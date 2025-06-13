@@ -1,7 +1,10 @@
 
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -15,13 +18,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Plan Your
-          <span className="block text-wellness-sage">Peaceful Escape</span>
+          {t('hero.title1')}
+          <span className="block text-wellness-sage">{t('hero.title2')}</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
-          Discover tranquility in the heart of the Bavarian Alps. Experience authentic wellness, 
-          rich culture, and breathtaking nature in Aschau im Chiemgau.
+          {t('hero.subtitle')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -29,14 +31,14 @@ const Hero = () => {
             className="btn-wellness text-xl px-10 py-6"
             aria-label="Start planning your wellness journey"
           >
-            Start Your Journey
+            {t('hero.startJourney')}
           </Button>
           <Button 
             variant="outline" 
             className="btn-wellness-outline bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-wellness-charcoal text-xl px-10 py-6"
             aria-label="Learn more about Aschau"
           >
-            Learn More
+            {t('hero.learnMore')}
           </Button>
         </div>
       </div>

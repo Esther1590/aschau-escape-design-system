@@ -2,10 +2,11 @@
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
+  const { language, setLanguage, t } = useTranslation();
 
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'DE' : 'EN');
@@ -29,16 +30,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#wellness" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-              Wellness
+              {t('nav.wellness')}
             </a>
             <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-              Culture
+              {t('nav.culture')}
             </a>
             <a href="#plan" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-              Plan Your Trip
+              {t('nav.planTrip')}
             </a>
             <a href="#booking" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-              Booking
+              {t('nav.booking')}
             </a>
           </nav>
 
@@ -69,16 +70,16 @@ const Header = () => {
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
             <div className="flex flex-col space-y-4">
               <a href="#wellness" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-                Wellness
+                {t('nav.wellness')}
               </a>
               <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-                Culture
+                {t('nav.culture')}
               </a>
               <a href="#plan" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-                Plan Your Trip
+                {t('nav.planTrip')}
               </a>
               <a href="#booking" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-                Booking
+                {t('nav.booking')}
               </a>
               <Button 
                 onClick={toggleLanguage}
