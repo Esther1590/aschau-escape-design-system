@@ -70,6 +70,9 @@ export default {
 					cream: '#F9F9F7'
 				}
 			},
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
