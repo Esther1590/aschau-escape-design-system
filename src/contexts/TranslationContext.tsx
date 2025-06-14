@@ -35,38 +35,84 @@ const translations = {
         title: 'Wellness & Spa',
         subtitle: 'Rejuvenate your mind, body, and soul in the heart of Bavaria'
       },
-      activities: {
-        title: 'Wellness Activities',
-        subtitle: 'Explore our range of wellness activities for a relaxing getaway',
-        spa: 'Spa & Massages',
-        yoga: 'Yoga & Meditation',
-        hiking: 'Hiking & Nature Walks',
-        nutrition: 'Nutrition & Health',
+      experiences: {
+        title: 'Premium Spa Experiences',
+        subtitle: 'Discover our exclusive wellness offerings designed for relaxation and rejuvenation'
       },
-      packages: {
-        title: 'Wellness Packages',
-        subtitle: 'Indulge in our exclusive wellness packages for a complete experience',
-        detox: 'Detox Package',
-        rejuvenation: 'Rejuvenation Package',
-        stressRelief: 'Stress Relief Package',
+      spa1: {
+        name: 'Alpine Serenity Spa',
+        description: 'Experience ultimate relaxation with our signature Alpine treatments featuring local herbs and minerals.',
+        feature1: 'Hot stone massage therapy',
+        feature2: 'Alpine herb steam room',
+        feature3: 'Mineral-rich mud baths',
+        feature4: 'Panoramic mountain views'
       },
-      testimonial: {
-        text: "The wellness retreat in Aschau was a life-changing experience. I feel refreshed and rejuvenated!",
-        author: "Emma Thompson"
+      spa2: {
+        name: 'Aqua Wellness Center',
+        description: 'Immerse yourself in our state-of-the-art hydrotherapy facilities with thermal pools and water treatments.',
+        feature1: 'Thermal healing pools',
+        feature2: 'Hydrotherapy circuits',
+        feature3: 'Underwater massage jets',
+        feature4: 'Aromatherapy steam rooms'
+      },
+      spa3: {
+        name: 'Mountain Peak Retreat',
+        description: 'Connect with nature through our outdoor wellness programs and meditation spaces.',
+        feature1: 'Outdoor meditation gardens',
+        feature2: 'Forest bathing experiences',
+        feature3: 'Mountain yoga sessions',
+        feature4: 'Natural cold therapy pools'
+      },
+      features: 'Features',
+      bookNow: 'Book Experience',
+      tips: {
+        title: 'Daily Wellness Tips',
+        subtitle: 'Simple practices to enhance your well-being during your stay',
+        tip1: {
+          title: 'Morning Mountain Air',
+          text: 'Start each day with deep breathing exercises on your balcony to energize your body with fresh Alpine air.'
+        },
+        tip2: {
+          title: 'Thermal Bath Ritual',
+          text: 'Alternate between warm thermal pools and cool mountain air for natural circulation therapy.'
+        },
+        tip3: {
+          title: 'Evening Reflection',
+          text: 'End your day with gentle stretching while watching the sunset over the Bavarian peaks.'
+        },
+        tip4: {
+          title: 'Hydration Harmony',
+          text: 'Drink natural spring water throughout the day to maintain optimal hydration in the mountain climate.'
+        }
       },
       contact: {
-        title: "Contact Us",
+        title: "Plan Your Wellness Journey",
+        name: "Full Name",
+        namePlaceholder: "Enter your full name",
+        email: "Email Address",
+        emailPlaceholder: "Enter your email",
+        message: "Special Requests",
+        messagePlaceholder: "Tell us about your wellness goals...",
+        send: "Send Inquiry"
+      },
+      support: {
+        title: "Wellness Support",
         phone: {
-          title: "Phone",
-          number: "+49 123 456789"
+          title: "Wellness Concierge",
+          number: "+49 8052 904-200"
         },
         email: {
-          title: "Email",
-          address: "info@aschauwellness.com"
+          title: "Spa Reservations",
+          address: "spa@aschau-wellness.de"
         },
         visit: {
-          title: "Visit Us",
-          address: "Aschau, Bavaria, Germany"
+          title: "Wellness Center",
+          address: "Wellness Pavilion, Aschau im Chiemgau"
+        },
+        hours: {
+          title: "Spa Operating Hours",
+          weekdays: "Monday - Friday: 7:00 AM - 9:00 PM",
+          weekends: "Saturday - Sunday: 8:00 AM - 8:00 PM"
         }
       }
     },
@@ -185,38 +231,84 @@ const translations = {
         title: 'Wellness & Spa',
         subtitle: 'Verjüngen Sie Geist, Körper und Seele im Herzen Bayerns'
       },
-      activities: {
-        title: 'Wellness Aktivitäten',
-        subtitle: 'Entdecken Sie unser Angebot an Wellnessaktivitäten für einen erholsamen Urlaub',
-        spa: 'Spa & Massagen',
-        yoga: 'Yoga & Meditation',
-        hiking: 'Wandern & Natur',
-        nutrition: 'Ernährung & Gesundheit',
+      experiences: {
+        title: 'Premium Spa Erlebnisse',
+        subtitle: 'Entdecken Sie unsere exklusiven Wellness-Angebote für Entspannung und Verjüngung'
       },
-      packages: {
-        title: 'Wellnesspakete',
-        subtitle: 'Gönnen Sie sich unsere exklusiven Wellnesspakete für ein umfassendes Erlebnis',
-        detox: 'Detox Paket',
-        rejuvenation: 'Verjüngungspaket',
-        stressRelief: 'Stressabbau Paket',
+      spa1: {
+        name: 'Alpine Ruhe Spa',
+        description: 'Erleben Sie ultimative Entspannung mit unseren charakteristischen Alpenbehandlungen mit lokalen Kräutern und Mineralien.',
+        feature1: 'Heißstein-Massagetherapie',
+        feature2: 'Alpenkräuter-Dampfbad',
+        feature3: 'Mineralreiche Schlammbäder',
+        feature4: 'Panoramablick auf die Berge'
       },
-      testimonial: {
-        text: "Der Wellnessurlaub in Aschau war eine lebensverändernde Erfahrung. Ich fühle mich erfrischt und verjüngt!",
-        author: "Emma Thompson"
+      spa2: {
+        name: 'Aqua Wellness Center',
+        description: 'Tauchen Sie ein in unsere hochmodernsten Hydrotherapie-Einrichtungen mit Thermalbecken und Wasserbehandlungen.',
+        feature1: 'Thermale Heilbecken',
+        feature2: 'Hydrotherapie-Kreisläufe',
+        feature3: 'Unterwasser-Massagedüsen',
+        feature4: 'Aromatherapie-Dampfbäder'
+      },
+      spa3: {
+        name: 'Berggipfel Retreat',
+        description: 'Verbinden Sie sich mit der Natur durch unsere Outdoor-Wellness-Programme und Meditationsräume.',
+        feature1: 'Outdoor-Meditationsgärten',
+        feature2: 'Waldbad-Erfahrungen',
+        feature3: 'Berg-Yoga-Sitzungen',
+        feature4: 'Natürliche Kältetherapie-Becken'
+      },
+      features: 'Eigenschaften',
+      bookNow: 'Erlebnis buchen',
+      tips: {
+        title: 'Tägliche Wellness-Tipps',
+        subtitle: 'Einfache Praktiken zur Verbesserung Ihres Wohlbefindens während Ihres Aufenthalts',
+        tip1: {
+          title: 'Morgenluft der Berge',
+          text: 'Beginnen Sie jeden Tag mit Atemübungen auf Ihrem Balkon, um Ihren Körper mit frischer Alpenluft zu energetisieren.'
+        },
+        tip2: {
+          title: 'Thermalbad-Ritual',
+          text: 'Wechseln Sie zwischen warmen Thermalbecken und kühler Bergluft für natürliche Kreislauftherapie.'
+        },
+        tip3: {
+          title: 'Abendliche Besinnung',
+          text: 'Beenden Sie Ihren Tag mit sanften Dehnübungen beim Betrachten des Sonnenuntergangs über den bayerischen Gipfeln.'
+        },
+        tip4: {
+          title: 'Hydrations-Harmonie',
+          text: 'Trinken Sie den ganzen Tag über natürliches Quellwasser, um optimale Hydration im Bergklima aufrechtzuerhalten.'
+        }
       },
       contact: {
-        title: "Kontaktieren Sie uns",
+        title: "Planen Sie Ihre Wellness-Reise",
+        name: "Vollständiger Name",
+        namePlaceholder: "Geben Sie Ihren vollständigen Namen ein",
+        email: "E-Mail-Adresse",
+        emailPlaceholder: "Geben Sie Ihre E-Mail ein",
+        message: "Besondere Wünsche",
+        messagePlaceholder: "Erzählen Sie uns von Ihren Wellness-Zielen...",
+        send: "Anfrage senden"
+      },
+      support: {
+        title: "Wellness-Support",
         phone: {
-          title: "Telefon",
-          number: "+49 123 456789"
+          title: "Wellness-Concierge",
+          number: "+49 8052 904-200"
         },
         email: {
-          title: "E-Mail",
-          address: "info@aschauwellness.com"
+          title: "Spa-Reservierungen",
+          address: "spa@aschau-wellness.de"
         },
         visit: {
-          title: "Besuchen Sie uns",
-          address: "Aschau, Bayern, Deutschland"
+          title: "Wellness-Center",
+          address: "Wellness-Pavillon, Aschau im Chiemgau"
+        },
+        hours: {
+          title: "Spa-Öffnungszeiten",
+          weekdays: "Montag - Freitag: 7:00 - 21:00 Uhr",
+          weekends: "Samstag - Sonntag: 8:00 - 20:00 Uhr"
         }
       }
     },
