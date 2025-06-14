@@ -30,23 +30,38 @@ const Wellness = () => {
 
   const spas = [
     {
-      name: 'Residenz Heinz Winkler',
-      description: 'Luxury spa hotel with world-class treatments and therapeutic wellness experiences',
-      features: ['Luxury Spa Treatments', 'Therapeutic Massages', 'Beauty Wellness', 'Medical Spa'],
+      name: t('wellness.spa1.name'),
+      description: t('wellness.spa1.description'),
+      features: [
+        t('wellness.spa1.feature1'),
+        t('wellness.spa1.feature2'),
+        t('wellness.spa1.feature3'),
+        t('wellness.spa1.feature4')
+      ],
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Heart
     },
     {
-      name: 'Burghotel Aschau',
-      description: 'Traditional wellness with sauna, whirlpool, and peaceful relaxation zones',
-      features: ['Finnish Sauna', 'Whirlpool', 'Quiet Zones', 'Relaxation Areas'],
+      name: t('wellness.spa2.name'),
+      description: t('wellness.spa2.description'),
+      features: [
+        t('wellness.spa2.feature1'),
+        t('wellness.spa2.feature2'),
+        t('wellness.spa2.feature3'),
+        t('wellness.spa2.feature4')
+      ],
       image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Waves
     },
     {
-      name: 'Agrad Chalets',
-      description: 'Private saunas with breathtaking mountain views and intimate wellness spaces',
-      features: ['Private Saunas', 'Mountain Views', 'Intimate Wellness', 'Alpine Air'],
+      name: t('wellness.spa3.name'),
+      description: t('wellness.spa3.description'),
+      features: [
+        t('wellness.spa3.feature1'),
+        t('wellness.spa3.feature2'),
+        t('wellness.spa3.feature3'),
+        t('wellness.spa3.feature4')
+      ],
       image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Mountain
     }
@@ -54,20 +69,20 @@ const Wellness = () => {
 
   const relaxationTips = [
     {
-      title: 'Breathe with Nature',
-      text: 'Take deep breaths of fresh Alpine air and let the mountain energy restore your inner balance.'
+      title: t('wellness.tips.tip1.title'),
+      text: t('wellness.tips.tip1.text')
     },
     {
-      title: 'Mountain Meditation',
-      text: 'Find a quiet spot with mountain views and practice mindfulness as you connect with the peaceful landscape.'
+      title: t('wellness.tips.tip2.title'),
+      text: t('wellness.tips.tip2.text')
     },
     {
-      title: 'Thermal Healing',
-      text: 'Let the warm thermal waters ease your tensions while you gaze at snow-capped peaks.'
+      title: t('wellness.tips.tip3.title'),
+      text: t('wellness.tips.tip3.text')
     },
     {
-      title: 'Forest Bathing',
-      text: 'Immerse yourself in the healing energy of ancient forests and feel stress melt away naturally.'
+      title: t('wellness.tips.tip4.title'),
+      text: t('wellness.tips.tip4.text')
     }
   ];
 
@@ -85,10 +100,10 @@ const Wellness = () => {
         />
         <div className="relative z-10 text-center text-wellness-charcoal">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow-lg">
-            Wellness in Aschau
+            {t('wellness.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl font-light">
-            Discover tranquility in the heart of the Bavarian Alps
+            {t('wellness.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -98,10 +113,10 @@ const Wellness = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
-              Wellness Experiences
+              {t('wellness.experiences.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Choose from our carefully selected wellness destinations, each offering unique experiences for body, mind, and soul.
+              {t('wellness.experiences.subtitle')}
             </p>
           </div>
 
@@ -130,7 +145,7 @@ const Wellness = () => {
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="mb-6">
-                      <h4 className="font-semibold text-wellness-charcoal mb-3 text-lg">Features:</h4>
+                      <h4 className="font-semibold text-wellness-charcoal mb-3 text-lg">{t('wellness.features')}:</h4>
                       <ul className="space-y-2">
                         {spa.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center text-gray-600">
@@ -141,7 +156,7 @@ const Wellness = () => {
                       </ul>
                     </div>
                     <Button className="w-full btn-wellness text-lg py-4">
-                      Book Now
+                      {t('wellness.bookNow')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -156,10 +171,10 @@ const Wellness = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
-              Relaxation Tips
+              {t('wellness.tips.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Simple wisdom for deeper wellness and lasting tranquility
+              {t('wellness.tips.subtitle')}
             </p>
           </div>
 
@@ -185,12 +200,12 @@ const Wellness = () => {
             {/* Contact Form */}
             <div>
               <h3 className="text-3xl font-bold mb-8 text-wellness-sage">
-                Wellness Contact
+                {t('wellness.contact.title')}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name" className="text-lg text-gray-300 mb-2 block">
-                    Name
+                    {t('wellness.contact.name')}
                   </Label>
                   <input
                     type="text"
@@ -199,13 +214,13 @@ const Wellness = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-wellness-sage focus:border-transparent text-lg"
-                    placeholder="Your Name"
+                    placeholder={t('wellness.contact.namePlaceholder')}
                     required
                   />
                 </div>
                 <div>
                   <Label htmlFor="email" className="text-lg text-gray-300 mb-2 block">
-                    Email
+                    {t('wellness.contact.email')}
                   </Label>
                   <input
                     type="email"
@@ -214,13 +229,13 @@ const Wellness = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-wellness-sage focus:border-transparent text-lg"
-                    placeholder="your.email@example.com"
+                    placeholder={t('wellness.contact.emailPlaceholder')}
                     required
                   />
                 </div>
                 <div>
                   <Label htmlFor="message" className="text-lg text-gray-300 mb-2 block">
-                    Message
+                    {t('wellness.contact.message')}
                   </Label>
                   <textarea
                     id="message"
@@ -229,12 +244,12 @@ const Wellness = () => {
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-wellness-sage focus:border-transparent text-lg resize-none"
-                    placeholder="Tell us about your wellness needs..."
+                    placeholder={t('wellness.contact.messagePlaceholder')}
                     required
                   />
                 </div>
                 <Button type="submit" className="w-full btn-wellness text-lg py-4">
-                  Send Message
+                  {t('wellness.contact.send')}
                 </Button>
               </form>
             </div>
@@ -242,37 +257,37 @@ const Wellness = () => {
             {/* Support Information */}
             <div>
               <h3 className="text-3xl font-bold mb-8 text-wellness-sage">
-                Support Hotline
+                {t('wellness.support.title')}
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Phone className="w-8 h-8 text-wellness-sage" />
                   <div>
-                    <p className="text-xl font-semibold">24/7 Wellness Support</p>
-                    <p className="text-lg text-gray-300">+49 8052 123456</p>
+                    <p className="text-xl font-semibold">{t('wellness.support.phone.title')}</p>
+                    <p className="text-lg text-gray-300">{t('wellness.support.phone.number')}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Mail className="w-8 h-8 text-wellness-sage" />
                   <div>
-                    <p className="text-xl font-semibold">Email Support</p>
-                    <p className="text-lg text-gray-300">wellness@aschau-tourism.com</p>
+                    <p className="text-xl font-semibold">{t('wellness.support.email.title')}</p>
+                    <p className="text-lg text-gray-300">{t('wellness.support.email.address')}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MapPin className="w-8 h-8 text-wellness-sage" />
                   <div>
-                    <p className="text-xl font-semibold">Visit Us</p>
-                    <p className="text-lg text-gray-300">Aschau im Chiemgau, Bavaria, Germany</p>
+                    <p className="text-xl font-semibold">{t('wellness.support.visit.title')}</p>
+                    <p className="text-lg text-gray-300">{t('wellness.support.visit.address')}</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 p-6 bg-wellness-sage/20 rounded-lg">
-                <h4 className="text-xl font-semibold mb-3">Wellness Hours</h4>
+                <h4 className="text-xl font-semibold mb-3">{t('wellness.support.hours.title')}</h4>
                 <div className="space-y-2 text-gray-300">
-                  <p>Monday - Friday: 6:00 AM - 10:00 PM</p>
-                  <p>Saturday - Sunday: 7:00 AM - 11:00 PM</p>
+                  <p>{t('wellness.support.hours.weekdays')}</p>
+                  <p>{t('wellness.support.hours.weekends')}</p>
                 </div>
               </div>
             </div>

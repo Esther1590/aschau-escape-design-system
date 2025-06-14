@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'EN' | 'DE';
@@ -58,6 +57,72 @@ const translations = {
     'testimonials.3.text': 'The perfect blend of relaxation and cultural immersion. The local traditions and wellness practices created memories that will last a lifetime.',
     'testimonials.4.text': 'The seasonal activities were perfectly curated. From spring hikes to winter thermal baths, each experience was magical and deeply restorative.',
     
+    // Wellness Page
+    'wellness.hero.title': 'Wellness in Aschau',
+    'wellness.hero.subtitle': 'Discover tranquility in the heart of the Bavarian Alps',
+    'wellness.experiences.title': 'Wellness Experiences',
+    'wellness.experiences.subtitle': 'Choose from our carefully selected wellness destinations, each offering unique experiences for body, mind, and soul.',
+    'wellness.features': 'Features',
+    'wellness.bookNow': 'Book Now',
+    
+    // Spa 1 - Residenz Heinz Winkler
+    'wellness.spa1.name': 'Residenz Heinz Winkler',
+    'wellness.spa1.description': 'Luxury spa hotel with world-class treatments and therapeutic wellness experiences',
+    'wellness.spa1.feature1': 'Luxury Spa Treatments',
+    'wellness.spa1.feature2': 'Therapeutic Massages',
+    'wellness.spa1.feature3': 'Beauty Wellness',
+    'wellness.spa1.feature4': 'Medical Spa',
+    
+    // Spa 2 - Burghotel Aschau
+    'wellness.spa2.name': 'Burghotel Aschau',
+    'wellness.spa2.description': 'Traditional wellness with sauna, whirlpool, and peaceful relaxation zones',
+    'wellness.spa2.feature1': 'Finnish Sauna',
+    'wellness.spa2.feature2': 'Whirlpool',
+    'wellness.spa2.feature3': 'Quiet Zones',
+    'wellness.spa2.feature4': 'Relaxation Areas',
+    
+    // Spa 3 - Agrad Chalets
+    'wellness.spa3.name': 'Agrad Chalets',
+    'wellness.spa3.description': 'Private saunas with breathtaking mountain views and intimate wellness spaces',
+    'wellness.spa3.feature1': 'Private Saunas',
+    'wellness.spa3.feature2': 'Mountain Views',
+    'wellness.spa3.feature3': 'Intimate Wellness',
+    'wellness.spa3.feature4': 'Alpine Air',
+    
+    // Relaxation Tips
+    'wellness.tips.title': 'Relaxation Tips',
+    'wellness.tips.subtitle': 'Simple wisdom for deeper wellness and lasting tranquility',
+    'wellness.tips.tip1.title': 'Breathe with Nature',
+    'wellness.tips.tip1.text': 'Take deep breaths of fresh Alpine air and let the mountain energy restore your inner balance.',
+    'wellness.tips.tip2.title': 'Mountain Meditation',
+    'wellness.tips.tip2.text': 'Find a quiet spot with mountain views and practice mindfulness as you connect with the peaceful landscape.',
+    'wellness.tips.tip3.title': 'Thermal Healing',
+    'wellness.tips.tip3.text': 'Let the warm thermal waters ease your tensions while you gaze at snow-capped peaks.',
+    'wellness.tips.tip4.title': 'Forest Bathing',
+    'wellness.tips.tip4.text': 'Immerse yourself in the healing energy of ancient forests and feel stress melt away naturally.',
+    
+    // Contact Form
+    'wellness.contact.title': 'Wellness Contact',
+    'wellness.contact.name': 'Name',
+    'wellness.contact.email': 'Email',
+    'wellness.contact.message': 'Message',
+    'wellness.contact.namePlaceholder': 'Your Name',
+    'wellness.contact.emailPlaceholder': 'your.email@example.com',
+    'wellness.contact.messagePlaceholder': 'Tell us about your wellness needs...',
+    'wellness.contact.send': 'Send Message',
+    
+    // Support Information
+    'wellness.support.title': 'Support Hotline',
+    'wellness.support.phone.title': '24/7 Wellness Support',
+    'wellness.support.phone.number': '+49 8052 123456',
+    'wellness.support.email.title': 'Email Support',
+    'wellness.support.email.address': 'info@aschau-wellness.com',
+    'wellness.support.visit.title': 'Visit Us',
+    'wellness.support.visit.address': 'Aschau im Chiemgau, Bavaria, Germany',
+    'wellness.support.hours.title': 'Wellness Hours',
+    'wellness.support.hours.weekdays': 'Monday - Friday: 6:00 AM - 10:00 PM',
+    'wellness.support.hours.weekends': 'Saturday - Sunday: 7:00 AM - 11:00 PM',
+    
     // Footer
     'footer.tagline': 'Your gateway to Alpine wellness and tranquility',
     'footer.quickLinks': 'Quick Links',
@@ -116,6 +181,72 @@ const translations = {
     'testimonials.2.text': 'Als Senior-Reisender schätzte ich die Zugänglichkeit und den durchdachten Service. Jedes Detail war auf Komfort und Leichtigkeit ausgelegt. Wirklich außergewöhnliche Gastfreundschaft.',
     'testimonials.3.text': 'Die perfekte Mischung aus Entspannung und kulturellem Eintauchen. Die lokalen Traditionen und Wellness-Praktiken schufen Erinnerungen, die ein Leben lang halten werden.',
     'testimonials.4.text': 'Die saisonalen Aktivitäten waren perfekt kuratiert. Von Frühlingswanderungen bis zu Winter-Thermalbädern war jede Erfahrung magisch und tiefgreifend erholsam.',
+    
+    // Wellness Page
+    'wellness.hero.title': 'Wellness in Aschau',
+    'wellness.hero.subtitle': 'Entdecken Sie Ruhe im Herzen der bayerischen Alpen',
+    'wellness.experiences.title': 'Wellness-Erlebnisse',
+    'wellness.experiences.subtitle': 'Wählen Sie aus unseren sorgfältig ausgewählten Wellness-Destinationen, die jeweils einzigartige Erfahrungen für Körper, Geist und Seele bieten.',
+    'wellness.features': 'Eigenschaften',
+    'wellness.bookNow': 'Jetzt Buchen',
+    
+    // Spa 1 - Residenz Heinz Winkler
+    'wellness.spa1.name': 'Residenz Heinz Winkler',
+    'wellness.spa1.description': 'Luxus-Spa-Hotel mit weltklasse Behandlungen und therapeutischen Wellness-Erfahrungen',
+    'wellness.spa1.feature1': 'Luxus-Spa-Behandlungen',
+    'wellness.spa1.feature2': 'Therapeutische Massagen',
+    'wellness.spa1.feature3': 'Beauty-Wellness',
+    'wellness.spa1.feature4': 'Medical Spa',
+    
+    // Spa 2 - Burghotel Aschau
+    'wellness.spa2.name': 'Burghotel Aschau',
+    'wellness.spa2.description': 'Traditionelles Wellness mit Sauna, Whirlpool und ruhigen Entspannungszonen',
+    'wellness.spa2.feature1': 'Finnische Sauna',
+    'wellness.spa2.feature2': 'Whirlpool',
+    'wellness.spa2.feature3': 'Ruhezonen',
+    'wellness.spa2.feature4': 'Entspannungsbereiche',
+    
+    // Spa 3 - Agrad Chalets
+    'wellness.spa3.name': 'Agrad Chalets',
+    'wellness.spa3.description': 'Private Saunen mit atemberaubendem Bergblick und intimen Wellness-Bereichen',
+    'wellness.spa3.feature1': 'Private Saunen',
+    'wellness.spa3.feature2': 'Bergblick',
+    'wellness.spa3.feature3': 'Intimes Wellness',
+    'wellness.spa3.feature4': 'Alpenluft',
+    
+    // Relaxation Tips
+    'wellness.tips.title': 'Entspannungstipps',
+    'wellness.tips.subtitle': 'Einfache Weisheit für tieferes Wellness und dauerhafte Ruhe',
+    'wellness.tips.tip1.title': 'Atmen mit der Natur',
+    'wellness.tips.tip1.text': 'Atmen Sie tief die frische Alpenluft ein und lassen Sie die Bergenergie Ihr inneres Gleichgewicht wiederherstellen.',
+    'wellness.tips.tip2.title': 'Berg-Meditation',
+    'wellness.tips.tip2.text': 'Finden Sie einen ruhigen Ort mit Bergblick und praktizieren Sie Achtsamkeit, während Sie sich mit der friedlichen Landschaft verbinden.',
+    'wellness.tips.tip3.title': 'Thermalheilung',
+    'wellness.tips.tip3.text': 'Lassen Sie das warme Thermalwasser Ihre Spannungen lösen, während Sie auf schneebedeckte Gipfel blicken.',
+    'wellness.tips.tip4.title': 'Waldbaden',
+    'wellness.tips.tip4.text': 'Tauchen Sie ein in die heilende Energie alter Wälder und spüren Sie, wie Stress natürlich wegschmilzt.',
+    
+    // Contact Form
+    'wellness.contact.title': 'Wellness-Kontakt',
+    'wellness.contact.name': 'Name',
+    'wellness.contact.email': 'E-Mail',
+    'wellness.contact.message': 'Nachricht',
+    'wellness.contact.namePlaceholder': 'Ihr Name',
+    'wellness.contact.emailPlaceholder': 'ihre.email@beispiel.com',
+    'wellness.contact.messagePlaceholder': 'Erzählen Sie uns von Ihren Wellness-Bedürfnissen...',
+    'wellness.contact.send': 'Nachricht Senden',
+    
+    // Support Information
+    'wellness.support.title': 'Support-Hotline',
+    'wellness.support.phone.title': '24/7 Wellness-Support',
+    'wellness.support.phone.number': '+49 8052 123456',
+    'wellness.support.email.title': 'E-Mail-Support',
+    'wellness.support.email.address': 'wellness@aschau-tourism.com',
+    'wellness.support.visit.title': 'Besuchen Sie Uns',
+    'wellness.support.visit.address': 'Aschau im Chiemgau, Bayern, Deutschland',
+    'wellness.support.hours.title': 'Wellness-Öffnungszeiten',
+    'wellness.support.hours.weekdays': 'Montag - Freitag: 6:00 - 22:00 Uhr',
+    'wellness.support.hours.weekends': 'Samstag - Sonntag: 7:00 - 23:00 Uhr',
     
     // Footer
     'footer.tagline': 'Ihr Tor zu alpinem Wellness und Ruhe',
