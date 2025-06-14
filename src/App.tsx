@@ -8,6 +8,7 @@ import { TranslationProvider } from "@/contexts/TranslationContext";
 import Index from "./pages/Index";
 import Wellness from "./pages/Wellness";
 import Culture from "./pages/Culture";
+import PlanTrip from "./pages/PlanTrip";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/wellness" element={<Wellness />} />
             <Route path="/culture" element={<Culture />} />
+            <Route path="/plan" element={<PlanTrip />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

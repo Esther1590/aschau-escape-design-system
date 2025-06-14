@@ -1,353 +1,340 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-export type Language = 'EN' | 'DE';
-
-interface TranslationContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
+interface TranslationContextProps {
+  language: 'EN' | 'DE';
+  setLanguage: (lang: 'EN' | 'DE') => void;
   t: (key: string) => string;
 }
 
-const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
+const TranslationContext = createContext<TranslationContextProps>({
+  language: 'EN',
+  setLanguage: () => {},
+  t: (key: string) => key,
+});
+
+export const useTranslation = () => useContext(TranslationContext);
+
+interface TranslationProviderProps {
+  children: React.ReactNode;
+}
 
 const translations = {
   EN: {
-    // Header
-    'nav.wellness': 'Wellness',
-    'nav.culture': 'Culture',
-    'nav.planTrip': 'Plan Your Trip',
-    'nav.booking': 'Booking',
-    
-    // Hero
-    'hero.title1': 'Plan Your',
-    'hero.title2': 'Peaceful Escape',
-    'hero.subtitle': 'Discover tranquility in the heart of the Bavarian Alps. Experience authentic wellness, rich culture, and breathtaking nature in Aschau im Chiemgau.',
-    'hero.startJourney': 'Start Your Journey',
-    'hero.learnMore': 'Learn More',
-    
-    // Navigation Cards
-    'cards.title': 'Discover Your Perfect Experience',
-    'cards.subtitle': 'From rejuvenating wellness treatments to cultural discoveries, we offer everything you need for an unforgettable Alpine retreat.',
-    'cards.wellness.title': 'Wellness',
-    'cards.wellness.description': 'Rejuvenate your body and mind with our premium spa treatments, thermal baths, and mindfulness experiences.',
-    'cards.culture.title': 'Culture',
-    'cards.culture.description': 'Immerse yourself in Bavarian traditions, local crafts, and the rich heritage of the Alpine region.',
-    'cards.plan.title': 'Plan Your Trip',
-    'cards.plan.description': 'Customize your perfect getaway with our expert recommendations and personalized itineraries.',
-    'cards.booking.title': 'Booking',
-    'cards.booking.description': 'Secure your stay at our carefully selected accommodations and wellness centers.',
-    
-    // Seasonal Activities
-    'seasonal.title': 'Seasonal Wellness Experiences',
-    'seasonal.subtitle': 'Each season brings unique opportunities for renewal and connection with nature. Discover what awaits you throughout the year in Aschau.',
-    'seasonal.spring.title': 'Alpine Awakening',
-    'seasonal.spring.description': 'Witness nature\'s renewal with guided mountain hikes, wildflower meditation, and outdoor yoga sessions.',
-    'seasonal.summer.title': 'Peak Wellness',
-    'seasonal.summer.description': 'Enjoy crystal-clear lake swimming, forest bathing, and alpine herb workshops in perfect weather.',
-    'seasonal.autumn.title': 'Golden Serenity',
-    'seasonal.autumn.description': 'Experience the magical colors of fall with harvest wellness retreats and cozy spa treatments.',
-    'seasonal.winter.title': 'Alpine Tranquility',
-    'seasonal.winter.description': 'Find peace in snowy landscapes with thermal baths, winter wellness programs, and cozy relaxation.',
-    
-    // Testimonials
-    'testimonials.title': 'What Our Guests Say',
-    'testimonials.subtitle': 'Discover why travelers from around the world choose Aschau for their wellness journey.',
-    'testimonials.1.text': 'The wellness treatments in Aschau were absolutely transformative. The mountain air, combined with the expert spa services, gave me the reset I desperately needed.',
-    'testimonials.2.text': 'As a senior traveler, I appreciated the accessibility and thoughtful service. Every detail was designed with comfort and ease in mind. Truly exceptional hospitality.',
-    'testimonials.3.text': 'The perfect blend of relaxation and cultural immersion. The local traditions and wellness practices created memories that will last a lifetime.',
-    'testimonials.4.text': 'The seasonal activities were perfectly curated. From spring hikes to winter thermal baths, each experience was magical and deeply restorative.',
-    
-    // Wellness Page
-    'wellness.hero.title': 'Wellness in Aschau',
-    'wellness.hero.subtitle': 'Discover tranquility in the heart of the Bavarian Alps',
-    'wellness.experiences.title': 'Wellness Experiences',
-    'wellness.experiences.subtitle': 'Choose from our carefully selected wellness destinations, each offering unique experiences for body, mind, and soul.',
-    'wellness.features': 'Features',
-    'wellness.bookNow': 'Book Now',
-    
-    // Spa 1 - Residenz Heinz Winkler
-    'wellness.spa1.name': 'Residenz Heinz Winkler',
-    'wellness.spa1.description': 'Luxury spa hotel with world-class treatments and therapeutic wellness experiences',
-    'wellness.spa1.feature1': 'Luxury Spa Treatments',
-    'wellness.spa1.feature2': 'Therapeutic Massages',
-    'wellness.spa1.feature3': 'Beauty Wellness',
-    'wellness.spa1.feature4': 'Medical Spa',
-    
-    // Spa 2 - Burghotel Aschau
-    'wellness.spa2.name': 'Burghotel Aschau',
-    'wellness.spa2.description': 'Traditional wellness with sauna, whirlpool, and peaceful relaxation zones',
-    'wellness.spa2.feature1': 'Finnish Sauna',
-    'wellness.spa2.feature2': 'Whirlpool',
-    'wellness.spa2.feature3': 'Quiet Zones',
-    'wellness.spa2.feature4': 'Relaxation Areas',
-    
-    // Spa 3 - Agrad Chalets
-    'wellness.spa3.name': 'Agrad Chalets',
-    'wellness.spa3.description': 'Private saunas with breathtaking mountain views and intimate wellness spaces',
-    'wellness.spa3.feature1': 'Private Saunas',
-    'wellness.spa3.feature2': 'Mountain Views',
-    'wellness.spa3.feature3': 'Intimate Wellness',
-    'wellness.spa3.feature4': 'Alpine Air',
-    
-    // Relaxation Tips
-    'wellness.tips.title': 'Relaxation Tips',
-    'wellness.tips.subtitle': 'Simple wisdom for deeper wellness and lasting tranquility',
-    'wellness.tips.tip1.title': 'Breathe with Nature',
-    'wellness.tips.tip1.text': 'Take deep breaths of fresh Alpine air and let the mountain energy restore your inner balance.',
-    'wellness.tips.tip2.title': 'Mountain Meditation',
-    'wellness.tips.tip2.text': 'Find a quiet spot with mountain views and practice mindfulness as you connect with the peaceful landscape.',
-    'wellness.tips.tip3.title': 'Thermal Healing',
-    'wellness.tips.tip3.text': 'Let the warm thermal waters ease your tensions while you gaze at snow-capped peaks.',
-    'wellness.tips.tip4.title': 'Forest Bathing',
-    'wellness.tips.tip4.text': 'Immerse yourself in the healing energy of ancient forests and feel stress melt away naturally.',
-    
-    // Contact Form
-    'wellness.contact.title': 'Wellness Contact',
-    'wellness.contact.name': 'Name',
-    'wellness.contact.email': 'Email',
-    'wellness.contact.message': 'Message',
-    'wellness.contact.namePlaceholder': 'Your Name',
-    'wellness.contact.emailPlaceholder': 'your.email@example.com',
-    'wellness.contact.messagePlaceholder': 'Tell us about your wellness needs...',
-    'wellness.contact.send': 'Send Message',
-    
-    // Support Information
-    'wellness.support.title': 'Support Hotline',
-    'wellness.support.phone.title': '24/7 Wellness Support',
-    'wellness.support.phone.number': '+49 8052 123456',
-    'wellness.support.email.title': 'Email Support',
-    'wellness.support.email.address': 'info@aschau-wellness.com',
-    'wellness.support.visit.title': 'Visit Us',
-    'wellness.support.visit.address': 'Aschau im Chiemgau, Bavaria, Germany',
-    'wellness.support.hours.title': 'Wellness Hours',
-    'wellness.support.hours.weekdays': 'Monday - Friday: 6:00 AM - 10:00 PM',
-    'wellness.support.hours.weekends': 'Saturday - Sunday: 7:00 AM - 11:00 PM',
-    
-    // Footer
-    'footer.tagline': 'Your gateway to Alpine wellness and tranquility',
-    'footer.quickLinks': 'Quick Links',
-    'footer.contact': 'Contact',
-    'footer.address': 'Aschau im Chiemgau, Bavaria, Germany',
-    'footer.phone': 'Phone: +49 8052 123456',
-    'footer.email': 'Email: info@aschau-wellness.com',
-    'footer.followUs': 'Follow Us',
-    'footer.rights': '© 2024 Aschau Wellness Tourism. All rights reserved.',
-    
-    // Sticky Button
-    'stickyButton.bookNow': 'Book Now',
-    
-    // Culture Page
-    'culture.hero.title': 'Cultural Highlights',
-    'culture.hero.subtitle': 'Discover the rich Bavarian heritage of Aschau im Chiemgau',
-    
-    // Castle Section
-    'culture.castle.title': 'Schloss Hohenaschau',
-    'culture.castle.history': 'Dating back to the 12th century, Schloss Hohenaschau stands majestically overlooking the Chiemgau valley. This historic castle has witnessed centuries of Bavarian history and offers visitors a glimpse into medieval life through its well-preserved chambers and exhibitions.',
-    'culture.castle.accessibility': 'Accessibility Note: Shuttle assistance is available for senior visitors to reach the castle entrance. Please contact us in advance to arrange transportation.',
-    
-    // Cultural Highlights
-    'culture.highlights.title': 'Explore Local Culture',
-    'culture.highlights.subtitle': 'Immerse yourself in authentic Bavarian traditions through our carefully curated cultural experiences.',
-    
-    // Museum
-    'culture.museum.name': 'Local Museum',
-    'culture.museum.description': 'Traditional exhibition space showcasing local artifacts, folk art, and the fascinating history of Aschau. Perfect for understanding the authentic Bavarian way of life.',
-    
-    // Events
-    'culture.events.name': 'Aschauer Events',
-    'culture.events.description': 'Join us for upcoming cultural festivals celebrating Bavarian traditions, folk music, and seasonal celebrations throughout the year.',
-    
-    // Café
-    'culture.cafe.name': 'Café Moments',
-    'culture.cafe.description': 'Experience the warm hospitality of our cozy local café, where traditional Bavarian coffee culture meets homemade pastries and friendly conversation.',
-    
-    'culture.learnMore': 'Learn More',
-    
-    // Testimonial
-    'culture.testimonial.text': 'The cultural richness of Aschau touched my heart. From the ancient castle to the warm café conversations, every moment felt like stepping into a living storybook of Bavarian heritage.',
-    'culture.testimonial.author': '— Elisabeth M., Cultural Enthusiast',
-    
-    // Contact
-    'culture.contact.title': 'Cultural Information',
-    'culture.contact.phone.title': 'Cultural Tours',
-    'culture.contact.phone.number': '+49 8052 789123',
-    'culture.contact.email.title': 'Cultural Events',
-    'culture.contact.email.address': 'culture@aschau-tourism.com',
-    'culture.contact.visit.title': 'Cultural Center',
-    'culture.contact.visit.address': 'Schloss Hohenaschau, Aschau im Chiemgau'
+    nav: {
+      wellness: 'Wellness',
+      culture: 'Culture',
+      planTrip: 'Plan Your Trip',
+      booking: 'Booking',
+    },
+    hero: {
+      title: 'Welcome to Aschau',
+      subtitle: 'Discover the beauty and tranquility of the Bavarian Alps',
+    },
+    wellness: {
+      hero: {
+        title: 'Wellness & Spa',
+        subtitle: 'Rejuvenate your mind, body, and soul in the heart of Bavaria'
+      },
+      activities: {
+        title: 'Wellness Activities',
+        subtitle: 'Explore our range of wellness activities for a relaxing getaway',
+        spa: 'Spa & Massages',
+        yoga: 'Yoga & Meditation',
+        hiking: 'Hiking & Nature Walks',
+        nutrition: 'Nutrition & Health',
+      },
+      packages: {
+        title: 'Wellness Packages',
+        subtitle: 'Indulge in our exclusive wellness packages for a complete experience',
+        detox: 'Detox Package',
+        rejuvenation: 'Rejuvenation Package',
+        stressRelief: 'Stress Relief Package',
+      },
+      testimonial: {
+        text: "The wellness retreat in Aschau was a life-changing experience. I feel refreshed and rejuvenated!",
+        author: "Emma Thompson"
+      },
+      contact: {
+        title: "Contact Us",
+        phone: {
+          title: "Phone",
+          number: "+49 123 456789"
+        },
+        email: {
+          title: "Email",
+          address: "info@aschauwellness.com"
+        },
+        visit: {
+          title: "Visit Us",
+          address: "Aschau, Bavaria, Germany"
+        }
+      }
+    },
+    culture: {
+      hero: {
+        title: 'Culture & Heritage',
+        subtitle: 'Immerse yourself in the rich history and traditions of Aschau'
+      },
+      castle: {
+        title: 'Aschau Castle',
+        history: 'Explore the historic Aschau Castle, a landmark of Bavarian heritage. Discover centuries of history and admire the stunning architecture.',
+        accessibility: 'The castle is partially accessible for visitors with mobility issues. Guided tours are available in English and German.'
+      },
+      highlights: {
+        title: 'Cultural Highlights',
+        subtitle: 'Discover the cultural treasures of Aschau, from historic museums to vibrant local events.'
+      },
+      museum: {
+        name: 'Local History Museum',
+        description: 'Explore the rich history of Aschau and the surrounding region through fascinating exhibits and artifacts.'
+      },
+      events: {
+        name: 'Traditional Festivals',
+        description: 'Experience the vibrant culture of Aschau at our traditional festivals, featuring music, dance, and local cuisine.'
+      },
+      cafe: {
+        name: 'Artisanal Cafés',
+        description: 'Relax and enjoy the local atmosphere in our charming artisanal cafés, offering traditional Bavarian treats and coffee.'
+      },
+      learnMore: 'Learn More',
+      testimonial: {
+        text: "Visiting Aschau was like stepping back in time. The castle and local traditions are truly captivating!",
+        author: "Hans Müller"
+      },
+      contact: {
+        title: "Contact Us",
+        phone: {
+          title: "Phone",
+          number: "+49 987 654321"
+        },
+        email: {
+          title: "Email",
+          address: "culture@aschau.de"
+        },
+        visit: {
+          title: "Visit Us",
+          address: "Aschau Cultural Center, Bavaria, Germany"
+        }
+      }
+    },
+    planTrip: {
+      hero: {
+        title: "Start Your Aschau Journey",
+        subtitle: "Plan your perfect wellness and cultural retreat with personalized recommendations for senior travelers"
+      },
+      form: {
+        title: "Plan Your Perfect Stay",
+        startDate: "Check-in Date",
+        endDate: "Check-out Date",
+        selectDate: "Select a date",
+        guests: "Number of Guests",
+        selectGuests: "Select guests",
+        guest: "Guest",
+        travelStyle: "Travel Style",
+        selectStyle: "Select your preference",
+        wellness: "Wellness Focus",
+        culture: "Cultural Focus",
+        both: "Wellness & Culture",
+        generateItinerary: "Generate My Itinerary"
+      },
+      tips: {
+        title: "Helpful Travel Tips",
+        trails: {
+          title: "Accessible Trails",
+          description: "Discover gentle walking paths with beautiful Alpine views, designed for comfortable senior exploration with rest areas and clear signage."
+        },
+        transport: {
+          title: "Easy Transport",
+          description: "Regular train connections from Munich (1.5h) and Salzburg (1h). Local shuttle services available for seniors with advance booking."
+        },
+        weather: {
+          title: "Weather & Packing",
+          description: "Mild Alpine climate year-round. Pack comfortable walking shoes, light layers, and a rain jacket for changing mountain weather."
+        }
+      },
+      offers: {
+        title: "Senior Wellness Packages",
+        subtitle: "Specially designed packages for travelers 60+ with exclusive benefits and accessible amenities",
+        wellness: {
+          title: "7-Day Wellness Retreat",
+          description: "Spa treatments, gentle yoga, thermal baths, and nutritious Alpine cuisine in a serene mountain setting.",
+          price: "From €890 per person"
+        },
+        cultural: {
+          title: "5-Day Cultural Experience",
+          description: "Guided castle tours, local museum visits, traditional craft workshops, and authentic Bavarian dining.",
+          price: "From €650 per person"
+        },
+        viewAll: "View All Packages"
+      }
+    }
   },
   DE: {
-    // Header
-    'nav.wellness': 'Wellness',
-    'nav.culture': 'Kultur',
-    'nav.planTrip': 'Reise Planen',
-    'nav.booking': 'Buchung',
-    
-    // Hero
-    'hero.title1': 'Planen Sie Ihre',
-    'hero.title2': 'Friedliche Auszeit',
-    'hero.subtitle': 'Entdecken Sie Ruhe im Herzen der bayerischen Alpen. Erleben Sie authentisches Wellness, reiche Kultur und atemberaubende Natur in Aschau im Chiemgau.',
-    'hero.startJourney': 'Reise Beginnen',
-    'hero.learnMore': 'Mehr Erfahren',
-    
-    // Navigation Cards
-    'cards.title': 'Entdecken Sie Ihr Perfektes Erlebnis',
-    'cards.subtitle': 'Von verjüngenden Wellness-Behandlungen bis zu kulturellen Entdeckungen bieten wir alles, was Sie für einen unvergesslichen Alpenrückzug benötigen.',
-    'cards.wellness.title': 'Wellness',
-    'cards.wellness.description': 'Regenerieren Sie Körper und Geist mit unseren erstklassigen Spa-Behandlungen, Thermalbädern und Achtsamkeitserfahrungen.',
-    'cards.culture.title': 'Kultur',
-    'cards.culture.description': 'Tauchen Sie ein in bayerische Traditionen, lokales Handwerk und das reiche Erbe der Alpenregion.',
-    'cards.plan.title': 'Reise Planen',
-    'cards.plan.description': 'Gestalten Sie Ihren perfekten Kurzurlaub mit unseren Expertenempfehlungen und personalisierten Reiseplänen.',
-    'cards.booking.title': 'Buchung',
-    'cards.booking.description': 'Sichern Sie sich Ihren Aufenthalt in unseren sorgfältig ausgewählten Unterkünften und Wellness-Zentren.',
-    
-    // Seasonal Activities
-    'seasonal.title': 'Saisonale Wellness-Erlebnisse',
-    'seasonal.subtitle': 'Jede Jahreszeit bringt einzigartige Möglichkeiten für Erneuerung und Verbindung mit der Natur. Entdecken Sie, was Sie das ganze Jahr über in Aschau erwartet.',
-    'seasonal.spring.title': 'Alpines Erwachen',
-    'seasonal.spring.description': 'Erleben Sie die Erneuerung der Natur mit geführten Bergwanderungen, Wildblumen-Meditation und Outdoor-Yoga-Sitzungen.',
-    'seasonal.summer.title': 'Gipfel-Wellness',
-    'seasonal.summer.description': 'Genießen Sie kristallklares Seeschwimmen, Waldbaden und alpine Kräuter-Workshops bei perfektem Wetter.',
-    'seasonal.autumn.title': 'Goldene Gelassenheit',
-    'seasonal.autumn.description': 'Erleben Sie die magischen Farben des Herbstes mit Ernte-Wellness-Retreats und gemütlichen Spa-Behandlungen.',
-    'seasonal.winter.title': 'Alpine Ruhe',
-    'seasonal.winter.description': 'Finden Sie Frieden in schneebedeckten Landschaften mit Thermalbädern, Winter-Wellness-Programmen und gemütlicher Entspannung.',
-    
-    // Testimonials
-    'testimonials.title': 'Was Unsere Gäste Sagen',
-    'testimonials.subtitle': 'Entdecken Sie, warum Reisende aus aller Welt Aschau für ihre Wellness-Reise wählen.',
-    'testimonials.1.text': 'Die Wellness-Behandlungen in Aschau waren absolut transformativ. Die Bergluft, kombiniert mit den fachkundigen Spa-Services, gab mir die Erholung, die ich dringend brauchte.',
-    'testimonials.2.text': 'Als Senior-Reisender schätzte ich die Zugänglichkeit und den durchdachten Service. Jedes Detail war auf Komfort und Leichtigkeit ausgelegt. Wirklich außergewöhnliche Gastfreundschaft.',
-    'testimonials.3.text': 'Die perfekte Mischung aus Entspannung und kulturellem Eintauchen. Die lokalen Traditionen und Wellness-Praktiken schufen Erinnerungen, die ein Leben lang halten werden.',
-    'testimonials.4.text': 'Die saisonalen Aktivitäten waren perfekt kuratiert. Von Frühlingswanderungen bis zu Winter-Thermalbädern war jede Erfahrung magisch und tiefgreifend erholsam.',
-    
-    // Wellness Page
-    'wellness.hero.title': 'Wellness in Aschau',
-    'wellness.hero.subtitle': 'Entdecken Sie Ruhe im Herzen der bayerischen Alpen',
-    'wellness.experiences.title': 'Wellness-Erlebnisse',
-    'wellness.experiences.subtitle': 'Wählen Sie aus unseren sorgfältig ausgewählten Wellness-Destinationen, die jeweils einzigartige Erfahrungen für Körper, Geist und Seele bieten.',
-    'wellness.features': 'Eigenschaften',
-    'wellness.bookNow': 'Jetzt Buchen',
-    
-    // Spa 1 - Residenz Heinz Winkler
-    'wellness.spa1.name': 'Residenz Heinz Winkler',
-    'wellness.spa1.description': 'Luxus-Spa-Hotel mit weltklasse Behandlungen und therapeutischen Wellness-Erfahrungen',
-    'wellness.spa1.feature1': 'Luxus-Spa-Behandlungen',
-    'wellness.spa1.feature2': 'Therapeutische Massagen',
-    'wellness.spa1.feature3': 'Beauty-Wellness',
-    'wellness.spa1.feature4': 'Medical Spa',
-    
-    // Spa 2 - Burghotel Aschau
-    'wellness.spa2.name': 'Burghotel Aschau',
-    'wellness.spa2.description': 'Traditionelles Wellness mit Sauna, Whirlpool und ruhigen Entspannungszonen',
-    'wellness.spa2.feature1': 'Finnische Sauna',
-    'wellness.spa2.feature2': 'Whirlpool',
-    'wellness.spa2.feature3': 'Ruhezonen',
-    'wellness.spa2.feature4': 'Entspannungsbereiche',
-    
-    // Spa 3 - Agrad Chalets
-    'wellness.spa3.name': 'Agrad Chalets',
-    'wellness.spa3.description': 'Private Saunen mit atemberaubendem Bergblick und intimen Wellness-Bereichen',
-    'wellness.spa3.feature1': 'Private Saunen',
-    'wellness.spa3.feature2': 'Bergblick',
-    'wellness.spa3.feature3': 'Intimes Wellness',
-    'wellness.spa3.feature4': 'Alpenluft',
-    
-    // Relaxation Tips
-    'wellness.tips.title': 'Entspannungstipps',
-    'wellness.tips.subtitle': 'Einfache Weisheit für tieferes Wellness und dauerhafte Ruhe',
-    'wellness.tips.tip1.title': 'Atmen mit der Natur',
-    'wellness.tips.tip1.text': 'Atmen Sie tief die frische Alpenluft ein und lassen Sie die Bergenergie Ihr inneres Gleichgewicht wiederherstellen.',
-    'wellness.tips.tip2.title': 'Berg-Meditation',
-    'wellness.tips.tip2.text': 'Finden Sie einen ruhigen Ort mit Bergblick und praktizieren Sie Achtsamkeit, während Sie sich mit der friedlichen Landschaft verbinden.',
-    'wellness.tips.tip3.title': 'Thermalheilung',
-    'wellness.tips.tip3.text': 'Lassen Sie das warme Thermalwasser Ihre Spannungen lösen, während Sie auf schneebedeckte Gipfel blicken.',
-    'wellness.tips.tip4.title': 'Waldbaden',
-    'wellness.tips.tip4.text': 'Tauchen Sie ein in die heilende Energie alter Wälder und spüren Sie, wie Stress natürlich wegschmilzt.',
-    
-    // Contact Form
-    'wellness.contact.title': 'Wellness-Kontakt',
-    'wellness.contact.name': 'Name',
-    'wellness.contact.email': 'E-Mail',
-    'wellness.contact.message': 'Nachricht',
-    'wellness.contact.namePlaceholder': 'Ihr Name',
-    'wellness.contact.emailPlaceholder': 'ihre.email@beispiel.com',
-    'wellness.contact.messagePlaceholder': 'Erzählen Sie uns von Ihren Wellness-Bedürfnissen...',
-    'wellness.contact.send': 'Nachricht Senden',
-    
-    // Support Information
-    'wellness.support.title': 'Support-Hotline',
-    'wellness.support.phone.title': '24/7 Wellness-Support',
-    'wellness.support.phone.number': '+49 8052 123456',
-    'wellness.support.email.title': 'E-Mail-Support',
-    'wellness.support.email.address': 'wellness@aschau-tourism.com',
-    'wellness.support.visit.title': 'Besuchen Sie Uns',
-    'wellness.support.visit.address': 'Aschau im Chiemgau, Bayern, Deutschland',
-    'wellness.support.hours.title': 'Wellness-Öffnungszeiten',
-    'wellness.support.hours.weekdays': 'Montag - Freitag: 6:00 - 22:00 Uhr',
-    'wellness.support.hours.weekends': 'Samstag - Sonntag: 7:00 - 23:00 Uhr',
-    
-    // Footer
-    'footer.tagline': 'Ihr Tor zu alpinem Wellness und Ruhe',
-    'footer.quickLinks': 'Schnelle Links',
-    'footer.contact': 'Kontakt',
-    'footer.address': 'Aschau im Chiemgau, Bayern, Deutschland',
-    'footer.phone': 'Telefon: +49 8052 123456',
-    'footer.email': 'E-Mail: info@aschau-wellness.com',
-    'footer.followUs': 'Folgen Sie Uns',
-    'footer.rights': '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.',
-    
-    // Sticky Button
-    'stickyButton.bookNow': 'Jetzt Buchen',
-    
-    // Culture Page
-    'culture.hero.title': 'Kulturelle Höhepunkte',
-    'culture.hero.subtitle': 'Entdecken Sie das reiche bayerische Erbe von Aschau im Chiemgau',
-    
-    // Castle Section
-    'culture.castle.title': 'Schloss Hohenaschau',
-    'culture.castle.history': 'Schloss Hohenaschau stammt aus dem 12. Jahrhundert und thront majestätisch über dem Chiemgau. Diese historische Burg hat Jahrhunderte bayerischer Geschichte miterlebt und bietet Besuchern durch ihre gut erhaltenen Gemächer und Ausstellungen einen Einblick in das mittelalterliche Leben.',
-    'culture.castle.accessibility': 'Barrierefreiheit: Shuttle-Service ist für Senioren zum Schlosseingang verfügbar. Bitte kontaktieren Sie uns im Voraus, um den Transport zu arrangieren.',
-    
-    // Cultural Highlights
-    'culture.highlights.title': 'Lokale Kultur Erkunden',
-    'culture.highlights.subtitle': 'Tauchen Sie ein in authentische bayerische Traditionen durch unsere sorgfältig kuratierten kulturellen Erlebnisse.',
-    
-    // Museum
-    'culture.museum.name': 'Heimatmuseum',
-    'culture.museum.description': 'Traditioneller Ausstellungsraum mit lokalen Artefakten, Volkskunst und der faszinierenden Geschichte von Aschau. Perfekt, um die authentische bayerische Lebensweise zu verstehen.',
-    
-    // Events
-    'culture.events.name': 'Aschauer Veranstaltungen',
-    'culture.events.description': 'Nehmen Sie teil an kommenden Kulturfestivals, die bayerische Traditionen, Volksmusik und saisonale Feiern das ganze Jahr über zelebrieren.',
-    
-    // Café
-    'culture.cafe.name': 'Café-Momente',
-    'culture.cafe.description': 'Erleben Sie die warme Gastfreundschaft unseres gemütlichen Lokalkafés, wo traditionelle bayerische Kaffeekultur auf hausgemachte Backwaren und freundliche Gespräche trifft.',
-    
-    'culture.learnMore': 'Mehr Erfahren',
-    
-    // Testimonial
-    'culture.testimonial.text': 'Der kulturelle Reichtum von Aschau hat mein Herz berührt. Vom alten Schloss bis zu den warmen Café-Gesprächen fühlte sich jeder Moment an wie ein Schritt in ein lebendiges Märchenbuch bayerischen Erbes.',
-    'culture.testimonial.author': '— Elisabeth M., Kultur-Enthusiastin',
-    
-    // Contact
-    'culture.contact.title': 'Kulturelle Informationen',
-    'culture.contact.phone.title': 'Kulturführungen',
-    'culture.contact.phone.number': '+49 8052 789123',
-    'culture.contact.email.title': 'Kulturveranstaltungen',
-    'culture.contact.email.address': 'kultur@aschau-tourismus.com',
-    'culture.contact.visit.title': 'Kulturzentrum',
-    'culture.contact.visit.address': 'Schloss Hohenaschau, Aschau im Chiemgau'
+    nav: {
+      wellness: 'Wellness',
+      culture: 'Kultur',
+      planTrip: 'Reise Planen',
+      booking: 'Buchung',
+    },
+    hero: {
+      title: 'Willkommen in Aschau',
+      subtitle: 'Entdecken Sie die Schönheit und Ruhe der bayerischen Alpen',
+    },
+    wellness: {
+      hero: {
+        title: 'Wellness & Spa',
+        subtitle: 'Verjüngen Sie Geist, Körper und Seele im Herzen Bayerns'
+      },
+      activities: {
+        title: 'Wellness Aktivitäten',
+        subtitle: 'Entdecken Sie unser Angebot an Wellnessaktivitäten für einen erholsamen Urlaub',
+        spa: 'Spa & Massagen',
+        yoga: 'Yoga & Meditation',
+        hiking: 'Wandern & Natur',
+        nutrition: 'Ernährung & Gesundheit',
+      },
+      packages: {
+        title: 'Wellnesspakete',
+        subtitle: 'Gönnen Sie sich unsere exklusiven Wellnesspakete für ein umfassendes Erlebnis',
+        detox: 'Detox Paket',
+        rejuvenation: 'Verjüngungspaket',
+        stressRelief: 'Stressabbau Paket',
+      },
+      testimonial: {
+        text: "Der Wellnessurlaub in Aschau war eine lebensverändernde Erfahrung. Ich fühle mich erfrischt und verjüngt!",
+        author: "Emma Thompson"
+      },
+      contact: {
+        title: "Kontaktieren Sie uns",
+        phone: {
+          title: "Telefon",
+          number: "+49 123 456789"
+        },
+        email: {
+          title: "E-Mail",
+          address: "info@aschauwellness.com"
+        },
+        visit: {
+          title: "Besuchen Sie uns",
+          address: "Aschau, Bayern, Deutschland"
+        }
+      }
+    },
+    culture: {
+      hero: {
+        title: 'Kultur & Erbe',
+        subtitle: 'Tauchen Sie ein in die reiche Geschichte und Traditionen von Aschau'
+      },
+      castle: {
+        title: 'Schloss Aschau',
+        history: 'Erkunden Sie das historische Schloss Aschau, ein Wahrzeichen bayerischen Erbes. Entdecken Sie Jahrhunderte der Geschichte und bewundern Sie die atemberaubende Architektur.',
+        accessibility: 'Das Schloss ist für Besucher mit Mobilitätsproblemen teilweise zugänglich. Führungen sind in Englisch und Deutsch verfügbar.'
+      },
+      highlights: {
+        title: 'Kulturelle Highlights',
+        subtitle: 'Entdecken Sie die kulturellen Schätze von Aschau, von historischen Museen bis hin zu lebendigen lokalen Veranstaltungen.'
+      },
+      museum: {
+        name: 'Heimatmuseum',
+        description: 'Erkunden Sie die reiche Geschichte von Aschau und der umliegenden Region anhand faszinierender Exponate und Artefakte.'
+      },
+      events: {
+        name: 'Traditionelle Feste',
+        description: 'Erleben Sie die lebendige Kultur von Aschau auf unseren traditionellen Festen mit Musik, Tanz und lokaler Küche.'
+      },
+      cafe: {
+        name: 'Handwerkliche Cafés',
+        description: 'Entspannen Sie sich und genießen Sie die lokale Atmosphäre in unseren charmanten handwerklichen Cafés, die traditionelle bayerische Köstlichkeiten und Kaffee anbieten.'
+      },
+      learnMore: 'Mehr erfahren',
+      testimonial: {
+        text: "Aschau zu besuchen war wie eine Reise in die Vergangenheit. Das Schloss und die lokalen Traditionen sind wirklich fesselnd!",
+        author: "Hans Müller"
+      },
+      contact: {
+        title: "Kontaktieren Sie uns",
+        phone: {
+          title: "Telefon",
+          number: "+49 987 654321"
+        },
+        email: {
+          title: "E-Mail",
+          address: "culture@aschau.de"
+        },
+        visit: {
+          title: "Besuchen Sie uns",
+          address: "Aschau Kulturzentrum, Bayern, Deutschland"
+        }
+      }
+    },
+    planTrip: {
+      hero: {
+        title: "Beginnen Sie Ihre Aschau-Reise",
+        subtitle: "Planen Sie Ihren perfekten Wellness- und Kulturaufenthalt mit personalisierten Empfehlungen für Senioren"
+      },
+      form: {
+        title: "Planen Sie Ihren perfekten Aufenthalt",
+        startDate: "Anreisedatum",
+        endDate: "Abreisedatum",
+        selectDate: "Datum auswählen",
+        guests: "Anzahl der Gäste",
+        selectGuests: "Gäste auswählen",
+        guest: "Gast",
+        travelStyle: "Reisestil",
+        selectStyle: "Ihre Präferenz wählen",
+        wellness: "Wellness-Fokus",
+        culture: "Kultur-Fokus",
+        both: "Wellness & Kultur",
+        generateItinerary: "Meine Reiseroute erstellen"
+      },
+      tips: {
+        title: "Hilfreiche Reisetipps",
+        trails: {
+          title: "Barrierefreie Wanderwege",
+          description: "Entdecken Sie sanfte Wanderpfade mit wunderschönen Alpenblicken, entwickelt für komfortable Seniorenerkundung mit Rastplätzen und klarer Beschilderung."
+        },
+        transport: {
+          title: "Einfacher Transport",
+          description: "Regelmäßige Zugverbindungen von München (1,5h) und Salzburg (1h). Lokale Shuttle-Services für Senioren mit Voranmeldung verfügbar."
+        },
+        weather: {
+          title: "Wetter & Packen",
+          description: "Mildes Alpenklima das ganze Jahr über. Packen Sie bequeme Wanderschuhe, leichte Schichten und eine Regenjacke für wechselndes Bergwetter."
+        }
+      },
+      offers: {
+        title: "Wellness-Pakete für Senioren",
+        subtitle: "Speziell entwickelte Pakete für Reisende 60+ mit exklusiven Vorteilen und barrierefreien Annehmlichkeiten",
+        wellness: {
+          title: "7-Tage Wellness-Retreat",
+          description: "Spa-Behandlungen, sanftes Yoga, Thermalbäder und nahrhafte Alpenküche in ruhiger Bergkulisse.",
+          price: "Ab €890 pro Person"
+        },
+        cultural: {
+          title: "5-Tage Kulturerlebnis",
+          description: "Geführte Schlosstouren, lokale Museumsbesuche, traditionelle Handwerks-Workshops und authentische bayerische Küche.",
+          price: "Ab €650 pro Person"
+        },
+        viewAll: "Alle Pakete anzeigen"
+      }
+    }
   }
 };
 
-export const TranslationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('EN');
+export const TranslationProvider: React.FC<TranslationProviderProps> = ({ children }) => {
+  const [language, setLanguage] = useState<'EN' | 'DE'>('EN');
 
-  const t = (key: string): string => {
-    return translations[language][key] || key;
+  const t = (key: string) => {
+    const keys = key.split('.');
+    let value: any = translations[language];
+    for (const k of keys) {
+      if (value && value[k]) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+    return value || key;
   };
 
   return (
@@ -355,12 +342,4 @@ export const TranslationProvider: React.FC<{ children: ReactNode }> = ({ childre
       {children}
     </TranslationContext.Provider>
   );
-};
-
-export const useTranslation = (): TranslationContextType => {
-  const context = useContext(TranslationContext);
-  if (!context) {
-    throw new Error('useTranslation must be used within a TranslationProvider');
-  }
-  return context;
 };
