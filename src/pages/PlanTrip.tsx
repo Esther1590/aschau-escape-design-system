@@ -12,6 +12,7 @@ import { CalendarIcon, MapPin, Train, CloudSun, Gift, Users, Compass } from 'luc
 import { useTranslation } from '@/contexts/TranslationContext';
 import { cn } from '@/lib/utils';
 import Header from '@/components/Header';
+import Map from '@/components/Map';
 
 const PlanTrip = () => {
   const { t } = useTranslation();
@@ -37,6 +38,21 @@ const PlanTrip = () => {
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
             {t('planTrip.hero.subtitle')}
           </p>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="py-8 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-wellness-charcoal mb-4">
+              Explore Aschau
+            </h2>
+            <p className="text-lg text-gray-600">
+              Discover wellness spots and cultural sites on our interactive map
+            </p>
+          </div>
+          <Map />
         </div>
       </section>
 
