@@ -1,34 +1,36 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const SeasonalActivities = () => {
+  const { t } = useTranslation();
+
   const activities = [
     {
-      season: 'Spring',
-      title: 'Alpine Awakening',
-      description: 'Witness nature\'s renewal with guided mountain hikes, wildflower meditation, and outdoor yoga sessions.',
+      season: t('seasonal.spring.title'),
+      title: t('seasonal.spring.title'),
+      description: t('seasonal.spring.description'),
       image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Mountain Hiking', 'Meditation Walks', 'Outdoor Yoga']
     },
     {
-      season: 'Summer',
-      title: 'Peak Wellness',
-      description: 'Enjoy crystal-clear lake swimming, forest bathing, and alpine herb workshops in perfect weather.',
+      season: t('seasonal.summer.title'),
+      title: t('seasonal.summer.title'),
+      description: t('seasonal.summer.description'),
       image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Lake Swimming', 'Forest Bathing', 'Herb Workshops']
     },
     {
-      season: 'Autumn',
-      title: 'Golden Serenity',
-      description: 'Experience the magical colors of fall with harvest wellness retreats and cozy spa treatments.',
+      season: t('seasonal.autumn.title'),
+      title: t('seasonal.autumn.title'),
+      description: t('seasonal.autumn.description'),
       image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Harvest Retreats', 'Spa Treatments', 'Photography Tours']
     },
     {
-      season: 'Winter',
-      title: 'Alpine Tranquility',
-      description: 'Find peace in snowy landscapes with thermal baths, winter wellness programs, and cozy relaxation.',
+      season: t('seasonal.winter.title'),
+      title: t('seasonal.winter.title'),
+      description: t('seasonal.winter.description'),
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Thermal Baths', 'Winter Wellness', 'Indoor Relaxation']
     }
@@ -39,11 +41,10 @@ const SeasonalActivities = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
-            Seasonal Wellness Experiences
+            {t('seasonal.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Each season brings unique opportunities for renewal and connection with nature. 
-            Discover what awaits you throughout the year in Aschau.
+            {t('seasonal.subtitle')}
           </p>
         </div>
 

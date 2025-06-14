@@ -1,33 +1,35 @@
-
 import { Card } from '@/components/ui/card';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const NavigationCards = () => {
+  const { t } = useTranslation();
+
   const cards = [
     {
       id: 'wellness',
-      title: 'Wellness',
-      description: 'Rejuvenate your body and mind with our premium spa treatments, thermal baths, and mindfulness experiences.',
+      title: t('cards.wellness.title'),
+      description: t('cards.wellness.description'),
       image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-lightSage'
     },
     {
       id: 'culture',
-      title: 'Culture',
-      description: 'Immerse yourself in Bavarian traditions, local crafts, and the rich heritage of the Alpine region.',
+      title: t('cards.culture.title'),
+      description: t('cards.culture.description'),
       image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-cream'
     },
     {
       id: 'plan',
-      title: 'Plan Your Trip',
-      description: 'Customize your perfect getaway with our expert recommendations and personalized itineraries.',
+      title: t('cards.plan.title'),
+      description: t('cards.plan.description'),
       image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-lightSage'
     },
     {
       id: 'booking',
-      title: 'Booking',
-      description: 'Secure your stay at our carefully selected accommodations and wellness centers.',
+      title: t('cards.booking.title'),
+      description: t('cards.booking.description'),
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-cream'
     }
@@ -38,11 +40,10 @@ const NavigationCards = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
-            Discover Your Perfect Experience
+            {t('cards.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From rejuvenating wellness treatments to cultural discoveries, 
-            we offer everything you need for an unforgettable Alpine retreat.
+            {t('cards.subtitle')}
           </p>
         </div>
 

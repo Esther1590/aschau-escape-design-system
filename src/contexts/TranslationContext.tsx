@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'EN' | 'DE';
@@ -27,26 +26,28 @@ const translations = {
     'hero.learnMore': 'Learn More',
     
     // Navigation Cards
-    'cards.wellness.title': 'Wellness & Spa',
-    'cards.wellness.description': 'Rejuvenate your body and mind with our premium spa treatments and wellness programs.',
-    'cards.culture.title': 'Culture & Heritage',
-    'cards.culture.description': 'Explore the rich Bavarian culture, traditions, and historic landmarks of our region.',
-    'cards.plan.title': 'Plan Your Stay',
-    'cards.plan.description': 'Customize your perfect wellness retreat with our comprehensive planning tools.',
-    'cards.booking.title': 'Book Now',
-    'cards.booking.description': 'Secure your peaceful escape with our easy and flexible booking system.',
+    'cards.title': 'Discover Your Perfect Experience',
+    'cards.subtitle': 'From rejuvenating wellness treatments to cultural discoveries, we offer everything you need for an unforgettable Alpine retreat.',
+    'cards.wellness.title': 'Wellness',
+    'cards.wellness.description': 'Rejuvenate your body and mind with our premium spa treatments, thermal baths, and mindfulness experiences.',
+    'cards.culture.title': 'Culture',
+    'cards.culture.description': 'Immerse yourself in Bavarian traditions, local crafts, and the rich heritage of the Alpine region.',
+    'cards.plan.title': 'Plan Your Trip',
+    'cards.plan.description': 'Customize your perfect getaway with our expert recommendations and personalized itineraries.',
+    'cards.booking.title': 'Booking',
+    'cards.booking.description': 'Secure your stay at our carefully selected accommodations and wellness centers.',
     
     // Seasonal Activities
-    'seasonal.title': 'Seasonal Wellness Activities',
-    'seasonal.subtitle': 'Discover activities perfect for every season in the Bavarian Alps',
-    'seasonal.spring.title': 'Spring Renewal',
-    'seasonal.spring.description': 'Fresh mountain air walks and detox programs',
-    'seasonal.summer.title': 'Summer Vitality',
-    'seasonal.summer.description': 'Outdoor yoga and alpine hiking adventures',
-    'seasonal.autumn.title': 'Autumn Balance',
-    'seasonal.autumn.description': 'Harvest wellness retreats and thermal spa sessions',
-    'seasonal.winter.title': 'Winter Serenity',
-    'seasonal.winter.description': 'Cozy spa treatments and peaceful snow walks',
+    'seasonal.title': 'Seasonal Wellness Experiences',
+    'seasonal.subtitle': 'Each season brings unique opportunities for renewal and connection with nature. Discover what awaits you throughout the year in Aschau.',
+    'seasonal.spring.title': 'Alpine Awakening',
+    'seasonal.spring.description': 'Witness nature\'s renewal with guided mountain hikes, wildflower meditation, and outdoor yoga sessions.',
+    'seasonal.summer.title': 'Peak Wellness',
+    'seasonal.summer.description': 'Enjoy crystal-clear lake swimming, forest bathing, and alpine herb workshops in perfect weather.',
+    'seasonal.autumn.title': 'Golden Serenity',
+    'seasonal.autumn.description': 'Experience the magical colors of fall with harvest wellness retreats and cozy spa treatments.',
+    'seasonal.winter.title': 'Alpine Tranquility',
+    'seasonal.winter.description': 'Find peace in snowy landscapes with thermal baths, winter wellness programs, and cozy relaxation.',
     
     // Testimonials
     'testimonials.title': 'What Our Guests Say',
@@ -89,26 +90,28 @@ const translations = {
     'hero.learnMore': 'Mehr Erfahren',
     
     // Navigation Cards
-    'cards.wellness.title': 'Wellness & Spa',
-    'cards.wellness.description': 'Regenerieren Sie Körper und Geist mit unseren erstklassigen Spa-Behandlungen und Wellness-Programmen.',
-    'cards.culture.title': 'Kultur & Erbe',
-    'cards.culture.description': 'Entdecken Sie die reiche bayerische Kultur, Traditionen und historischen Sehenswürdigkeiten unserer Region.',
-    'cards.plan.title': 'Aufenthalt Planen',
-    'cards.plan.description': 'Gestalten Sie Ihren perfekten Wellness-Rückzugsort mit unseren umfassenden Planungstools.',
-    'cards.booking.title': 'Jetzt Buchen',
-    'cards.booking.description': 'Sichern Sie sich Ihre friedliche Auszeit mit unserem einfachen und flexiblen Buchungssystem.',
+    'cards.title': 'Entdecken Sie Ihr Perfektes Erlebnis',
+    'cards.subtitle': 'Von verjüngenden Wellness-Behandlungen bis zu kulturellen Entdeckungen bieten wir alles, was Sie für einen unvergesslichen Alpenrückzug benötigen.',
+    'cards.wellness.title': 'Wellness',
+    'cards.wellness.description': 'Regenerieren Sie Körper und Geist mit unseren erstklassigen Spa-Behandlungen, Thermalbädern und Achtsamkeitserfahrungen.',
+    'cards.culture.title': 'Kultur',
+    'cards.culture.description': 'Tauchen Sie ein in bayerische Traditionen, lokales Handwerk und das reiche Erbe der Alpenregion.',
+    'cards.plan.title': 'Reise Planen',
+    'cards.plan.description': 'Gestalten Sie Ihren perfekten Kurzurlaub mit unseren Expertenempfehlungen und personalisierten Reiseplänen.',
+    'cards.booking.title': 'Buchung',
+    'cards.booking.description': 'Sichern Sie sich Ihren Aufenthalt in unseren sorgfältig ausgewählten Unterkünften und Wellness-Zentren.',
     
     // Seasonal Activities
-    'seasonal.title': 'Saisonale Wellness-Aktivitäten',
-    'seasonal.subtitle': 'Entdecken Sie Aktivitäten, die perfekt für jede Jahreszeit in den bayerischen Alpen sind',
-    'seasonal.spring.title': 'Frühlings-Erneuerung',
-    'seasonal.spring.description': 'Spaziergänge in frischer Bergluft und Entgiftungsprogramme',
-    'seasonal.summer.title': 'Sommer-Vitalität',
-    'seasonal.summer.description': 'Outdoor-Yoga und alpine Wanderabenteuer',
-    'seasonal.autumn.title': 'Herbst-Balance',
-    'seasonal.autumn.description': 'Wellness-Retreats zur Erntezeit und Thermalbad-Sitzungen',
-    'seasonal.winter.title': 'Winter-Gelassenheit',
-    'seasonal.winter.description': 'Gemütliche Spa-Behandlungen und friedliche Schneespaziergänge',
+    'seasonal.title': 'Saisonale Wellness-Erlebnisse',
+    'seasonal.subtitle': 'Jede Jahreszeit bringt einzigartige Möglichkeiten für Erneuerung und Verbindung mit der Natur. Entdecken Sie, was Sie das ganze Jahr über in Aschau erwartet.',
+    'seasonal.spring.title': 'Alpines Erwachen',
+    'seasonal.spring.description': 'Erleben Sie die Erneuerung der Natur mit geführten Bergwanderungen, Wildblumen-Meditation und Outdoor-Yoga-Sitzungen.',
+    'seasonal.summer.title': 'Gipfel-Wellness',
+    'seasonal.summer.description': 'Genießen Sie kristallklares Seeschwimmen, Waldbaden und alpine Kräuter-Workshops bei perfektem Wetter.',
+    'seasonal.autumn.title': 'Goldene Gelassenheit',
+    'seasonal.autumn.description': 'Erleben Sie die magischen Farben des Herbstes mit Ernte-Wellness-Retreats und gemütlichen Spa-Behandlungen.',
+    'seasonal.winter.title': 'Alpine Ruhe',
+    'seasonal.winter.description': 'Finden Sie Frieden in schneebedeckten Landschaften mit Thermalbädern, Winter-Wellness-Programmen und gemütlicher Entspannung.',
     
     // Testimonials
     'testimonials.title': 'Was Unsere Gäste Sagen',
