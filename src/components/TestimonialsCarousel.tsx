@@ -3,36 +3,38 @@ import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation();
 
   const testimonials = [
     {
       name: 'Maria Schmidt',
       location: 'Munich, Germany',
-      text: 'The wellness treatments in Aschau were absolutely transformative. The mountain air, combined with the expert spa services, gave me the reset I desperately needed.',
+      text: t('testimonials.1.text'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       name: 'James Wilson',
       location: 'London, UK',
-      text: 'As a senior traveler, I appreciated the accessibility and thoughtful service. Every detail was designed with comfort and ease in mind. Truly exceptional hospitality.',
+      text: t('testimonials.2.text'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       name: 'Sophie Dubois',
       location: 'Paris, France',
-      text: 'The perfect blend of relaxation and cultural immersion. The local traditions and wellness practices created memories that will last a lifetime.',
+      text: t('testimonials.3.text'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       name: 'Roberto Rossi',
       location: 'Milan, Italy',
-      text: 'The seasonal activities were perfectly curated. From spring hikes to winter thermal baths, each experience was magical and deeply restorative.',
+      text: t('testimonials.4.text'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     }
@@ -56,10 +58,10 @@ const TestimonialsCarousel = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
-            What Our Guests Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover why travelers from around the world choose Aschau for their wellness journey.
+            {t('testimonials.subtitle')}
           </p>
         </div>
 

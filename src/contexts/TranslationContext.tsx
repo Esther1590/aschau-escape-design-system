@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'EN' | 'DE';
@@ -51,16 +52,11 @@ const translations = {
     
     // Testimonials
     'testimonials.title': 'What Our Guests Say',
-    'testimonials.subtitle': 'Hear from travelers who found their perfect wellness escape',
-    'testimonials.1.text': 'The perfect blend of relaxation and culture. Aschau exceeded all my expectations for a wellness retreat.',
-    'testimonials.1.author': 'Sarah M.',
-    'testimonials.1.location': 'Munich, Germany',
-    'testimonials.2.text': 'Exceptional service and truly peaceful surroundings. I left feeling completely refreshed and renewed.',
-    'testimonials.2.author': 'Michael R.',
-    'testimonials.2.location': 'Vienna, Austria',
-    'testimonials.3.text': 'A wonderful experience for seniors. Everything was accessible and the staff was incredibly attentive.',
-    'testimonials.3.author': 'Elisabeth K.',
-    'testimonials.3.location': 'Salzburg, Austria',
+    'testimonials.subtitle': 'Discover why travelers from around the world choose Aschau for their wellness journey.',
+    'testimonials.1.text': 'The wellness treatments in Aschau were absolutely transformative. The mountain air, combined with the expert spa services, gave me the reset I desperately needed.',
+    'testimonials.2.text': 'As a senior traveler, I appreciated the accessibility and thoughtful service. Every detail was designed with comfort and ease in mind. Truly exceptional hospitality.',
+    'testimonials.3.text': 'The perfect blend of relaxation and cultural immersion. The local traditions and wellness practices created memories that will last a lifetime.',
+    'testimonials.4.text': 'The seasonal activities were perfectly curated. From spring hikes to winter thermal baths, each experience was magical and deeply restorative.',
     
     // Footer
     'footer.tagline': 'Your gateway to Alpine wellness and tranquility',
@@ -115,16 +111,11 @@ const translations = {
     
     // Testimonials
     'testimonials.title': 'Was Unsere Gäste Sagen',
-    'testimonials.subtitle': 'Hören Sie von Reisenden, die ihre perfekte Wellness-Auszeit gefunden haben',
-    'testimonials.1.text': 'Die perfekte Mischung aus Entspannung und Kultur. Aschau hat alle meine Erwartungen für einen Wellness-Rückzugsort übertroffen.',
-    'testimonials.1.author': 'Sarah M.',
-    'testimonials.1.location': 'München, Deutschland',
-    'testimonials.2.text': 'Außergewöhnlicher Service und wirklich friedliche Umgebung. Ich ging völlig erfrischt und erneuert.',
-    'testimonials.2.author': 'Michael R.',
-    'testimonials.2.location': 'Wien, Österreich',
-    'testimonials.3.text': 'Eine wunderbare Erfahrung für Senioren. Alles war zugänglich und das Personal war unglaublich aufmerksam.',
-    'testimonials.3.author': 'Elisabeth K.',
-    'testimonials.3.location': 'Salzburg, Österreich',
+    'testimonials.subtitle': 'Entdecken Sie, warum Reisende aus aller Welt Aschau für ihre Wellness-Reise wählen.',
+    'testimonials.1.text': 'Die Wellness-Behandlungen in Aschau waren absolut transformativ. Die Bergluft, kombiniert mit den fachkundigen Spa-Services, gab mir die Erholung, die ich dringend brauchte.',
+    'testimonials.2.text': 'Als Senior-Reisender schätzte ich die Zugänglichkeit und den durchdachten Service. Jedes Detail war auf Komfort und Leichtigkeit ausgelegt. Wirklich außergewöhnliche Gastfreundschaft.',
+    'testimonials.3.text': 'Die perfekte Mischung aus Entspannung und kulturellem Eintauchen. Die lokalen Traditionen und Wellness-Praktiken schufen Erinnerungen, die ein Leben lang halten werden.',
+    'testimonials.4.text': 'Die saisonalen Aktivitäten waren perfekt kuratiert. Von Frühlingswanderungen bis zu Winter-Thermalbädern war jede Erfahrung magisch und tiefgreifend erholsam.',
     
     // Footer
     'footer.tagline': 'Ihr Tor zu alpinem Wellness und Ruhe',
