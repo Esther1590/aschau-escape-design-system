@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { Phone, Mail, MapPin, Spa, Mountain, Waves } from 'lucide-react';
+import { Phone, Mail, MapPin, Heart, Mountain, Waves } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import Header from '@/components/Header';
 
@@ -34,7 +34,7 @@ const Wellness = () => {
       description: 'Luxury spa hotel with world-class treatments and therapeutic wellness experiences',
       features: ['Luxury Spa Treatments', 'Therapeutic Massages', 'Beauty Wellness', 'Medical Spa'],
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-      icon: Spa
+      icon: Heart
     },
     {
       name: 'Burghotel Aschau',
