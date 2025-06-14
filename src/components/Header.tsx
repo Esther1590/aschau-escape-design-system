@@ -37,9 +37,12 @@ const Header = () => {
             >
               {t('nav.wellness')}
             </Link>
-            <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
+            <Link 
+              to="/culture" 
+              className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+            >
               {t('nav.culture')}
-            </a>
+            </Link>
             <a href="#plan" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
               {t('nav.planTrip')}
             </a>
@@ -81,9 +84,13 @@ const Header = () => {
               >
                 {t('nav.wellness')}
               </Link>
-              <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
+              <Link 
+                to="/culture" 
+                className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {t('nav.culture')}
-              </a>
+              </Link>
               <a href="#plan" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
                 {t('nav.planTrip')}
               </a>

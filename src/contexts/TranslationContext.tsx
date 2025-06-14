@@ -134,7 +134,47 @@ const translations = {
     'footer.rights': '© 2024 Aschau Wellness Tourism. All rights reserved.',
     
     // Sticky Button
-    'stickyButton.bookNow': 'Book Now'
+    'stickyButton.bookNow': 'Book Now',
+    
+    // Culture Page
+    'culture.hero.title': 'Cultural Highlights',
+    'culture.hero.subtitle': 'Discover the rich Bavarian heritage of Aschau im Chiemgau',
+    
+    // Castle Section
+    'culture.castle.title': 'Schloss Hohenaschau',
+    'culture.castle.history': 'Dating back to the 12th century, Schloss Hohenaschau stands majestically overlooking the Chiemgau valley. This historic castle has witnessed centuries of Bavarian history and offers visitors a glimpse into medieval life through its well-preserved chambers and exhibitions.',
+    'culture.castle.accessibility': 'Accessibility Note: Shuttle assistance is available for senior visitors to reach the castle entrance. Please contact us in advance to arrange transportation.',
+    
+    // Cultural Highlights
+    'culture.highlights.title': 'Explore Local Culture',
+    'culture.highlights.subtitle': 'Immerse yourself in authentic Bavarian traditions through our carefully curated cultural experiences.',
+    
+    // Museum
+    'culture.museum.name': 'Local Museum',
+    'culture.museum.description': 'Traditional exhibition space showcasing local artifacts, folk art, and the fascinating history of Aschau. Perfect for understanding the authentic Bavarian way of life.',
+    
+    // Events
+    'culture.events.name': 'Aschauer Events',
+    'culture.events.description': 'Join us for upcoming cultural festivals celebrating Bavarian traditions, folk music, and seasonal celebrations throughout the year.',
+    
+    // Café
+    'culture.cafe.name': 'Café Moments',
+    'culture.cafe.description': 'Experience the warm hospitality of our cozy local café, where traditional Bavarian coffee culture meets homemade pastries and friendly conversation.',
+    
+    'culture.learnMore': 'Learn More',
+    
+    // Testimonial
+    'culture.testimonial.text': 'The cultural richness of Aschau touched my heart. From the ancient castle to the warm café conversations, every moment felt like stepping into a living storybook of Bavarian heritage.',
+    'culture.testimonial.author': '— Elisabeth M., Cultural Enthusiast',
+    
+    // Contact
+    'culture.contact.title': 'Cultural Information',
+    'culture.contact.phone.title': 'Cultural Tours',
+    'culture.contact.phone.number': '+49 8052 789123',
+    'culture.contact.email.title': 'Cultural Events',
+    'culture.contact.email.address': 'culture@aschau-tourism.com',
+    'culture.contact.visit.title': 'Cultural Center',
+    'culture.contact.visit.address': 'Schloss Hohenaschau, Aschau im Chiemgau'
   },
   DE: {
     // Header
@@ -259,7 +299,47 @@ const translations = {
     'footer.rights': '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.',
     
     // Sticky Button
-    'stickyButton.bookNow': 'Jetzt Buchen'
+    'stickyButton.bookNow': 'Jetzt Buchen',
+    
+    // Culture Page
+    'culture.hero.title': 'Kulturelle Höhepunkte',
+    'culture.hero.subtitle': 'Entdecken Sie das reiche bayerische Erbe von Aschau im Chiemgau',
+    
+    // Castle Section
+    'culture.castle.title': 'Schloss Hohenaschau',
+    'culture.castle.history': 'Schloss Hohenaschau stammt aus dem 12. Jahrhundert und thront majestätisch über dem Chiemgau. Diese historische Burg hat Jahrhunderte bayerischer Geschichte miterlebt und bietet Besuchern durch ihre gut erhaltenen Gemächer und Ausstellungen einen Einblick in das mittelalterliche Leben.',
+    'culture.castle.accessibility': 'Barrierefreiheit: Shuttle-Service ist für Senioren zum Schlosseingang verfügbar. Bitte kontaktieren Sie uns im Voraus, um den Transport zu arrangieren.',
+    
+    // Cultural Highlights
+    'culture.highlights.title': 'Lokale Kultur Erkunden',
+    'culture.highlights.subtitle': 'Tauchen Sie ein in authentische bayerische Traditionen durch unsere sorgfältig kuratierten kulturellen Erlebnisse.',
+    
+    // Museum
+    'culture.museum.name': 'Heimatmuseum',
+    'culture.museum.description': 'Traditioneller Ausstellungsraum mit lokalen Artefakten, Volkskunst und der faszinierenden Geschichte von Aschau. Perfekt, um die authentische bayerische Lebensweise zu verstehen.',
+    
+    // Events
+    'culture.events.name': 'Aschauer Veranstaltungen',
+    'culture.events.description': 'Nehmen Sie teil an kommenden Kulturfestivals, die bayerische Traditionen, Volksmusik und saisonale Feiern das ganze Jahr über zelebrieren.',
+    
+    // Café
+    'culture.cafe.name': 'Café-Momente',
+    'culture.cafe.description': 'Erleben Sie die warme Gastfreundschaft unseres gemütlichen Lokalkafés, wo traditionelle bayerische Kaffeekultur auf hausgemachte Backwaren und freundliche Gespräche trifft.',
+    
+    'culture.learnMore': 'Mehr Erfahren',
+    
+    // Testimonial
+    'culture.testimonial.text': 'Der kulturelle Reichtum von Aschau hat mein Herz berührt. Vom alten Schloss bis zu den warmen Café-Gesprächen fühlte sich jeder Moment an wie ein Schritt in ein lebendiges Märchenbuch bayerischen Erbes.',
+    'culture.testimonial.author': '— Elisabeth M., Kultur-Enthusiastin',
+    
+    // Contact
+    'culture.contact.title': 'Kulturelle Informationen',
+    'culture.contact.phone.title': 'Kulturführungen',
+    'culture.contact.phone.number': '+49 8052 789123',
+    'culture.contact.email.title': 'Kulturveranstaltungen',
+    'culture.contact.email.address': 'kultur@aschau-tourismus.com',
+    'culture.contact.visit.title': 'Kulturzentrum',
+    'culture.contact.visit.address': 'Schloss Hohenaschau, Aschau im Chiemgau'
   }
 };
 
