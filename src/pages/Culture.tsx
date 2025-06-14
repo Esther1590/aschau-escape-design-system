@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { Phone, Mail, MapPin, Calendar, Camera, Museum } from 'lucide-react';
+import { Phone, Mail, MapPin, Calendar, Camera, Building2 } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import Header from '@/components/Header';
 
@@ -14,7 +13,7 @@ const Culture = () => {
       name: t('culture.museum.name'),
       description: t('culture.museum.description'),
       image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-      icon: Museum
+      icon: Building2
     },
     {
       name: t('culture.events.name'),
