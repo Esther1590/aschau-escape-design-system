@@ -135,6 +135,11 @@
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
   }
 
+  /* Text shadow for hero text */
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;

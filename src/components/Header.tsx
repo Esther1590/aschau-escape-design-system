@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useTranslation();
+  const location = useLocation();
 
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'DE' : 'EN');
@@ -17,7 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-wellness-sage rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg">A</span>
             </div>
@@ -25,13 +27,16 @@ const Header = () => {
               <h1 className="text-xl font-bold text-wellness-charcoal">Aschau</h1>
               <p className="text-sm text-gray-600">Wellness Tourism</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#wellness" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
+            <Link 
+              to="/wellness" 
+              className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+            >
               {t('nav.wellness')}
-            </a>
+            </Link>
             <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
               {t('nav.culture')}
             </a>
@@ -69,9 +74,13 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
             <div className="flex flex-col space-y-4">
-              <a href="#wellness" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
+              <Link 
+                to="/wellness" 
+                className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {t('nav.wellness')}
-              </a>
+              </Link>
               <a href="#culture" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
                 {t('nav.culture')}
               </a>
