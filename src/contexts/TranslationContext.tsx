@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 interface TranslationContextProps {
@@ -29,6 +30,74 @@ const translations = {
     hero: {
       title: 'Welcome to Aschau',
       subtitle: 'Discover the beauty and tranquility of the Bavarian Alps',
+    },
+    cards: {
+      title: 'Discover Aschau',
+      subtitle: 'Explore wellness, culture, and plan your perfect getaway in the heart of Bavaria',
+      wellness: {
+        title: 'Wellness & Spa',
+        description: 'Rejuvenate your mind, body, and soul with our premium spa experiences and natural thermal baths.'
+      },
+      culture: {
+        title: 'Culture & Heritage',
+        description: 'Immerse yourself in the rich history and traditions of Aschau with guided tours and local experiences.'
+      },
+      plan: {
+        title: 'Plan Your Trip',
+        description: 'Create your perfect wellness and cultural retreat with personalized recommendations for senior travelers.'
+      },
+      booking: {
+        title: 'Easy Booking',
+        description: 'Book your accommodation, spa treatments, and activities with our convenient online booking system.'
+      }
+    },
+    seasonal: {
+      title: 'Year-Round Wellness',
+      subtitle: 'Discover the unique beauty and activities that each season brings to Aschau',
+      spring: {
+        title: 'Spring Awakening',
+        description: 'Experience the renewal of nature with gentle hiking trails, meditation walks, and fresh mountain air.'
+      },
+      summer: {
+        title: 'Summer Bliss',
+        description: 'Enjoy outdoor wellness activities, lake swimming, and forest bathing in the warm Alpine sunshine.'
+      },
+      autumn: {
+        title: 'Autumn Serenity',
+        description: 'Find peace in the golden landscapes with harvest retreats, spa treatments, and photography tours.'
+      },
+      winter: {
+        title: 'Winter Wellness',
+        description: 'Embrace the cozy season with thermal baths, indoor relaxation, and traditional winter wellness practices.'
+      }
+    },
+    testimonials: {
+      title: 'What Our Guests Say',
+      subtitle: 'Hear from travelers who have experienced the magic of Aschau wellness tourism',
+      1: {
+        text: 'Aschau provided the perfect wellness retreat. The spa treatments and mountain views created an unforgettable experience.'
+      },
+      2: {
+        text: 'The combination of culture and wellness in Aschau exceeded all expectations. Truly a hidden gem in Bavaria.'
+      },
+      3: {
+        text: 'As a senior traveler, I felt completely comfortable and welcomed. The accessibility and care were exceptional.'
+      },
+      4: {
+        text: 'The thermal baths and mountain air worked wonders for my well-being. I left feeling completely rejuvenated.'
+      }
+    },
+    footer: {
+      tagline: 'Your gateway to wellness and culture in the Bavarian Alps',
+      quickLinks: 'Quick Links',
+      contact: 'Contact',
+      address: 'Aschau im Chiemgau, Bavaria, Germany',
+      phone: '+49 8052 904-200',
+      email: 'info@aschau-wellness.de',
+      rights: '© 2024 Aschau Wellness Tourism. All rights reserved.'
+    },
+    stickyButton: {
+      bookNow: 'Book Now'
     },
     wellness: {
       hero: {
@@ -225,6 +294,74 @@ const translations = {
     hero: {
       title: 'Willkommen in Aschau',
       subtitle: 'Entdecken Sie die Schönheit und Ruhe der bayerischen Alpen',
+    },
+    cards: {
+      title: 'Entdecken Sie Aschau',
+      subtitle: 'Erkunden Sie Wellness, Kultur und planen Sie Ihren perfekten Urlaub im Herzen Bayerns',
+      wellness: {
+        title: 'Wellness & Spa',
+        description: 'Verjüngen Sie Geist, Körper und Seele mit unseren Premium-Spa-Erlebnissen und natürlichen Thermalbädern.'
+      },
+      culture: {
+        title: 'Kultur & Erbe',
+        description: 'Tauchen Sie ein in die reiche Geschichte und Traditionen von Aschau mit geführten Touren und lokalen Erlebnissen.'
+      },
+      plan: {
+        title: 'Reise Planen',
+        description: 'Erstellen Sie Ihren perfekten Wellness- und Kulturaufenthalt mit personalisierten Empfehlungen für Senioren.'
+      },
+      booking: {
+        title: 'Einfache Buchung',
+        description: 'Buchen Sie Ihre Unterkunft, Spa-Behandlungen und Aktivitäten mit unserem praktischen Online-Buchungssystem.'
+      }
+    },
+    seasonal: {
+      title: 'Ganzjähriges Wellness',
+      subtitle: 'Entdecken Sie die einzigartige Schönheit und Aktivitäten, die jede Jahreszeit nach Aschau bringt',
+      spring: {
+        title: 'Frühlingserwachen',
+        description: 'Erleben Sie die Erneuerung der Natur mit sanften Wanderwegen, Meditationsspaziergängen und frischer Bergluft.'
+      },
+      summer: {
+        title: 'Sommer-Glückseligkeit',
+        description: 'Genießen Sie Wellness-Aktivitäten im Freien, Schwimmen im See und Waldbaden im warmen Alpensonnenschein.'
+      },
+      autumn: {
+        title: 'Herbstliche Gelassenheit',
+        description: 'Finden Sie Ruhe in den goldenen Landschaften mit Ernte-Retreats, Spa-Behandlungen und Fototours.'
+      },
+      winter: {
+        title: 'Winter-Wellness',
+        description: 'Genießen Sie die gemütliche Jahreszeit mit Thermalbädern, Indoor-Entspannung und traditionellen Winter-Wellness-Praktiken.'
+      }
+    },
+    testimonials: {
+      title: 'Was unsere Gäste sagen',
+      subtitle: 'Hören Sie von Reisenden, die die Magie des Aschau Wellness-Tourismus erlebt haben',
+      1: {
+        text: 'Aschau bot den perfekten Wellness-Rückzugsort. Die Spa-Behandlungen und Bergblicke schufen ein unvergessliches Erlebnis.'
+      },
+      2: {
+        text: 'Die Kombination aus Kultur und Wellness in Aschau übertraf alle Erwartungen. Wirklich ein verstecktes Juwel in Bayern.'
+      },
+      3: {
+        text: 'Als Seniorenreisende fühlte ich mich völlig wohl und willkommen. Die Barrierefreiheit und Betreuung waren außergewöhnlich.'
+      },
+      4: {
+        text: 'Die Thermalbäder und Bergluft wirkten Wunder für mein Wohlbefinden. Ich ging völlig verjüngt weg.'
+      }
+    },
+    footer: {
+      tagline: 'Ihr Tor zu Wellness und Kultur in den bayerischen Alpen',
+      quickLinks: 'Schnelle Links',
+      contact: 'Kontakt',
+      address: 'Aschau im Chiemgau, Bayern, Deutschland',
+      phone: '+49 8052 904-200',
+      email: 'info@aschau-wellness.de',
+      rights: '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.'
+    },
+    stickyButton: {
+      bookNow: 'Jetzt buchen'
     },
     wellness: {
       hero: {
