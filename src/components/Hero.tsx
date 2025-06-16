@@ -18,8 +18,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          {t('hero.title1')}
-          <span className="block text-wellness-sage">{t('hero.title2')}</span>
+          {t('hero.title')}
         </h1>
         
         <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -31,14 +30,14 @@ const Hero = () => {
             className="btn-wellness text-xl px-10 py-6"
             aria-label="Start planning your wellness journey"
           >
-            {t('hero.startJourney')}
+            Start Your Journey
           </Button>
           <Button 
             variant="outline" 
             className="btn-wellness-outline bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-wellness-charcoal text-xl px-10 py-6"
             aria-label="Learn more about Aschau"
           >
-            {t('hero.learnMore')}
+            Learn More
           </Button>
         </div>
       </div>
