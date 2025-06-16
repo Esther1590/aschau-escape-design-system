@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -38,7 +39,7 @@ const Culture = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=800&q=80)'
+            backgroundImage: 'url(/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png)'
           }}
         />
         <div className="relative z-10 text-center text-wellness-charcoal">
@@ -59,6 +60,13 @@ const Culture = () => {
               {t('culture.castle.title')}
             </h2>
             <div className="bg-white/80 p-8 rounded-2xl shadow-lg">
+              <div className="mb-8">
+                <img 
+                  src="/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png" 
+                  alt="Burg Hotel Aschau"
+                  className="w-full h-64 object-cover rounded-xl shadow-lg"
+                />
+              </div>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
                 {t('culture.castle.history')}
               </p>
