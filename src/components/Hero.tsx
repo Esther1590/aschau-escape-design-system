@@ -9,9 +9,10 @@ const Hero = () => {
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(139, 195, 74, 0.1), rgba(38, 50, 56, 0.3)), url('/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png')`
+          backgroundImage: `linear-gradient(rgba(139, 195, 74, 0.1), rgba(38, 50, 56, 0.3)), url('/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png')`,
+          backgroundSize: '120%'
         }}
       />
       
