@@ -37,7 +37,6 @@ const Wellness = () => {
         t('wellness.spa1.feature3'),
         t('wellness.spa1.feature4')
       ],
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Heart
     },
     {
@@ -49,7 +48,6 @@ const Wellness = () => {
         t('wellness.spa2.feature3'),
         t('wellness.spa2.feature4')
       ],
-      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Waves
     },
     {
@@ -61,7 +59,6 @@ const Wellness = () => {
         t('wellness.spa3.feature3'),
         t('wellness.spa3.feature4')
       ],
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Mountain
     }
   ];
@@ -124,15 +121,8 @@ const Wellness = () => {
               const IconComponent = spa.icon;
               return (
                 <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="relative h-64">
-                    <img 
-                      src={spa.image} 
-                      alt={spa.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-white/90 p-3 rounded-full">
-                      <IconComponent className="w-6 h-6 text-wellness-sage" />
-                    </div>
+                  <div className="relative h-32 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
+                    <IconComponent className="w-12 h-12 text-white" />
                   </div>
                   <CardHeader className="pb-4">
                     <CardTitle className="text-2xl text-wellness-charcoal mb-3">
