@@ -21,7 +21,7 @@ const Map = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/outdoors-v12',
-      center: [12.1864, 47.7869], // Aschau coordinates
+      center: [12.1864, 47.7869] as [number, number], // Aschau coordinates
       zoom: 13,
       pitch: 45,
     });
@@ -36,15 +36,15 @@ const Map = () => {
 
     // Add wellness and cultural markers
     const wellnessSpots = [
-      { name: 'Spa Resort', coords: [12.1844, 47.7889] },
-      { name: 'Mountain Wellness Center', coords: [12.1924, 47.7849] },
-      { name: 'Thermal Baths', coords: [12.1804, 47.7859] }
+      { name: 'Spa Resort', coords: [12.1844, 47.7889] as [number, number] },
+      { name: 'Mountain Wellness Center', coords: [12.1924, 47.7849] as [number, number] },
+      { name: 'Thermal Baths', coords: [12.1804, 47.7859] as [number, number] }
     ];
 
     const culturalSpots = [
-      { name: 'Historic Town Center', coords: [12.1864, 47.7869] },
-      { name: 'Traditional Museum', coords: [12.1884, 47.7879] },
-      { name: 'Alpine Chapel', coords: [12.1834, 47.7839] }
+      { name: 'Historic Town Center', coords: [12.1864, 47.7869] as [number, number] },
+      { name: 'Traditional Museum', coords: [12.1884, 47.7879] as [number, number] },
+      { name: 'Alpine Chapel', coords: [12.1834, 47.7839] as [number, number] }
     ];
 
     map.current.on('load', () => {
