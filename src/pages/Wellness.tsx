@@ -2,6 +2,7 @@
 import Header from '@/components/Header';
 import WellnessHero from '@/components/wellness/WellnessHero';
 import SpaExperiences from '@/components/wellness/SpaExperiences';
+import WellnessTrails from '@/components/wellness/WellnessTrails';
 import RelaxationTips from '@/components/wellness/RelaxationTips';
 import WellnessContact from '@/components/wellness/WellnessContact';
 
@@ -11,6 +12,7 @@ const Wellness = () => {
       <Header />
       <WellnessHero />
       <SpaExperiences />
+      <WellnessTrails />
       <RelaxationTips />
       <WellnessContact />
     </div>
