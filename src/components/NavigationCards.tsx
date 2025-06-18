@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/contexts/TranslationContext';
 
@@ -36,13 +37,13 @@ const NavigationCards = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
             {t('cards.title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('cards.subtitle')}
           </p>
         </div>
@@ -51,7 +52,7 @@ const NavigationCards = () => {
           {cards.map((card, index) => (
             <Card 
               key={card.id} 
-              className="card-hover cursor-pointer group overflow-hidden border-0 shadow-lg"
+              className="card-hover cursor-pointer group overflow-hidden border-0 shadow-lg dark:bg-gray-800"
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="relative h-64 overflow-hidden">
@@ -64,10 +65,10 @@ const NavigationCards = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-wellness-charcoal mb-3 group-hover:text-wellness-sage transition-colors">
+                <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-3 group-hover:text-wellness-sage dark:group-hover:text-wellness-lightSage transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                   {card.description}
                 </p>
               </div>
