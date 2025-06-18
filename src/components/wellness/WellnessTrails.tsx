@@ -1,6 +1,7 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { MapPin, Clock, TrendingUp } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 
@@ -136,9 +137,40 @@ const WellnessTrails = () => {
                   </ul>
                 </div>
 
-                <Button className="w-full btn-wellness">
-                  Get Trail Map
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full btn-wellness">
+                      View Trail Gallery
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-wellness-charcoal dark:text-white">
+                        {trail.name} - Trail Gallery
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                      {trail.images.map((image, imgIndex) => (
+                        <div key={imgIndex} className="relative">
+                          <img 
+                            src={image} 
+                            alt={`${trail.name} view ${imgIndex + 1}`}
+                            className="w-full h-64 object-cover rounded-lg"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                      <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-2">About this trail:</h4>
+                      <p className="text-gray-600 dark:text-gray-300 mb-3">{trail.description}</p>
+                      <div className="flex gap-4 text-sm">
+                        <span><strong>Distance:</strong> {trail.distance}</span>
+                        <span><strong>Duration:</strong> {trail.duration}</span>
+                        <span><strong>Difficulty:</strong> {trail.difficulty}</span>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </Card>
           ))}
