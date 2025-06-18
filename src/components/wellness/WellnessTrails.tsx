@@ -1,4 +1,3 @@
-
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
 import TrailCard from './TrailCard';
@@ -20,7 +19,9 @@ const WellnessTrails = () => {
         '/lovable-uploads/0ea358f3-d819-4044-b3ba-ff524260fa7a.png',
         '/lovable-uploads/a72129e4-aa8f-4130-95b3-2906ef2d5fc7.png',
         '/lovable-uploads/a99c7156-68f2-4e3e-9f1f-18fd4a3c7f68.png',
-        '/lovable-uploads/de107ea7-336e-4d25-a4a5-26dfe2f8e32b.png'
+        '/lovable-uploads/de107ea7-336e-4d25-a4a5-26dfe2f8e32b.png',
+        '/lovable-uploads/4cea2c23-76e4-4862-905b-6625a78a0612.png',
+        '/lovable-uploads/4ea7854d-3134-4de1-8df6-44278fd8826d.png'
       ],
       highlights: [
         'Forest bathing experience',
