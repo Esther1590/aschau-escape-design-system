@@ -32,7 +32,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">
-                Burg Hotel Aschau
+                Welcome to Aschau im Chiemgau
               </h1>
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 Wellness & Culture
