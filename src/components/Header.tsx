@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,7 +48,7 @@ const Header = () => {
                 isActive('/') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
               }`}
             >
-              {t('nav.home')}
+              {language === 'EN' ? 'Home' : 'Startseite'}
             </Link>
             <Link 
               to="/wellness" 
@@ -71,7 +72,7 @@ const Header = () => {
                 isActive('/plan') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
               }`}
             >
-              {t('nav.plan')}
+              {t('nav.planTrip')}
             </Link>
           </nav>
 
@@ -111,7 +112,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.home')}
+                {language === 'EN' ? 'Home' : 'Startseite'}
               </Link>
               <Link 
                 to="/wellness" 
@@ -138,7 +139,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.plan')}
+                {t('nav.planTrip')}
               </Link>
             </div>
           </nav>
