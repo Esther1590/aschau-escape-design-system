@@ -50,7 +50,8 @@ const SpaExperiences = () => {
         'Traditional Bavarian wellness',
         'Luxury accommodations'
       ],
-      icon: Crown
+      icon: Crown,
+      image: '/lovable-uploads/2198bc83-1831-44b3-9659-012bd6e423d7.png'
     }
   ];
 
@@ -72,7 +73,15 @@ const SpaExperiences = () => {
             return (
               <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
                 <div className="relative h-32 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
-                  <IconComponent className="w-12 h-12 text-white" />
+                  {spa.image ? (
+                    <img 
+                      src={spa.image} 
+                      alt={spa.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <IconComponent className="w-12 h-12 text-white" />
+                  )}
                 </div>
                 <CardHeader className="pb-4">
                   <CardTitle className="text-2xl text-wellness-charcoal dark:text-white mb-3">
