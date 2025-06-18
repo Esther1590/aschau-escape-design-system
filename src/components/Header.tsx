@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,7 +11,7 @@ const Header = () => {
   const location = useLocation();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'de' : 'en');
+    setLanguage(language === 'EN' ? 'DE' : 'EN');
   };
 
   const isActive = (path: string) => {
@@ -86,7 +85,7 @@ const Header = () => {
               className="flex items-center space-x-1 text-gray-700 dark:text-gray-200 hover:text-wellness-sage"
             >
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <span className="text-sm font-medium">{language}</span>
             </Button>
             
             {/* Mobile menu button */}
