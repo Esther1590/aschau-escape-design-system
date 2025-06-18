@@ -1,5 +1,5 @@
 
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription } from '@/components/ui/dialog';
 
 interface TrailImageViewerProps {
   selectedImage: string | null;
@@ -10,6 +10,9 @@ const TrailImageViewer = ({ selectedImage, onClose }: TrailImageViewerProps) => 
   return (
     <Dialog open={!!selectedImage} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl p-2 bg-black/95 border-none">
+        <DialogDescription className="sr-only">
+          Full size view of selected trail image
+        </DialogDescription>
         <div className="relative flex items-center justify-center min-h-[60vh]">
           {selectedImage && (
             <img 
