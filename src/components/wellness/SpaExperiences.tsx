@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Mountain, Waves } from 'lucide-react';
+import { Heart, Mountain, Waves, Crown } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 const SpaExperiences = () => {
@@ -40,6 +40,17 @@ const SpaExperiences = () => {
         t('wellness.spa3.feature4')
       ],
       icon: Mountain
+    },
+    {
+      name: 'Burghotel Aschau',
+      description: 'A historic luxury hotel offering premium spa services with traditional Bavarian hospitality and modern wellness amenities.',
+      features: [
+        'Historic castle setting',
+        'Premium spa treatments',
+        'Traditional Bavarian wellness',
+        'Luxury accommodations'
+      ],
+      icon: Crown
     }
   ];
 
@@ -55,7 +66,7 @@ const SpaExperiences = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {spas.map((spa, index) => {
             const IconComponent = spa.icon;
             return (
