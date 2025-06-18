@@ -14,12 +14,20 @@ const WellnessTrails = () => {
       distance: '3.2 km',
       duration: '45 min',
       difficulty: 'Easy',
-      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      images: [
+        '/lovable-uploads/f89c33b5-93e8-42f4-8a6e-881f1b32c192.png',
+        '/lovable-uploads/0ea358f3-d819-4044-b3ba-ff524260fa7a.png',
+        '/lovable-uploads/a72129e4-aa8f-4130-95b3-2906ef2d5fc7.png',
+        '/lovable-uploads/a99c7156-68f2-4e3e-9f1f-18fd4a3c7f68.png',
+        '/lovable-uploads/de107ea7-336e-4d25-a4a5-26dfe2f8e32b.png'
+      ],
       highlights: [
         'Forest bathing experience',
         'Panoramic mountain views',
         'Meditation spots along the way',
-        'Fresh mountain air'
+        'Fresh mountain air',
+        'Exercise stations along the trail',
+        'Information boards about local nature'
       ]
     },
     {
@@ -28,7 +36,7 @@ const WellnessTrails = () => {
       distance: '2.8 km',
       duration: '35 min',
       difficulty: 'Easy',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
       highlights: [
         'Guided meditation points',
         'Peaceful forest setting',
@@ -42,7 +50,7 @@ const WellnessTrails = () => {
       distance: '5.1 km',
       duration: '1h 15min',
       difficulty: 'Moderate',
-      image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
       highlights: [
         'Exercise stations',
         'Breathwork platforms',
@@ -69,7 +77,7 @@ const WellnessTrails = () => {
             <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={trail.image} 
+                  src={trail.images[0]} 
                   alt={trail.name}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -100,6 +108,21 @@ const WellnessTrails = () => {
                     <span>{trail.difficulty}</span>
                   </div>
                 </div>
+
+                {trail.images.length > 1 && (
+                  <div className="mb-4">
+                    <div className="grid grid-cols-4 gap-2">
+                      {trail.images.slice(1).map((image, imgIndex) => (
+                        <img 
+                          key={imgIndex}
+                          src={image} 
+                          alt={`${trail.name} view ${imgIndex + 2}`}
+                          className="w-full h-16 object-cover rounded-md"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3">Trail Highlights:</h4>
