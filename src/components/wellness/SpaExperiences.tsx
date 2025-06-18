@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mountain, Crown, Cable } from 'lucide-react';
@@ -43,7 +42,7 @@ const SpaExperiences = () => {
         'Scenic wellness spots'
       ],
       icon: Cable,
-      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png'
     }
   ];
 
