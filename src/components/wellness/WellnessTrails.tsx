@@ -1,10 +1,8 @@
 
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { MapPin, Clock, TrendingUp } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
+import TrailCard from './TrailCard';
+import TrailImageViewer from './TrailImageViewer';
 
 const WellnessTrails = () => {
   const { t } = useTranslation();
@@ -78,145 +76,20 @@ const WellnessTrails = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {trails.map((trail, index) => (
-              <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
-                <div className="relative h-64 overflow-hidden group">
-                  <img 
-                    src={trail.images[0]} 
-                    alt={trail.name}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 cursor-pointer brightness-90 group-hover:brightness-100"
-                    onClick={() => setSelectedImage(trail.images[0])}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-wellness-sage/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-                    {trail.difficulty}
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-3">
-                    {trail.name}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                    {trail.description}
-                  </p>
-                  
-                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-500 dark:text-gray-400">
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>{trail.distance}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{trail.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <TrendingUp className="w-4 h-4" />
-                      <span>{trail.difficulty}</span>
-                    </div>
-                  </div>
-
-                  {trail.images.length > 1 && (
-                    <div className="mb-6">
-                      <div className="grid grid-cols-4 gap-3">
-                        {trail.images.slice(1).map((image, imgIndex) => (
-                          <div key={imgIndex} className="relative group overflow-hidden rounded-lg">
-                            <img 
-                              src={image} 
-                              alt={`${trail.name} view ${imgIndex + 2}`}
-                              className="w-full h-20 object-cover cursor-pointer transition-all duration-500 group-hover:scale-110 brightness-90 group-hover:brightness-100 shadow-md"
-                              onClick={() => setSelectedImage(image)}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-wellness-sage/50 rounded-lg transition-all duration-300"></div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3">Trail Highlights:</h4>
-                    <ul className="space-y-2">
-                      {trail.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600 dark:text-gray-300">
-                          <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="w-full btn-wellness shadow-lg hover:shadow-xl">
-                        View Trail Gallery
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-3xl font-bold text-wellness-charcoal dark:text-white">
-                          {trail.name} - Trail Gallery
-                        </DialogTitle>
-                      </DialogHeader>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                        {trail.images.map((image, imgIndex) => (
-                          <div key={imgIndex} className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                            <img 
-                              src={image} 
-                              alt={`${trail.name} view ${imgIndex + 1}`}
-                              className="w-full h-64 object-cover cursor-pointer transition-all duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-100"
-                              onClick={() => setSelectedImage(image)}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <span className="text-sm font-medium bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
-                                View {imgIndex + 1} of {trail.images.length}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="mt-8 p-6 bg-gradient-to-r from-wellness-lightSage/20 to-wellness-sage/10 dark:from-gray-800 dark:to-gray-700 rounded-xl border border-wellness-sage/20">
-                        <h4 className="font-bold text-xl text-wellness-charcoal dark:text-white mb-3">About this trail:</h4>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{trail.description}</p>
-                        <div className="flex flex-wrap gap-6 text-sm">
-                          <span className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-wellness-sage" />
-                            <strong>Distance:</strong> {trail.distance}
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-wellness-sage" />
-                            <strong>Duration:</strong> {trail.duration}
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4 text-wellness-sage" />
-                            <strong>Difficulty:</strong> {trail.difficulty}
-                          </span>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </Card>
+              <TrailCard 
+                key={index} 
+                trail={trail} 
+                onImageClick={setSelectedImage}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Image Viewer Modal */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-7xl p-2 bg-black/95 border-none">
-          <div className="relative flex items-center justify-center min-h-[60vh]">
-            {selectedImage && (
-              <img 
-                src={selectedImage} 
-                alt="Trail view"
-                className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
-              />
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
+      <TrailImageViewer 
+        selectedImage={selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </>
   );
 };
