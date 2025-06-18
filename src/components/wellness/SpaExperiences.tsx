@@ -1,23 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Mountain, Crown } from 'lucide-react';
+import { Mountain, Crown } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 const SpaExperiences = () => {
   const { t } = useTranslation();
 
   const spas = [
-    {
-      name: t('wellness.spa1.name'),
-      description: t('wellness.spa1.description'),
-      features: [
-        t('wellness.spa1.feature1'),
-        t('wellness.spa1.feature2'),
-        t('wellness.spa1.feature3'),
-        t('wellness.spa1.feature4')
-      ],
-      icon: Heart
-    },
     {
       name: t('wellness.spa3.name'),
       description: t('wellness.spa3.description'),
