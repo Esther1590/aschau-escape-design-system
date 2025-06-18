@@ -1,9 +1,10 @@
 
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,106 +12,135 @@ const Header = () => {
   const location = useLocation();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'EN' ? 'DE' : 'EN');
+    setLanguage(language === 'en' ? 'de' : 'en');
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-wellness-sage rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">A</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-wellness-charcoal">Aschau</h1>
-              <p className="text-sm text-gray-600">Wellness Tourism</p>
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png" 
+              alt="Burg Hotel Aschau" 
+              className="h-12 w-auto"
+            />
+            <div className="hidden sm:block">
+              <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">
+                Burg Hotel Aschau
+              </h1>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Wellness & Culture
+              </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
+              to="/" 
+              className={`font-medium transition-colors hover:text-wellness-sage ${
+                isActive('/') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+              }`}
+            >
+              {t('nav.home')}
+            </Link>
+            <Link 
               to="/wellness" 
-              className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+              className={`font-medium transition-colors hover:text-wellness-sage ${
+                isActive('/wellness') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+              }`}
             >
               {t('nav.wellness')}
             </Link>
             <Link 
               to="/culture" 
-              className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+              className={`font-medium transition-colors hover:text-wellness-sage ${
+                isActive('/culture') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+              }`}
             >
               {t('nav.culture')}
             </Link>
             <Link 
               to="/plan" 
-              className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+              className={`font-medium transition-colors hover:text-wellness-sage ${
+                isActive('/plan') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+              }`}
             >
-              {t('nav.planTrip')}
+              {t('nav.plan')}
             </Link>
-            <a href="#booking" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-              {t('nav.booking')}
-            </a>
           </nav>
 
-          {/* Language Toggle & Mobile Menu */}
+          {/* Controls */}
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <Button 
+              variant="ghost" 
+              size="sm" 
               onClick={toggleLanguage}
-              variant="outline"
-              className="hidden sm:flex border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white"
+              className="flex items-center space-x-1 text-gray-700 dark:text-gray-200 hover:text-wellness-sage"
             >
-              {language}
+              <Globe className="w-4 h-4" />
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
             </Button>
             
+            {/* Mobile menu button */}
             <Button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
               variant="ghost"
-              size="icon"
-              className="md:hidden text-wellness-charcoal"
-              aria-label="Toggle menu"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <Menu className="h-6 w-6" />
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
             <div className="flex flex-col space-y-4">
               <Link 
+                to="/" 
+                className={`font-medium transition-colors hover:text-wellness-sage ${
+                  isActive('/') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.home')}
+              </Link>
+              <Link 
                 to="/wellness" 
-                className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+                className={`font-medium transition-colors hover:text-wellness-sage ${
+                  isActive('/wellness') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.wellness')}
               </Link>
               <Link 
                 to="/culture" 
-                className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+                className={`font-medium transition-colors hover:text-wellness-sage ${
+                  isActive('/culture') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.culture')}
               </Link>
               <Link 
                 to="/plan" 
-                className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg"
+                className={`font-medium transition-colors hover:text-wellness-sage ${
+                  isActive('/plan') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.planTrip')}
+                {t('nav.plan')}
               </Link>
-              <a href="#booking" className="text-wellness-charcoal hover:text-wellness-sage transition-colors font-medium text-lg">
-                {t('nav.booking')}
-              </a>
-              <Button 
-                onClick={toggleLanguage}
-                variant="outline"
-                className="self-start border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white"
-              >
-                {language}
-              </Button>
             </div>
           </nav>
         )}
