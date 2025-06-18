@@ -28,9 +28,6 @@ const Header = () => {
               <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">
                 Welcome to Aschau im Chiemgau
               </h1>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Wellness & Culture
-              </p>
             </div>
           </Link>
 
