@@ -1,6 +1,7 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mountain, Crown } from 'lucide-react';
+import { Mountain, Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 const SpaExperiences = () => {
@@ -29,6 +30,20 @@ const SpaExperiences = () => {
       ],
       icon: Crown,
       image: '/lovable-uploads/2198bc83-1831-44b3-9659-012bd6e423d7.png'
+    },
+    {
+      name: 'Kampenwandbahn Station',
+      description: 'Experience breathtaking panoramic views from the Kampenwand cable car station, offering a unique wellness perspective from above the clouds.',
+      features: [
+        'Panoramic mountain views',
+        'Cable car experience',
+        'Alpine fresh air',
+        'Photography opportunities',
+        'Mountain hiking access',
+        'Scenic wellness spots'
+      ],
+      icon: Cable,
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
