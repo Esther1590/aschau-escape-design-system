@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,11 +24,6 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png" 
-              alt="Burg Hotel Aschau" 
-              className="h-12 w-auto"
-            />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">
                 Welcome to Aschau im Chiemgau
