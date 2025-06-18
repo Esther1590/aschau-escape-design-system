@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -37,13 +38,13 @@ const SeasonalActivities = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
             {t('seasonal.title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('seasonal.subtitle')}
           </p>
         </div>
@@ -52,7 +53,7 @@ const SeasonalActivities = () => {
           {activities.map((activity, index) => (
             <Card 
               key={activity.season}
-              className="card-hover overflow-hidden border-0 shadow-lg group"
+              className="card-hover overflow-hidden border-0 shadow-lg group dark:bg-gray-800"
               style={{animationDelay: `${index * 0.15}s`}}
             >
               <div className="relative h-48 overflow-hidden">
@@ -69,16 +70,16 @@ const SeasonalActivities = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-wellness-charcoal mb-3 group-hover:text-wellness-sage transition-colors">
+                <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 group-hover:text-wellness-sage dark:group-hover:text-wellness-lightSage transition-colors">
                   {activity.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {activity.description}
                 </p>
                 
                 <div className="space-y-2 mb-4">
                   {activity.highlights.map((highlight) => (
-                    <div key={highlight} className="flex items-center text-sm text-gray-500">
+                    <div key={highlight} className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                       <div className="w-2 h-2 bg-wellness-sage rounded-full mr-2"></div>
                       {highlight}
                     </div>
@@ -88,7 +89,7 @@ const SeasonalActivities = () => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="w-full border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white"
+                  className="w-full border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white dark:border-wellness-lightSage dark:text-wellness-lightSage dark:hover:bg-wellness-lightSage dark:hover:text-gray-900"
                 >
                   Explore {activity.season}
                 </Button>
