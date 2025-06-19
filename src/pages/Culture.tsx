@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -13,7 +12,7 @@ const Culture = () => {
     {
       name: "Schloss Hohenaschau",
       description: "A magnificent 12th-century castle perched majestically above the village, offering guided tours through historic chambers and breathtaking Alpine views. Wheelchair accessible elevator available.",
-      image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c50a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
+      image: '/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png',
       icon: Building2,
       accessibility: "Elevator access to main floors, guided tours available"
     },
