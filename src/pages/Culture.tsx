@@ -67,18 +67,18 @@ const Culture = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-amber-100 to-orange-100 flex items-center justify-center">
+      <section className="relative h-96 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
             backgroundImage: 'url(/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png)'
           }}
         />
-        <div className="relative z-10 text-center text-wellness-charcoal">
+        <div className="relative z-10 text-center text-wellness-charcoal dark:text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow-lg">
             Cultural Heritage
           </h1>
@@ -92,10 +92,10 @@ const Culture = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
               Cultural Treasures
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Explore our carefully selected cultural experiences, designed with comfort and accessibility in mind for discerning travelers.
             </p>
           </div>
@@ -104,26 +104,26 @@ const Culture = () => {
             {culturalAttractions.map((attraction, index) => {
               const IconComponent = attraction.icon;
               return (
-                <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300">
+                <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 dark:bg-gray-800">
                   <div className="relative h-64">
                     <img 
                       src={attraction.image} 
                       alt={attraction.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 right-4 bg-white/90 p-3 rounded-full">
+                    <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 p-3 rounded-full">
                       <IconComponent className="w-6 h-6 text-amber-600" />
                     </div>
                   </div>
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl text-wellness-charcoal mb-3">
+                    <CardTitle className="text-2xl text-foreground mb-3">
                       {attraction.name}
                     </CardTitle>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-4">
                       {attraction.description}
                     </p>
-                    <div className="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
-                      <p className="text-sm font-medium text-green-800">
+                    <div className="bg-green-50 dark:bg-green-900/30 p-3 rounded-lg border-l-4 border-green-500">
+                      <p className="text-sm font-medium text-green-800 dark:text-green-200">
                         ♿ Accessibility: {attraction.accessibility}
                       </p>
                     </div>
@@ -141,13 +141,13 @@ const Culture = () => {
       </section>
 
       {/* Practical Information */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="py-16 px-4 bg-white/50 dark:bg-gray-800/50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
               Practical Information
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Everything you need to know for a comfortable and enriching cultural experience in Aschau.
             </p>
           </div>
@@ -156,18 +156,18 @@ const Culture = () => {
             {practicalInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800">
                   <div className="text-center">
-                    <div className="bg-amber-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                      <IconComponent className="w-8 h-8 text-amber-600" />
+                    <div className="bg-amber-100 dark:bg-amber-900/30 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <IconComponent className="w-8 h-8 text-amber-600 dark:text-amber-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-wellness-charcoal mb-3">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
                       {info.description}
                     </p>
-                    <ul className="text-sm text-gray-500 space-y-1">
+                    <ul className="text-sm text-gray-500 dark:text-gray-400 space-y-1">
                       {info.details.map((detail, idx) => (
                         <li key={idx} className="flex items-center justify-center">
                           <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
@@ -187,10 +187,10 @@ const Culture = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
               Our Historic Burg Hotel
             </h2>
-            <div className="bg-white/80 p-8 rounded-2xl shadow-lg">
+            <div className="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg">
               <div className="mb-8">
                 <img 
                   src="/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png" 
@@ -198,11 +198,11 @@ const Culture = () => {
                   className="w-full h-64 object-cover rounded-xl shadow-lg"
                 />
               </div>
-              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 Our hotel itself is a piece of living history, carefully restored to maintain its authentic medieval character while providing modern comfort and accessibility for all our guests.
               </p>
-              <div className="bg-amber-100 p-6 rounded-xl border-l-4 border-amber-500">
-                <p className="text-lg text-gray-700 font-medium">
+              <div className="bg-amber-100 dark:bg-amber-900/30 p-6 rounded-xl border-l-4 border-amber-500">
+                <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">
                   The hotel features elevator access to all floors, wide corridors, and specially designed rooms for guests with mobility needs.
                 </p>
               </div>
@@ -212,14 +212,14 @@ const Culture = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto max-w-4xl">
-          <Card className="p-12 border-0 shadow-2xl bg-white/90">
+          <Card className="p-12 border-0 shadow-2xl bg-white/90 dark:bg-gray-800/90">
             <div className="text-center">
-              <blockquote className="text-2xl md:text-3xl font-light text-gray-700 italic leading-relaxed mb-6">
+              <blockquote className="text-2xl md:text-3xl font-light text-gray-700 dark:text-gray-300 italic leading-relaxed mb-6">
                 "The cultural experiences in Aschau are thoughtfully designed for every visitor. From the accessible castle tours to the intimate folk music evenings, every detail shows genuine care for guest comfort."
               </blockquote>
-              <cite className="text-xl font-semibold text-wellness-charcoal">
+              <cite className="text-xl font-semibold text-wellness-charcoal dark:text-white">
                 — Margaret & James Thompson, Frequent Visitors
               </cite>
             </div>
@@ -228,7 +228,7 @@ const Culture = () => {
       </section>
 
       {/* Contact Footer */}
-      <footer className="bg-wellness-charcoal text-white py-16">
+      <footer className="bg-wellness-charcoal dark:bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-3xl font-bold mb-8 text-amber-300">
