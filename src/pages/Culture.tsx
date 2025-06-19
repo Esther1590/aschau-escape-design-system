@@ -14,7 +14,8 @@ const Culture = () => {
       description: "A magnificent 12th-century castle perched majestically above the village, offering guided tours through historic chambers and breathtaking Alpine views. Wheelchair accessible elevator available.",
       image: '/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png',
       icon: Building2,
-      accessibility: "Elevator access to main floors, guided tours available"
+      accessibility: "Elevator access to main floors, guided tours available",
+      isSchloss: true
     },
     {
       name: t('culture.museum.name'),
@@ -109,14 +110,14 @@ const Culture = () => {
                     <img 
                       src={attraction.image} 
                       alt={attraction.name}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full ${attraction.isSchloss ? 'object-cover object-top' : 'object-cover'}`}
                     />
                     <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 p-3 rounded-full">
                       <IconComponent className="w-6 h-6 text-amber-600" />
                     </div>
                   </div>
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl text-foreground mb-3">
+                    <CardTitle className="text-2xl text-foreground dark:text-white mb-3">
                       {attraction.name}
                     </CardTitle>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-4">
