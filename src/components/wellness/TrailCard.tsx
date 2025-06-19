@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -30,6 +31,7 @@ const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 cursor-pointer brightness-90 group-hover:brightness-100"
           onClick={() => onImageClick(trail.images[0])}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 bg-wellness-sage/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
           {trail.difficulty}
         </div>
