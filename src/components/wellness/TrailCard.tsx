@@ -1,4 +1,5 @@
 
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -24,7 +25,7 @@ interface TrailCardProps {
 const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
   return (
     <Card className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
-      <div className="relative h-64 overflow-hidden group">
+      <div className="relative h-80 overflow-hidden group">
         <img 
           src={trail.images[0]} 
           alt={trail.name}
@@ -112,3 +113,4 @@ const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
 };
 
 export default TrailCard;
+
