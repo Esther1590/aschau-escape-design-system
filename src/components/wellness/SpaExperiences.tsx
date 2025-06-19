@@ -53,7 +53,7 @@ const SpaExperiences = () => {
             const IconComponent = spa.icon;
             return (
               <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
-                <div className="relative h-32 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
+                <div className="relative h-64 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
                   {spa.image ? (
                     <img 
                       src={spa.image} 
