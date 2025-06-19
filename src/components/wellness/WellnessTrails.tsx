@@ -1,3 +1,4 @@
+
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
 import TrailCard from './TrailCard';
@@ -30,20 +31,6 @@ const WellnessTrails = () => {
         'Fresh mountain air',
         'Exercise stations along the trail',
         'Information boards about local nature'
-      ]
-    },
-    {
-      name: 'Chiemgau Meditation Path',
-      description: 'A tranquil path designed for meditation and mindfulness, winding through peaceful forests and meadows.',
-      distance: '2.8 km',
-      duration: '35 min',
-      difficulty: 'Easy',
-      images: ['https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
-      highlights: [
-        'Guided meditation points',
-        'Peaceful forest setting',
-        'Wellness information boards',
-        'Stress relief zones'
       ]
     },
     {
