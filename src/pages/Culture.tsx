@@ -110,7 +110,7 @@ const Culture = () => {
                     <img 
                       src={attraction.image} 
                       alt={attraction.name}
-                      className={`w-full h-full ${attraction.isSchloss ? 'object-cover object-top' : 'object-cover'}`}
+                      className={`w-full h-full ${attraction.isSchloss ? 'object-cover object-center' : 'object-cover'}`}
                     />
                     <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 p-3 rounded-full">
                       <IconComponent className="w-6 h-6 text-amber-600" />
