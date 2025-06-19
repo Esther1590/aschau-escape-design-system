@@ -32,20 +32,6 @@ const WellnessTrails = () => {
         'Exercise stations along the trail',
         'Information boards about local nature'
       ]
-    },
-    {
-      name: 'Alpine Wellness Circuit',
-      description: 'An invigorating trail combining gentle hiking with wellness stations for a complete mind-body experience.',
-      distance: '5.1 km',
-      duration: '1h 15min',
-      difficulty: 'Moderate',
-      images: ['https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
-      highlights: [
-        'Exercise stations',
-        'Breathwork platforms',
-        'Mountain summit views',
-        'Natural spring stops'
-      ]
     }
   ];
 
