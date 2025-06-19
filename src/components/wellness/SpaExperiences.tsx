@@ -1,23 +1,13 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mountain, Crown, Cable } from 'lucide-react';
+import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 const SpaExperiences = () => {
   const { t } = useTranslation();
 
   const spas = [
-    {
-      name: t('wellness.spa3.name'),
-      description: t('wellness.spa3.description'),
-      features: [
-        t('wellness.spa3.feature1'),
-        t('wellness.spa3.feature2'),
-        t('wellness.spa3.feature3'),
-        t('wellness.spa3.feature4')
-      ],
-      icon: Mountain
-    },
     {
       name: 'Burghotel Aschau',
       description: 'A historic luxury hotel offering premium spa services with traditional Bavarian hospitality and modern wellness amenities.',
