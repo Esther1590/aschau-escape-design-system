@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Crown, Cable } from 'lucide-react';
@@ -18,7 +17,7 @@ const SpaExperiences = () => {
         'Luxury accommodations'
       ],
       icon: Crown,
-      image: '/lovable-uploads/12c5cd55-b115-419a-b17c-c7818243fe11.png'
+      image: '/lovable-uploads/6204a6be-cc42-4340-ad23-7278ec4f8190.png'
     },
     {
       name: 'Kampenwandbahn Station',
