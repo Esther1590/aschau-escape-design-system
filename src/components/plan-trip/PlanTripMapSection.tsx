@@ -1,6 +1,4 @@
 
-import Map from '@/components/Map';
-
 const PlanTripMapSection = () => {
   return (
     <section className="py-8 px-4">
@@ -13,7 +11,18 @@ const PlanTripMapSection = () => {
             Discover wellness spots and cultural sites on our interactive map
           </p>
         </div>
-        <Map />
+        <div className="w-full flex justify-center">
+          <iframe 
+            src="https://www.google.com/maps/d/embed?mid=1hdfCuEyO-o4RNsI3NNvHkUImk1_7jsk&ehbc=2E312F&noprof=1" 
+            width="640" 
+            height="480"
+            className="rounded-lg shadow-lg border-0 max-w-full"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
     </section>
   );
