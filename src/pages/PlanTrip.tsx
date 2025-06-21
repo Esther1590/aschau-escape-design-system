@@ -26,16 +26,16 @@ const PlanTrip = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-wellness-sage/10 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-wellness-sage/10 to-white dark:from-wellness-sage/5 dark:to-gray-900">
       <Header />
       
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-wellness-charcoal mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-wellness-charcoal dark:text-white mb-6">
             {t('planTrip.hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
             {t('planTrip.hero.subtitle')}
           </p>
         </div>
@@ -45,10 +45,10 @@ const PlanTrip = () => {
       <section className="py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-wellness-charcoal mb-4">
+            <h2 className="text-3xl font-bold text-wellness-charcoal dark:text-white mb-4">
               Explore Aschau
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Discover wellness spots and cultural sites on our interactive map
             </p>
           </div>
@@ -59,9 +59,9 @@ const PlanTrip = () => {
       {/* Planning Form */}
       <section className="py-8 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Card className="p-8 shadow-xl border-0">
+          <Card className="p-8 shadow-xl border-0 dark:bg-gray-800">
             <CardHeader className="text-center pb-8">
-              <CardTitle className="text-3xl text-wellness-charcoal mb-4">
+              <CardTitle className="text-3xl text-wellness-charcoal dark:text-white mb-4">
                 {t('planTrip.form.title')}
               </CardTitle>
             </CardHeader>
@@ -69,7 +69,7 @@ const PlanTrip = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Start Date */}
                 <div className="space-y-3">
-                  <Label className="text-lg font-semibold text-wellness-charcoal">
+                  <Label className="text-lg font-semibold text-wellness-charcoal dark:text-white">
                     {t('planTrip.form.startDate')}
                   </Label>
                   <Popover>
@@ -77,8 +77,8 @@ const PlanTrip = () => {
                       <Button
                         variant="outline"
                         className={cn(
-                          "w-full justify-start text-left font-normal text-lg py-6",
-                          !startDate && "text-muted-foreground"
+                          "w-full justify-start text-left font-normal text-lg py-6 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
+                          !startDate && "text-muted-foreground dark:text-gray-400"
                         )}
                       >
                         <CalendarIcon className="mr-4 h-5 w-5" />
@@ -99,7 +99,7 @@ const PlanTrip = () => {
 
                 {/* End Date */}
                 <div className="space-y-3">
-                  <Label className="text-lg font-semibold text-wellness-charcoal">
+                  <Label className="text-lg font-semibold text-wellness-charcoal dark:text-white">
                     {t('planTrip.form.endDate')}
                   </Label>
                   <Popover>
@@ -107,8 +107,8 @@ const PlanTrip = () => {
                       <Button
                         variant="outline"
                         className={cn(
-                          "w-full justify-start text-left font-normal text-lg py-6",
-                          !endDate && "text-muted-foreground"
+                          "w-full justify-start text-left font-normal text-lg py-6 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
+                          !endDate && "text-muted-foreground dark:text-gray-400"
                         )}
                       >
                         <CalendarIcon className="mr-4 h-5 w-5" />
@@ -131,11 +131,11 @@ const PlanTrip = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Number of Guests */}
                 <div className="space-y-3">
-                  <Label className="text-lg font-semibold text-wellness-charcoal">
+                  <Label className="text-lg font-semibold text-wellness-charcoal dark:text-white">
                     {t('planTrip.form.guests')}
                   </Label>
                   <Select value={guests} onValueChange={setGuests}>
-                    <SelectTrigger className="text-lg py-6">
+                    <SelectTrigger className="text-lg py-6 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
                       <SelectValue placeholder={t('planTrip.form.selectGuests')} />
                     </SelectTrigger>
                     <SelectContent>
@@ -150,11 +150,11 @@ const PlanTrip = () => {
 
                 {/* Travel Style */}
                 <div className="space-y-3">
-                  <Label className="text-lg font-semibold text-wellness-charcoal">
+                  <Label className="text-lg font-semibold text-wellness-charcoal dark:text-white">
                     {t('planTrip.form.travelStyle')}
                   </Label>
                   <Select value={travelStyle} onValueChange={setTravelStyle}>
-                    <SelectTrigger className="text-lg py-6">
+                    <SelectTrigger className="text-lg py-6 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
                       <SelectValue placeholder={t('planTrip.form.selectStyle')} />
                     </SelectTrigger>
                     <SelectContent>
@@ -182,46 +182,46 @@ const PlanTrip = () => {
       </section>
 
       {/* Travel Tips */}
-      <section className="py-16 px-4 bg-wellness-sage/5">
+      <section className="py-16 px-4 bg-wellness-sage/5 dark:bg-gray-800/50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-wellness-charcoal mb-6">
+            <h2 className="text-4xl font-bold text-wellness-charcoal dark:text-white mb-6">
               {t('planTrip.tips.title')}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6 border-0 shadow-lg">
+            <Card className="p-6 border-0 shadow-lg dark:bg-gray-800">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-wellness-sage mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-wellness-charcoal mb-4">
+                <h3 className="text-2xl font-semibold text-wellness-charcoal dark:text-white mb-4">
                   {t('planTrip.tips.trails.title')}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                   {t('planTrip.tips.trails.description')}
                 </p>
               </div>
             </Card>
 
-            <Card className="p-6 border-0 shadow-lg">
+            <Card className="p-6 border-0 shadow-lg dark:bg-gray-800">
               <div className="text-center">
                 <Train className="w-12 h-12 text-wellness-sage mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-wellness-charcoal mb-4">
+                <h3 className="text-2xl font-semibold text-wellness-charcoal dark:text-white mb-4">
                   {t('planTrip.tips.transport.title')}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                   {t('planTrip.tips.transport.description')}
                 </p>
               </div>
             </Card>
 
-            <Card className="p-6 border-0 shadow-lg">
+            <Card className="p-6 border-0 shadow-lg dark:bg-gray-800">
               <div className="text-center">
                 <CloudSun className="w-12 h-12 text-wellness-sage mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-wellness-charcoal mb-4">
+                <h3 className="text-2xl font-semibold text-wellness-charcoal dark:text-white mb-4">
                   {t('planTrip.tips.weather.title')}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                   {t('planTrip.tips.weather.description')}
                 </p>
               </div>
@@ -233,36 +233,36 @@ const PlanTrip = () => {
       {/* Special Offers */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Card className="bg-gradient-to-r from-wellness-sage/10 to-wellness-sage/5 border-0 shadow-xl">
+          <Card className="bg-gradient-to-r from-wellness-sage/10 to-wellness-sage/5 dark:from-wellness-sage/5 dark:to-wellness-sage/10 border-0 shadow-xl dark:bg-gray-800">
             <CardHeader className="text-center pb-6">
               <div className="flex justify-center mb-4">
                 <Gift className="w-16 h-16 text-wellness-sage" />
               </div>
-              <CardTitle className="text-4xl font-bold text-wellness-charcoal mb-4">
+              <CardTitle className="text-4xl font-bold text-wellness-charcoal dark:text-white mb-4">
                 {t('planTrip.offers.title')}
               </CardTitle>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                 {t('planTrip.offers.subtitle')}
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <h4 className="text-xl font-semibold text-wellness-charcoal mb-3">
+                <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                  <h4 className="text-xl font-semibold text-wellness-charcoal dark:text-white mb-3">
                     {t('planTrip.offers.wellness.title')}
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {t('planTrip.offers.wellness.description')}
                   </p>
                   <p className="text-wellness-sage font-bold text-lg">
                     {t('planTrip.offers.wellness.price')}
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <h4 className="text-xl font-semibold text-wellness-charcoal mb-3">
+                <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                  <h4 className="text-xl font-semibold text-wellness-charcoal dark:text-white mb-3">
                     {t('planTrip.offers.cultural.title')}
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {t('planTrip.offers.cultural.description')}
                   </p>
                   <p className="text-wellness-sage font-bold text-lg">
