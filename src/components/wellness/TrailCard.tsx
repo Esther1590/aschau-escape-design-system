@@ -24,14 +24,14 @@ interface TrailCardProps {
 const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
   return (
     <Card className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
-      <div className="relative h-80 overflow-hidden group bg-gray-100 dark:bg-gray-700">
+      <div className="relative h-96 overflow-hidden group">
         <img 
           src={trail.images[0]} 
           alt={trail.name}
-          className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105 cursor-pointer brightness-95 group-hover:brightness-100"
+          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 cursor-pointer brightness-90 group-hover:brightness-100"
           onClick={() => onImageClick(trail.images[0])}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 bg-wellness-sage/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
           {trail.difficulty}
         </div>
