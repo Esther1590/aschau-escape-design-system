@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Crown, Cable } from 'lucide-react';
@@ -31,7 +32,9 @@ const SpaExperiences = () => {
         'Scenic wellness spots'
       ],
       icon: Cable,
-      image: '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png'
+      image: '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png',
+      hasVideo: true,
+      videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
     }
   ];
 
@@ -53,7 +56,16 @@ const SpaExperiences = () => {
             return (
               <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
                 <div className="relative h-64 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
-                  {spa.image ? (
+                  {spa.hasVideo ? (
+                    <video 
+                      className="w-full h-full object-cover"
+                      controls
+                      poster={spa.image}
+                    >
+                      <source src={spa.videoPath} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : spa.image ? (
                     <img 
                       src={spa.image} 
                       alt={spa.name}
