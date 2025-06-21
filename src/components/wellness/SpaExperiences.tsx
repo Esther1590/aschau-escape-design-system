@@ -3,9 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { useState } from 'react';
 
 const SpaExperiences = () => {
   const { t } = useTranslation();
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const spas = [
     {
@@ -38,6 +40,16 @@ const SpaExperiences = () => {
     }
   ];
 
+  const handleCardClick = (spa: any) => {
+    if (spa.hasVideo) {
+      setSelectedVideo(spa.videoPath);
+    }
+  };
+
+  const closeVideo = () => {
+    setSelectedVideo(null);
+  };
+
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-green-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto">
@@ -54,18 +66,13 @@ const SpaExperiences = () => {
           {spas.map((spa, index) => {
             const IconComponent = spa.icon;
             return (
-              <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
+              <Card 
+                key={index} 
+                className={`overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800 ${spa.hasVideo ? 'cursor-pointer' : ''}`}
+                onClick={() => handleCardClick(spa)}
+              >
                 <div className="relative h-64 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
-                  {spa.hasVideo ? (
-                    <video 
-                      className="w-full h-full object-cover"
-                      controls
-                      poster={spa.image}
-                    >
-                      <source src={spa.videoPath} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  ) : spa.image ? (
+                  {spa.image ? (
                     <img 
                       src={spa.image} 
                       alt={spa.name}
@@ -73,6 +80,13 @@ const SpaExperiences = () => {
                     />
                   ) : (
                     <IconComponent className="w-12 h-12 text-white" />
+                  )}
+                  {spa.hasVideo && (
+                    <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                        <div className="w-0 h-0 border-l-[16px] border-l-black border-y-[12px] border-y-transparent ml-1"></div>
+                      </div>
+                    </div>
                   )}
                 </div>
                 <CardHeader className="pb-4">
@@ -103,6 +117,29 @@ const SpaExperiences = () => {
             );
           })}
         </div>
+
+        {/* Video Modal */}
+        {selectedVideo && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeVideo}>
+            <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center p-4">
+              <button 
+                onClick={closeVideo}
+                className="absolute top-4 right-4 text-white text-2xl font-bold z-10 bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-75"
+              >
+                ×
+              </button>
+              <video 
+                className="max-w-full max-h-full"
+                controls
+                autoPlay
+                onClick={(e) => e.stopPropagation()}
+              >
+                <source src={selectedVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
