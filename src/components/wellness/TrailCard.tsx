@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -21,6 +22,11 @@ interface TrailCardProps {
 }
 
 const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
+  const handleImageClick = (image: string, imageIndex: number) => {
+    console.log('Image clicked:', image, 'Index:', imageIndex);
+    onImageClick(image);
+  };
+
   return (
     <Card className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
       <div className="relative h-96 overflow-hidden group">
@@ -28,7 +34,11 @@ const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
           src={trail.images[0]} 
           alt={trail.name}
           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 cursor-pointer brightness-90 group-hover:brightness-100"
-          onClick={() => onImageClick(trail.images[0])}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleImageClick(trail.images[0], 0);
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 bg-wellness-sage/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
@@ -73,7 +83,11 @@ const TrailCard = ({ trail, onImageClick }: TrailCardProps) => {
                     src={image} 
                     alt={`${trail.name} view ${imgIndex + 2}`}
                     className="w-full h-20 object-cover cursor-pointer transition-all duration-500 group-hover:scale-110 brightness-90 group-hover:brightness-100 shadow-md"
-                    onClick={() => onImageClick(image)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleImageClick(image, imgIndex + 1);
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-wellness-sage/50 rounded-lg transition-all duration-300"></div>

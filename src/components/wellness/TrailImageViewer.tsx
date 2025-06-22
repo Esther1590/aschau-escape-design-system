@@ -1,8 +1,7 @@
-
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface TrailImageViewerProps {
   selectedImage: string | null;
@@ -14,6 +13,10 @@ const TrailImageViewer = ({ selectedImage, onClose }: TrailImageViewerProps) => 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    console.log('TrailImageViewer selectedImage changed:', selectedImage);
+  }, [selectedImage]);
 
   const handleZoomIn = () => {
     setZoom(prev => Math.min(prev + 0.25, 3));
@@ -52,9 +55,12 @@ const TrailImageViewer = ({ selectedImage, onClose }: TrailImageViewerProps) => 
   };
 
   const handleClose = () => {
+    console.log('TrailImageViewer handleClose called');
     handleReset();
     onClose();
   };
+
+  console.log('TrailImageViewer render, selectedImage:', selectedImage, 'open:', !!selectedImage);
 
   return (
     <Dialog open={!!selectedImage} onOpenChange={handleClose}>

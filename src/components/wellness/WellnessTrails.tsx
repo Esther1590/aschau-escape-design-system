@@ -1,4 +1,3 @@
-
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
 import TrailCard from './TrailCard';
@@ -7,6 +6,16 @@ import TrailImageViewer from './TrailImageViewer';
 const WellnessTrails = () => {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const handleImageClick = (image: string) => {
+    console.log('Opening image viewer with:', image);
+    setSelectedImage(image);
+  };
+
+  const handleCloseViewer = () => {
+    console.log('Closing image viewer');
+    setSelectedImage(null);
+  };
 
   const trails = [
     {
@@ -53,7 +62,7 @@ const WellnessTrails = () => {
               <TrailCard 
                 key={index} 
                 trail={trail} 
-                onImageClick={setSelectedImage}
+                onImageClick={handleImageClick}
               />
             ))}
           </div>
@@ -62,7 +71,7 @@ const WellnessTrails = () => {
 
       <TrailImageViewer 
         selectedImage={selectedImage}
-        onClose={() => setSelectedImage(null)}
+        onClose={handleCloseViewer}
       />
     </>
   );
