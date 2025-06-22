@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -35,6 +36,10 @@ const SpaExperiences = () => {
       ],
       icon: Cable,
       image: '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png',
+      gallery: [
+        '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png',
+        '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png'
+      ],
       hasVideo: true,
       videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
     }
@@ -109,6 +114,26 @@ const SpaExperiences = () => {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Gallery Preview for Kampenwandbahn */}
+                  {spa.gallery && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {spa.gallery.map((galleryImage, idx) => (
+                          <div key={idx} className="relative group overflow-hidden rounded-lg">
+                            <img 
+                              src={galleryImage} 
+                              alt={`${spa.name} view ${idx + 1}`}
+                              className="w-full h-20 object-cover cursor-pointer transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <Button className="w-full btn-wellness text-lg py-4">
                     {t('wellness.bookNow')}
                   </Button>
