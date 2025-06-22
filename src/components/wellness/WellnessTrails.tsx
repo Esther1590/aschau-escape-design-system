@@ -71,6 +71,7 @@ const WellnessTrails = () => {
 
       <TrailImageViewer 
         selectedImage={selectedImage}
+        images={trails[0]?.images || []}
         onClose={handleCloseViewer}
       />
     </>

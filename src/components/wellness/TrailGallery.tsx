@@ -1,4 +1,3 @@
-
 import { MapPin, Clock, TrendingUp } from 'lucide-react';
 
 interface Trail {
@@ -17,6 +16,11 @@ interface TrailGalleryProps {
 }
 
 const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
+  const handleImageClick = (image: string) => {
+    console.log('TrailGallery image clicked:', image);
+    onImageClick(image);
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -26,7 +30,7 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
               src={image} 
               alt={`${trail.name} view ${imgIndex + 1}`}
               className="w-full h-64 object-cover cursor-pointer transition-all duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-100"
-              onClick={() => onImageClick(image)}
+              onClick={() => handleImageClick(image)}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
