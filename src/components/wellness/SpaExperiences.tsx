@@ -1,14 +1,15 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
+import TrailImageViewer from './TrailImageViewer';
 
 const SpaExperiences = () => {
   const { t } = useTranslation();
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const spas = [
     {
@@ -51,8 +52,17 @@ const SpaExperiences = () => {
     }
   };
 
+  const handleGalleryImageClick = (image: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent the card click event
+    setSelectedImage(image);
+  };
+
   const closeVideo = () => {
     setSelectedVideo(null);
+  };
+
+  const closeImageViewer = () => {
+    setSelectedImage(null);
   };
 
   return (
@@ -126,6 +136,7 @@ const SpaExperiences = () => {
                               src={galleryImage} 
                               alt={`${spa.name} view ${idx + 1}`}
                               className="w-full h-20 object-cover cursor-pointer transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                              onClick={(e) => handleGalleryImageClick(galleryImage, e)}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
@@ -167,6 +178,13 @@ const SpaExperiences = () => {
             </div>
           </DialogContent>
         </Dialog>
+
+        {/* Image Viewer for Gallery Images */}
+        <TrailImageViewer
+          selectedImage={selectedImage}
+          images={spas.find(spa => spa.gallery)?.gallery || []}
+          onClose={closeImageViewer}
+        />
       </div>
     </section>
   );
