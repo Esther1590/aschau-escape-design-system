@@ -1,7 +1,7 @@
 
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface TrailImageViewerProps {
@@ -112,6 +112,16 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
           Full size view of selected trail image with zoom functionality
         </DialogDescription>
         
+        {/* Close/Exit Button */}
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-20 bg-black/50 border-white/20 text-white hover:bg-black/70"
+        >
+          <X className="w-4 h-4" />
+        </Button>
+
         {/* Zoom Controls */}
         <div className="absolute top-4 left-4 z-10 flex gap-2">
           <Button
@@ -164,7 +174,7 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
 
         {/* Image Counter */}
         {images.length > 1 && (
-          <div className="absolute top-4 right-4 z-10 bg-black/50 text-white px-3 py-1 rounded text-sm">
+          <div className="absolute top-4 right-16 z-10 bg-black/50 text-white px-3 py-1 rounded text-sm">
             {currentImageIndex + 1} / {images.length}
           </div>
         )}
