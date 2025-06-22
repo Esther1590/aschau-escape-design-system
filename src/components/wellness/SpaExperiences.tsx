@@ -168,7 +168,7 @@ const SpaExperiences = () => {
                   )}
 
                   <Button className="w-full btn-wellness text-lg py-4">
-                    {t('wellness.bookNow')}
+                    {spa.name === 'Kampenwandbahn Station' ? 'View Station Gallery' : t('wellness.bookNow')}
                   </Button>
                 </CardContent>
               </Card>
