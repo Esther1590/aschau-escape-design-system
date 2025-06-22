@@ -1,3 +1,4 @@
+
 import { MapPin, Clock, TrendingUp } from 'lucide-react';
 
 interface Trail {
@@ -21,10 +22,13 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
     onImageClick(image);
   };
 
+  // Filter out the first image (/lovable-uploads/3e728932-0d57-4b50-a4b6-4a8946d51c0b.png)
+  const filteredImages = trail.images.filter((image, index) => index !== 0);
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {trail.images.map((image, imgIndex) => (
+        {filteredImages.map((image, imgIndex) => (
           <div key={imgIndex} className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
             <img 
               src={image} 
@@ -34,7 +38,7 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
             />
             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="text-sm font-medium bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
-                View {imgIndex + 1} of {trail.images.length}
+                View {imgIndex + 1} of {filteredImages.length}
               </span>
             </div>
           </div>
