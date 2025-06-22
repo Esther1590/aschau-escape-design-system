@@ -36,10 +36,10 @@ const SpaExperiences = () => {
         'Scenic wellness spots'
       ],
       icon: Cable,
-      image: '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png',
+      image: '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
       gallery: [
-        '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png',
-        '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png'
+        '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
+        '/lovable-uploads/0ec72996-7048-42eb-9eb8-f94e755d00fe.png'
       ],
       hasVideo: true,
       videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
@@ -85,8 +85,7 @@ const SpaExperiences = () => {
             return (
               <Card 
                 key={index} 
-                className={`overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800 ${spa.hasVideo ? 'cursor-pointer' : ''}`}
-                onClick={() => handleCardClick(spa)}
+                className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800"
               >
                 <div className="relative h-64 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
                   {spa.image ? (
@@ -97,13 +96,6 @@ const SpaExperiences = () => {
                     />
                   ) : (
                     <IconComponent className="w-12 h-12 text-white" />
-                  )}
-                  {spa.hasVideo && (
-                    <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                        <div className="w-0 h-0 border-l-[16px] border-l-black border-y-[12px] border-y-transparent ml-1"></div>
-                      </div>
-                    </div>
                   )}
                 </div>
                 <CardHeader className="pb-4">
@@ -127,12 +119,13 @@ const SpaExperiences = () => {
                     </ul>
                   </div>
 
-                  {/* Gallery Preview for Kampenwandbahn */}
-                  {spa.gallery && (
+                  {/* Gallery for Kampenwandbahn with Video */}
+                  {spa.name === 'Kampenwandbahn Station' && (
                     <div className="mb-6">
                       <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
                       <div className="grid grid-cols-2 gap-2">
-                        {spa.gallery.map((galleryImage, idx) => (
+                        {/* Gallery Images */}
+                        {spa.gallery && spa.gallery.map((galleryImage, idx) => (
                           <div 
                             key={idx} 
                             className="relative group overflow-hidden rounded-lg cursor-pointer"
@@ -146,6 +139,21 @@ const SpaExperiences = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
                         ))}
+                        
+                        {/* Video Thumbnail */}
+                        {spa.hasVideo && (
+                          <div 
+                            className="relative group overflow-hidden rounded-lg cursor-pointer"
+                            onClick={() => setSelectedVideo(spa.videoPath)}
+                          >
+                            <div className="w-full h-20 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
+                              <div className="w-8 h-8 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                                <div className="w-0 h-0 border-l-[8px] border-l-black border-y-[6px] border-y-transparent ml-0.5"></div>
+                              </div>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
