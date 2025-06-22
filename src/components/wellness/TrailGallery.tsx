@@ -32,7 +32,6 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
               className="w-full h-64 object-cover cursor-pointer transition-all duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-100"
               onClick={() => handleImageClick(image)}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="text-sm font-medium bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
                 View {imgIndex + 1} of {trail.images.length}
