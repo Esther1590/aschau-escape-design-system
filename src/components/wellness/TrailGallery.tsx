@@ -1,5 +1,3 @@
-
-
 import { MapPin, Clock, TrendingUp } from 'lucide-react';
 
 interface Trail {
@@ -23,8 +21,8 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
     onImageClick(image);
   };
 
-  // Filter out the first image and the second image (index 1 after filtering)
-  const filteredImages = trail.images.filter((image, index) => index !== 0 && index !== 1);
+  // Filter out the first three images (indices 0, 1, and 2)
+  const filteredImages = trail.images.filter((image, index) => index !== 0 && index !== 1 && index !== 2);
 
   return (
     <>
@@ -68,4 +66,3 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
 };
 
 export default TrailGallery;
-
