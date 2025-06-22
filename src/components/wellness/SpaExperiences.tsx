@@ -1,5 +1,4 @@
 
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -38,7 +37,7 @@ const SpaExperiences = () => {
         'Scenic wellness spots'
       ],
       icon: Cable,
-      image: '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
+      image: '/lovable-uploads/49af8508-04ae-4e4d-b719-df70603aa097.png',
       gallery: [
         '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
         '/lovable-uploads/49af8508-04ae-4e4d-b719-df70603aa097.png',
@@ -60,6 +59,13 @@ const SpaExperiences = () => {
     e.preventDefault();
     e.stopPropagation();
     setSelectedImage(image);
+  };
+
+  const handleVideoClick = (videoPath: string, e: React.MouseEvent) => {
+    console.log('Video thumbnail clicked:', videoPath);
+    e.preventDefault();
+    e.stopPropagation();
+    setSelectedVideo(videoPath);
   };
 
   const closeVideo = () => {
@@ -147,7 +153,7 @@ const SpaExperiences = () => {
                         {spa.hasVideo && (
                           <div 
                             className="relative group overflow-hidden rounded-lg cursor-pointer"
-                            onClick={() => setSelectedVideo(spa.videoPath)}
+                            onClick={(e) => handleVideoClick(spa.videoPath, e)}
                           >
                             <div className="w-full h-20 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
                               <div className="w-8 h-8 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
@@ -207,4 +213,3 @@ const SpaExperiences = () => {
 };
 
 export default SpaExperiences;
-
