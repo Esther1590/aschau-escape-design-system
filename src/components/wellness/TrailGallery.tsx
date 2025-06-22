@@ -21,8 +21,8 @@ const TrailGallery = ({ trail, onImageClick }: TrailGalleryProps) => {
     onImageClick(image);
   };
 
-  // Filter out the first three images (indices 0, 1, and 2)
-  const filteredImages = trail.images.filter((image, index) => index !== 0 && index !== 1 && index !== 2);
+  // Filter out the first four images (indices 0, 1, 2, and 3)
+  const filteredImages = trail.images.filter((image, index) => index !== 0 && index !== 1 && index !== 2 && index !== 3);
 
   return (
     <>
