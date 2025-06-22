@@ -1,6 +1,6 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription } from '@/components/ui/dialog';
 import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
@@ -118,28 +118,27 @@ const SpaExperiences = () => {
           })}
         </div>
 
-        {/* Video Modal */}
-        {selectedVideo && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeVideo}>
-            <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center p-4">
-              <button 
-                onClick={closeVideo}
-                className="absolute top-4 right-4 text-white text-2xl font-bold z-10 bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-75"
-              >
-                ×
-              </button>
-              <video 
-                className="max-w-full max-h-full"
-                controls
-                autoPlay
-                onClick={(e) => e.stopPropagation()}
-              >
-                <source src={selectedVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+        {/* Video Dialog */}
+        <Dialog open={!!selectedVideo} onOpenChange={closeVideo}>
+          <DialogContent className="max-w-4xl p-2 bg-black/95 border-none">
+            <DialogDescription className="sr-only">
+              Video player for cable car experience
+            </DialogDescription>
+            <div className="relative flex items-center justify-center min-h-[60vh]">
+              {selectedVideo && (
+                <video 
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                  controls
+                  autoPlay
+                  preload="metadata"
+                >
+                  <source src={selectedVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
-          </div>
-        )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
