@@ -1,5 +1,5 @@
 
-import { Dialog, DialogContent, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 
 interface TrailImageViewerProps {
   selectedImage: string | null;
@@ -10,6 +10,9 @@ const TrailImageViewer = ({ selectedImage, onClose }: TrailImageViewerProps) => 
   return (
     <Dialog open={!!selectedImage} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl p-2 bg-black/95 border-none">
+        <DialogTitle className="sr-only">
+          Trail Image Viewer
+        </DialogTitle>
         <DialogDescription className="sr-only">
           Full size view of selected trail image
         </DialogDescription>

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
@@ -121,6 +121,9 @@ const SpaExperiences = () => {
         {/* Video Dialog */}
         <Dialog open={!!selectedVideo} onOpenChange={closeVideo}>
           <DialogContent className="max-w-4xl p-2 bg-black/95 border-none">
+            <DialogTitle className="sr-only">
+              Cable Car Experience Video
+            </DialogTitle>
             <DialogDescription className="sr-only">
               Video player for cable car experience
             </DialogDescription>
