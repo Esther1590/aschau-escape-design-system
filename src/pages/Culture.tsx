@@ -134,6 +134,28 @@ const Culture = () => {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
+                    {/* Gallery for Schloss Hohenaschau */}
+                    {attraction.isSchloss && attraction.gallery && (
+                      <div className="mb-6">
+                        <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {attraction.gallery.map((galleryImage, idx) => (
+                            <div 
+                              key={idx} 
+                              className="relative group overflow-hidden rounded-lg"
+                            >
+                              <img 
+                                src={galleryImage} 
+                                alt={`${attraction.name} view ${idx + 1}`}
+                                className="w-full h-20 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
                     <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white text-lg py-4">
                       Learn More & Book
                     </Button>
@@ -141,34 +163,6 @@ const Culture = () => {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Schloss Hohenaschau Gallery */}
-      <section className="py-16 px-4 bg-white/50 dark:bg-gray-800/50">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Schloss Hohenaschau Gallery
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Explore the magnificent architecture and stunning views of our historic castle through these carefully captured moments.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {culturalAttractions[0].gallery?.map((image, index) => (
-              <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 dark:bg-gray-800">
-                <div className="relative h-80">
-                  <img 
-                    src={image} 
-                    alt={`Schloss Hohenaschau view ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
