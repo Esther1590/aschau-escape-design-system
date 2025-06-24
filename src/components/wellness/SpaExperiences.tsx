@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -41,7 +40,8 @@ const SpaExperiences = () => {
       gallery: [
         '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
         '/lovable-uploads/49af8508-04ae-4e4d-b719-df70603aa097.png',
-        '/lovable-uploads/79e4246e-60b4-4927-a39e-ad18e8e8f92c.png'
+        '/lovable-uploads/79e4246e-60b4-4927-a39e-ad18e8e8f92c.png',
+        '/lovable-uploads/e1a57b00-3ce4-4425-aadf-220454852751.png'
       ],
       hasVideo: true,
       videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
