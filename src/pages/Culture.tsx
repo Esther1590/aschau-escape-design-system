@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -83,11 +82,11 @@ const Culture = () => {
             backgroundImage: 'url(/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png)'
           }}
         />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow-lg">
+        <div className="relative z-10 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-lg">
             Cultural Heritage
           </h1>
-          <p className="text-xl md:text-2xl font-light">
+          <p className="text-xl md:text-2xl font-light text-white drop-shadow-md">
             Discover the timeless traditions of Aschau im Chiemgau
           </p>
         </div>
