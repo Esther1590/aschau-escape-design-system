@@ -24,6 +24,7 @@ const Culture = () => {
         '/lovable-uploads/53209aaa-0dba-4790-a6aa-64d5e3ad2c48.png',
         '/lovable-uploads/795a8580-c818-4526-b201-9d317cebb951.png',
         '/lovable-uploads/084081ca-c2e2-4431-82a0-3ee8f171543b.png',
+        '/lovable-uploads/d9dc1eac-28e3-4a55-9cdd-d534ff12e097.png',
         '/20250417_123645_2.mp4'
       ]
     },
