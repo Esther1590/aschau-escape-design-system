@@ -31,7 +31,7 @@ const Culture = () => {
     {
       name: t('culture.museum.name'),
       description: "Discover Aschau's rich heritage through carefully curated exhibits showcasing traditional Alpine life, local customs, and historical artifacts. Ground floor access with comfortable seating areas.",
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
+      image: '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png',
       icon: Camera,
       accessibility: "Ground floor access, seating areas throughout"
     },
