@@ -1,5 +1,5 @@
 
-import { Crown, Cable } from 'lucide-react';
+import { Crown, Cable, Mountain } from 'lucide-react';
 
 export const spas = [
   {
@@ -37,5 +37,19 @@ export const spas = [
     ],
     hasVideo: true,
     videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
+  },
+  {
+    name: 'Agrad Chalets',
+    description: 'Luxurious alpine chalets offering authentic mountain wellness experiences with traditional Alpine architecture and modern comfort.',
+    features: [
+      'Authentic Alpine chalets',
+      'Mountain wellness treatments',
+      'Private outdoor spaces',
+      'Traditional wood sauna',
+      'Panoramic valley views',
+      'Cozy fireplaces'
+    ],
+    icon: Mountain,
+    image: '/lovable-uploads/f89c33b5-93e8-42f4-8a6e-881f1b32c192.png'
   }
 ];

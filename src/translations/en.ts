@@ -1,4 +1,3 @@
-
 import { Translations } from '@/types/translations';
 
 export const enTranslations: Translations = {
@@ -107,36 +106,36 @@ export const enTranslations: Translations = {
   },
   wellness: {
     hero: {
-      title: 'Wellness & Spa',
-      subtitle: 'Rejuvenate your mind, body, and soul in the heart of Bavaria'
+      title: 'Wellness & Relaxation',
+      subtitle: 'Discover tranquility in the heart of the Bavarian Alps'
     },
     experiences: {
-      title: 'Premium Spa Experiences',
-      subtitle: 'Discover our exclusive wellness offerings designed for relaxation and rejuvenation'
+      title: 'Spa Experiences',
+      subtitle: 'Immerse yourself in world-class wellness facilities and treatments designed to rejuvenate your body and soul.'
     },
     spa1: {
-      name: 'Alpine Serenity Spa',
-      description: 'Experience ultimate relaxation with our signature Alpine treatments featuring local herbs and minerals.',
-      feature1: 'Hot stone massage therapy',
-      feature2: 'Alpine herb steam room',
-      feature3: 'Mineral-rich mud baths',
-      feature4: 'Panoramic mountain views'
+      name: 'Burghotel Aschau',
+      description: 'A historic luxury hotel offering premium spa services with traditional Bavarian hospitality and modern wellness amenities.',
+      feature1: 'Historic castle setting',
+      feature2: 'Premium spa treatments',
+      feature3: 'Traditional Bavarian wellness',
+      feature4: 'Luxury accommodations'
     },
     spa2: {
-      name: 'Aqua Wellness Center',
-      description: 'Immerse yourself in our state-of-the-art hydrotherapy facilities with thermal pools and water treatments.',
-      feature1: 'Thermal healing pools',
-      feature2: 'Hydrotherapy circuits',
-      feature3: 'Underwater massage jets',
-      feature4: 'Aromatherapy steam rooms'
+      name: 'Kampenwandbahn Station',
+      description: 'Experience breathtaking panoramic views from the Kampenwand cable car station, offering a unique wellness perspective from above the clouds.',
+      feature1: 'Panoramic mountain views',
+      feature2: 'Cable car experience',
+      feature3: 'Alpine fresh air',
+      feature4: 'Photography opportunities'
     },
     spa3: {
-      name: 'Mountain Peak Retreat',
-      description: 'Connect with nature through our outdoor wellness programs and meditation spaces.',
-      feature1: 'Outdoor meditation gardens',
-      feature2: 'Forest bathing experiences',
-      feature3: 'Mountain yoga sessions',
-      feature4: 'Natural cold therapy pools'
+      name: 'Agrad Chalets',
+      description: 'Luxurious alpine chalets offering authentic mountain wellness experiences with traditional Alpine architecture and modern comfort.',
+      feature1: 'Authentic Alpine chalets',
+      feature2: 'Mountain wellness treatments',
+      feature3: 'Private outdoor spaces',
+      feature4: 'Traditional wood sauna'
     },
     features: 'Features',
     bookNow: 'Book Experience',

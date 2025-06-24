@@ -1,4 +1,3 @@
-
 import { Translations } from '@/types/translations';
 
 export const deTranslations: Translations = {
@@ -107,36 +106,36 @@ export const deTranslations: Translations = {
   },
   wellness: {
     hero: {
-      title: 'Wellness & Spa',
-      subtitle: 'Verjüngen Sie Geist, Körper und Seele im Herzen Bayerns'
+      title: 'Wellness & Entspannung',
+      subtitle: 'Entdecken Sie Ruhe im Herzen der bayerischen Alpen'
     },
     experiences: {
-      title: 'Premium Spa Erlebnisse',
-      subtitle: 'Entdecken Sie unsere exklusiven Wellness-Angebote für Entspannung und Verjüngung'
+      title: 'Spa-Erlebnisse',
+      subtitle: 'Tauchen Sie ein in erstklassige Wellness-Einrichtungen und Behandlungen, die Körper und Seele verjüngen.'
     },
     spa1: {
-      name: 'Alpine Ruhe Spa',
-      description: 'Erleben Sie ultimative Entspannung mit unseren charakteristischen Alpenbehandlungen mit lokalen Kräutern und Mineralien.',
-      feature1: 'Heißstein-Massagetherapie',
-      feature2: 'Alpenkräuter-Dampfbad',
-      feature3: 'Mineralreiche Schlammbäder',
-      feature4: 'Panoramablick auf die Berge'
+      name: 'Burghotel Aschau',
+      description: 'Ein historisches Luxushotel mit Premium-Spa-Services, traditioneller bayerischer Gastfreundschaft und modernen Wellness-Annehmlichkeiten.',
+      feature1: 'Historische Schlosskulisse',
+      feature2: 'Premium-Spa-Behandlungen',
+      feature3: 'Traditionelle bayerische Wellness',
+      feature4: 'Luxuriöse Unterkünfte'
     },
     spa2: {
-      name: 'Aqua Wellness Center',
-      description: 'Tauchen Sie ein in unsere hochmodernsten Hydrotherapie-Einrichtungen mit Thermalbecken und Wasserbehandlungen.',
-      feature1: 'Thermale Heilbecken',
-      feature2: 'Hydrotherapie-Kreisläufe',
-      feature3: 'Unterwasser-Massagedüsen',
-      feature4: 'Aromatherapie-Dampfbäder'
+      name: 'Kampenwandbahn Station',
+      description: 'Erleben Sie atemberaubende Panoramablicke von der Kampenwandbahn-Station und genießen Sie eine einzigartige Wellness-Perspektive über den Wolken.',
+      feature1: 'Panorama-Bergblicke',
+      feature2: 'Seilbahn-Erlebnis',
+      feature3: 'Alpine Frischluft',
+      feature4: 'Fotomöglichkeiten'
     },
     spa3: {
-      name: 'Berggipfel Retreat',
-      description: 'Verbinden Sie sich mit der Natur durch unsere Outdoor-Wellness-Programme und Meditationsräume.',
-      feature1: 'Outdoor-Meditationsgärten',
-      feature2: 'Waldbad-Erfahrungen',
-      feature3: 'Berg-Yoga-Sitzungen',
-      feature4: 'Natürliche Kältetherapie-Becken'
+      name: 'Agrad Chalets',
+      description: 'Luxuriöse Alpenchalets mit authentischen Berg-Wellness-Erlebnissen, traditioneller Alpenarchitektur und modernem Komfort.',
+      feature1: 'Authentische Alpenchalets',
+      feature2: 'Berg-Wellness-Behandlungen',
+      feature3: 'Private Außenbereiche',
+      feature4: 'Traditionelle Holzsauna'
     },
     features: 'Eigenschaften',
     bookNow: 'Erlebnis buchen',
