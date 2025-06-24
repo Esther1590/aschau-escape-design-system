@@ -22,7 +22,7 @@ const SpaExperiences = () => {
         'Luxury accommodations'
       ],
       icon: Crown,
-      image: '/lovable-uploads/ad738fb9-b5f8-4627-9733-aa4e1dcdf343.png'
+      image: '/lovable-uploads/a6359873-ec9a-46a0-9b93-282b17b3e212.png'
     },
     {
       name: 'Kampenwandbahn Station',
