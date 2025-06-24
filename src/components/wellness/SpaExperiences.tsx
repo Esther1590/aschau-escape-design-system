@@ -100,7 +100,7 @@ const SpaExperiences = () => {
                     <img 
                       src={spa.image} 
                       alt={spa.name}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${spa.name === 'Burghotel Aschau' ? 'object-[center_35%]' : ''}`}
                     />
                   ) : (
                     <IconComponent className="w-12 h-12 text-white" />
