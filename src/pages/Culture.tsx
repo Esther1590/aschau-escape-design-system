@@ -99,10 +99,10 @@ const Culture = () => {
           }}
         />
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800 dark:text-white drop-shadow-lg">
             Cultural Heritage
           </h1>
-          <p className="text-xl md:text-2xl font-light text-white drop-shadow-md">
+          <p className="text-xl md:text-2xl font-light text-gray-700 dark:text-white drop-shadow-md">
             Discover the timeless traditions of Aschau im Chiemgau
           </p>
         </div>
