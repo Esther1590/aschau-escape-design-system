@@ -11,8 +11,8 @@ const PlanTrip = () => {
     <div className="min-h-screen bg-gradient-to-b from-wellness-sage/10 to-white dark:from-wellness-sage/5 dark:to-gray-900">
       <Header />
       <PlanTripHero />
-      <PlanTripMapSection />
       <PlanTripForm />
+      <PlanTripMapSection />
       <PlanTripTips />
       <PlanTripOffers />
     </div>
