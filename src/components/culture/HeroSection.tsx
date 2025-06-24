@@ -2,15 +2,12 @@
 const HeroSection = () => {
   return (
     <section className="relative h-96 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
+      {/* Image Background */}
+      <img
         className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        playsInline
-      >
-        <source src="/20250417_120330_1.mp4" type="video/mp4" />
-      </video>
+        src="/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png"
+        alt="Cultural Heritage Background"
+      />
       
       <div className="relative z-10 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800 dark:text-white drop-shadow-lg">
