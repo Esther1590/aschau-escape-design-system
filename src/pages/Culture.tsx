@@ -111,15 +111,6 @@ const Culture = () => {
       {/* Cultural Attractions */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Cultural Treasures
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Explore our carefully selected cultural experiences, designed with comfort and accessibility in mind for discerning travelers.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {culturalAttractions.map((attraction, index) => {
               const IconComponent = attraction.icon;
