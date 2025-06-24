@@ -4,48 +4,59 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 const Footer = () => {
   const { t } = useTranslation();
 
-  const faqItems = [
-    {
-      question: "What makes Aschau ideal for wellness tourism?",
-      answer: "Aschau im Chiemgau offers a unique combination of pristine Alpine air, natural thermal springs, peaceful mountain trails, and world-class spa facilities. Our location provides the perfect environment for relaxation and rejuvenation."
-    },
-    {
-      question: "Are the wellness facilities accessible for seniors?",
-      answer: "Yes, all our recommended wellness facilities are designed with accessibility in mind. We offer elevator access, comfortable seating areas, gentle therapy options, and professional staff trained to assist guests of all mobility levels."
-    },
-    {
-      question: "What cultural attractions are available?",
-      answer: "Visit the historic Schloss Hohenaschau castle, explore our local heritage museum, participate in traditional craft workshops, and enjoy intimate folk music evenings. All attractions offer comfortable, accessible experiences."
-    },
-    {
-      question: "How do I plan my trip and book accommodations?",
-      answer: "Use our trip planning page to explore accommodations, activities, and create a personalized itinerary. You can also contact us directly for assistance with bookings and special arrangements."
-    },
-    {
-      question: "What is the best time to visit Aschau?",
-      answer: "Aschau is beautiful year-round. Spring and summer offer hiking and outdoor activities, while autumn provides stunning foliage. Winter brings cozy spa experiences and peaceful snow-covered landscapes."
-    }
-  ];
-
   return (
     <footer className="bg-wellness-charcoal text-white">
       {/* FAQ Section */}
       <section className="py-16 px-4 border-b border-gray-600">
         <div className="container mx-auto max-w-4xl">
           <h3 className="text-3xl font-bold text-center mb-8 text-wellness-sage">
-            Frequently Asked Questions
+            {t('footer.faq.title')}
           </h3>
           <Accordion type="single" collapsible className="space-y-4">
-            {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-gray-600 rounded-lg px-6">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+            <AccordionItem value="wellness" className="border border-gray-600 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
+                {t('footer.faq.questions.wellness.question')}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
+                {t('footer.faq.questions.wellness.answer')}
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="accessibility" className="border border-gray-600 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
+                {t('footer.faq.questions.accessibility.question')}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
+                {t('footer.faq.questions.accessibility.answer')}
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="culture" className="border border-gray-600 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
+                {t('footer.faq.questions.culture.question')}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
+                {t('footer.faq.questions.culture.answer')}
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="planning" className="border border-gray-600 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
+                {t('footer.faq.questions.planning.question')}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
+                {t('footer.faq.questions.planning.answer')}
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="timing" className="border border-gray-600 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-wellness-sage">
+                {t('footer.faq.questions.timing.question')}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-base leading-relaxed pt-2">
+                {t('footer.faq.questions.timing.answer')}
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
       </section>

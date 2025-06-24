@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 interface TranslationContextProps {
@@ -94,7 +93,32 @@ const translations = {
       address: 'Aschau im Chiemgau, Bavaria, Germany',
       phone: '+49 8052 904-200',
       email: 'info@aschau-wellness.de',
-      rights: '© 2024 Aschau Wellness Tourism. All rights reserved.'
+      rights: '© 2024 Aschau Wellness Tourism. All rights reserved.',
+      faq: {
+        title: 'Frequently Asked Questions',
+        questions: {
+          wellness: {
+            question: 'What makes Aschau ideal for wellness tourism?',
+            answer: 'Aschau im Chiemgau offers a unique combination of pristine Alpine air, natural thermal springs, peaceful mountain trails, and world-class spa facilities. Our location provides the perfect environment for relaxation and rejuvenation.'
+          },
+          accessibility: {
+            question: 'Are the wellness facilities accessible for seniors?',
+            answer: 'Yes, all our recommended wellness facilities are designed with accessibility in mind. We offer elevator access, comfortable seating areas, gentle therapy options, and professional staff trained to assist guests of all mobility levels.'
+          },
+          culture: {
+            question: 'What cultural attractions are available?',
+            answer: 'Visit the historic Schloss Hohenaschau castle, explore our local heritage museum, participate in traditional craft workshops, and enjoy intimate folk music evenings. All attractions offer comfortable, accessible experiences.'
+          },
+          planning: {
+            question: 'How do I plan my trip and book accommodations?',
+            answer: 'Use our trip planning page to explore accommodations, activities, and create a personalized itinerary. You can also contact us directly for assistance with bookings and special arrangements.'
+          },
+          timing: {
+            question: 'What is the best time to visit Aschau?',
+            answer: 'Aschau is beautiful year-round. Spring and summer offer hiking and outdoor activities, while autumn provides stunning foliage. Winter brings cozy spa experiences and peaceful snow-covered landscapes.'
+          }
+        }
+      }
     },
     stickyButton: {
       bookNow: 'Book Now'
@@ -358,7 +382,32 @@ const translations = {
       address: 'Aschau im Chiemgau, Bayern, Deutschland',
       phone: '+49 8052 904-200',
       email: 'info@aschau-wellness.de',
-      rights: '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.'
+      rights: '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.',
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        questions: {
+          wellness: {
+            question: 'Was macht Aschau ideal für Wellness-Tourismus?',
+            answer: 'Aschau im Chiemgau bietet eine einzigartige Kombination aus reiner Alpenluft, natürlichen Thermalquellen, ruhigen Bergwegen und erstklassigen Spa-Einrichtungen. Unser Standort bietet die perfekte Umgebung für Entspannung und Verjüngung.'
+          },
+          accessibility: {
+            question: 'Sind die Wellness-Einrichtungen für Senioren zugänglich?',
+            answer: 'Ja, alle unsere empfohlenen Wellness-Einrichtungen sind barrierefrei konzipiert. Wir bieten Aufzugszugang, bequeme Sitzbereiche, sanfte Therapieoptionen und professionelles Personal, das geschult ist, Gästen aller Mobilitätsstufen zu helfen.'
+          },
+          culture: {
+            question: 'Welche kulturellen Attraktionen gibt es?',
+            answer: 'Besuchen Sie das historische Schloss Hohenaschau, erkunden Sie unser lokales Heimatmuseum, nehmen Sie an traditionellen Handwerks-Workshops teil und genießen Sie intime Volksmusikabende. Alle Attraktionen bieten komfortable, barrierefreie Erlebnisse.'
+          },
+          planning: {
+            question: 'Wie plane ich meine Reise und buche Unterkünfte?',
+            answer: 'Nutzen Sie unsere Reiseplanungsseite, um Unterkünfte und Aktivitäten zu erkunden und eine personalisierte Reiseroute zu erstellen. Sie können uns auch direkt für Hilfe bei Buchungen und besonderen Arrangements kontaktieren.'
+          },
+          timing: {
+            question: 'Wann ist die beste Zeit, Aschau zu besuchen?',
+            answer: 'Aschau ist das ganze Jahr über schön. Frühling und Sommer bieten Wandern und Outdoor-Aktivitäten, während der Herbst atemberaubendes Laub bietet. Der Winter bringt gemütliche Spa-Erlebnisse und friedliche schneebedeckte Landschaften.'
+          }
+        }
+      }
     },
     stickyButton: {
       bookNow: 'Jetzt buchen'
