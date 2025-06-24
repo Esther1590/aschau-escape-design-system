@@ -22,7 +22,8 @@ const Culture = () => {
       gallery: [
         '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png',
         '/lovable-uploads/53209aaa-0dba-4790-a6aa-64d5e3ad2c48.png',
-        '/lovable-uploads/795a8580-c818-4526-b201-9d317cebb951.png'
+        '/lovable-uploads/795a8580-c818-4526-b201-9d317cebb951.png',
+        '/20250417_123645_2.mp4'
       ]
     },
     {
@@ -152,21 +153,43 @@ const Culture = () => {
                     {attraction.isSchloss && attraction.gallery && (
                       <div className="mb-6">
                         <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
-                        <div className="grid grid-cols-3 gap-2">
-                          {attraction.gallery.map((galleryImage, idx) => (
-                            <div 
-                              key={idx} 
-                              className="relative group overflow-hidden rounded-lg cursor-pointer"
-                              onClick={() => handleImageClick(galleryImage)}
-                            >
-                              <img 
-                                src={galleryImage} 
-                                alt={`${attraction.name} view ${idx + 1}`}
-                                className="w-full h-20 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                          ))}
+                        <div className="grid grid-cols-2 gap-2">
+                          {attraction.gallery.map((galleryItem, idx) => {
+                            const isVideo = galleryItem.endsWith('.mp4');
+                            return (
+                              <div 
+                                key={idx} 
+                                className="relative group overflow-hidden rounded-lg cursor-pointer"
+                                onClick={() => handleImageClick(galleryItem)}
+                              >
+                                {isVideo ? (
+                                  <video 
+                                    className="w-full h-20 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                                    muted
+                                    playsInline
+                                  >
+                                    <source src={galleryItem} type="video/mp4" />
+                                  </video>
+                                ) : (
+                                  <img 
+                                    src={galleryItem} 
+                                    alt={`${attraction.name} view ${idx + 1}`}
+                                    className="w-full h-20 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                                  />
+                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                {isVideo && (
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="bg-white/80 rounded-full p-2">
+                                      <svg className="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
