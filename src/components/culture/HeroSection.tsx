@@ -5,7 +5,7 @@ const HeroSection = () => {
       {/* Image Background */}
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png"
+        src="/lovable-uploads/3f53e89b-14d8-4730-b4c1-e102821b9d00.png"
         alt="Cultural Heritage Background"
       />
       
