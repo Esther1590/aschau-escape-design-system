@@ -145,6 +145,34 @@ const Culture = () => {
         </div>
       </section>
 
+      {/* Schloss Hohenaschau Gallery */}
+      <section className="py-16 px-4 bg-white/50 dark:bg-gray-800/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
+              Schloss Hohenaschau Gallery
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Explore the magnificent architecture and stunning views of our historic castle through these carefully captured moments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {culturalAttractions[0].gallery?.map((image, index) => (
+              <Card key={index} className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 dark:bg-gray-800">
+                <div className="relative h-80">
+                  <img 
+                    src={image} 
+                    alt={`Schloss Hohenaschau view ${index + 1}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Practical Information */}
       <section className="py-16 px-4 bg-white/50 dark:bg-gray-800/50">
         <div className="container mx-auto">
