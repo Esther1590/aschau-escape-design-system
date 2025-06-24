@@ -1,5 +1,6 @@
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import PlanTripHero from '@/components/plan-trip/PlanTripHero';
 import PlanTripMapSection from '@/components/plan-trip/PlanTripMapSection';
 import PlanTripForm from '@/components/plan-trip/PlanTripForm';
@@ -15,6 +16,7 @@ const PlanTrip = () => {
       <PlanTripMapSection />
       <PlanTripTips />
       <PlanTripOffers />
+      <Footer />
     </div>
   );
 };
