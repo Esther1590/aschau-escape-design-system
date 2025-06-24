@@ -20,8 +20,7 @@ const Culture = () => {
       accessibility: "Elevator access to main floors, guided tours available",
       isSchloss: true,
       gallery: [
-        '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png',
-        '/lovable-uploads/78439e83-1247-44b2-b6af-5f26dbc1a872.png'
+        '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png'
       ]
     },
     {
@@ -151,7 +150,7 @@ const Culture = () => {
                     {attraction.isSchloss && attraction.gallery && (
                       <div className="mb-6">
                         <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-1 gap-2">
                           {attraction.gallery.map((galleryImage, idx) => (
                             <div 
                               key={idx} 
