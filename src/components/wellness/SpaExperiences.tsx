@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -23,7 +22,7 @@ const SpaExperiences = () => {
         'Luxury accommodations'
       ],
       icon: Crown,
-      image: '/lovable-uploads/ad738fb9-b5f8-4627-9733-aa4e1dcdf343.png'
+      image: '/lovable-uploads/86f472bb-7fca-439b-965e-fd09804f7888.png'
     },
     {
       name: 'Kampenwandbahn Station',
