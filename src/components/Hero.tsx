@@ -1,9 +1,15 @@
 
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    navigate('/plan');
+  };
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -29,16 +35,10 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             className="btn-wellness text-xl px-10 py-6"
+            onClick={handleStartJourney}
             aria-label="Start planning your wellness journey"
           >
             Start Your Journey
-          </Button>
-          <Button 
-            variant="outline" 
-            className="btn-wellness-outline bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-wellness-charcoal text-xl px-10 py-6"
-            aria-label="Learn more about Aschau"
-          >
-            Learn More
           </Button>
         </div>
       </div>
