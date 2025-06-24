@@ -210,34 +210,6 @@ const Culture = () => {
         </div>
       </section>
 
-      {/* Castle History Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Our Historic Burg Hotel
-            </h2>
-            <div className="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg">
-              <div className="mb-8">
-                <img 
-                  src="/lovable-uploads/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png" 
-                  alt="Burg Hotel Aschau"
-                  className="w-full h-64 object-cover rounded-xl shadow-lg"
-                />
-              </div>
-              <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                Our hotel itself is a piece of living history, carefully restored to maintain its authentic medieval character while providing modern comfort and accessibility for all our guests.
-              </p>
-              <div className="bg-amber-100 dark:bg-amber-900/30 p-6 rounded-xl border-l-4 border-amber-500">
-                <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">
-                  The hotel features elevator access to all floors, wide corridors, and specially designed rooms for guests with mobility needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonial Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto max-w-4xl">
