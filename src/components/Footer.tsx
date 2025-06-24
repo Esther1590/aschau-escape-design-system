@@ -65,9 +65,6 @@ const Footer = () => {
                   <p className="text-gray-300">{t('footer.tagline')}</p>
                 </div>
               </div>
-              <p className="text-gray-300 leading-relaxed max-w-md text-lg">
-                {t('footer.tagline')}
-              </p>
             </div>
 
             {/* Quick Links */}
