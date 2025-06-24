@@ -1,4 +1,5 @@
 
+
 const HeroSection = () => {
   return (
     <section className="relative h-96 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center overflow-hidden">
@@ -10,7 +11,7 @@ const HeroSection = () => {
         muted
         playsInline
       >
-        <source src="/WhatsApp Video 2025-04-25 at 22.33.10.mp4" type="video/mp4" />
+        <source src="/20250417_120330_1.mp4" type="video/mp4" />
       </video>
       
       {/* Static Background Image as fallback */}
@@ -34,3 +35,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
