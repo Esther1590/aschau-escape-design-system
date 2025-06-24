@@ -21,7 +21,8 @@ const Culture = () => {
       isSchloss: true,
       gallery: [
         '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png',
-        '/lovable-uploads/53209aaa-0dba-4790-a6aa-64d5e3ad2c48.png'
+        '/lovable-uploads/53209aaa-0dba-4790-a6aa-64d5e3ad2c48.png',
+        '/lovable-uploads/795a8580-c818-4526-b201-9d317cebb951.png'
       ]
     },
     {
@@ -151,7 +152,7 @@ const Culture = () => {
                     {attraction.isSchloss && attraction.gallery && (
                       <div className="mb-6">
                         <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-3 gap-2">
                           {attraction.gallery.map((galleryImage, idx) => (
                             <div 
                               key={idx} 
