@@ -1,61 +1,15 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
-import { Crown, Cable } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useState } from 'react';
 import TrailImageViewer from './TrailImageViewer';
+import VideoDialog from './VideoDialog';
+import SpaCard from './SpaCard';
+import { spas } from '@/data/spaData';
 
 const SpaExperiences = () => {
   const { t } = useTranslation();
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const spas = [
-    {
-      name: 'Burghotel Aschau',
-      description: 'A historic luxury hotel offering premium spa services with traditional Bavarian hospitality and modern wellness amenities.',
-      features: [
-        'Historic castle setting',
-        'Premium spa treatments',
-        'Traditional Bavarian wellness',
-        'Luxury accommodations'
-      ],
-      icon: Crown,
-      image: '/lovable-uploads/a6359873-ec9a-46a0-9b93-282b17b3e212.png'
-    },
-    {
-      name: 'Kampenwandbahn Station',
-      description: 'Experience breathtaking panoramic views from the Kampenwand cable car station, offering a unique wellness perspective from above the clouds.',
-      features: [
-        'Panoramic mountain views',
-        'Cable car experience',
-        'Alpine fresh air',
-        'Photography opportunities',
-        'Mountain hiking access',
-        'Scenic wellness spots'
-      ],
-      icon: Cable,
-      image: '/lovable-uploads/49af8508-04ae-4e4d-b719-df70603aa097.png',
-      gallery: [
-        '/lovable-uploads/4a4cdf52-cc7e-49a5-b473-0fe47892ffc8.png',
-        '/lovable-uploads/49af8508-04ae-4e4d-b719-df70603aa097.png',
-        '/lovable-uploads/79e4246e-60b4-4927-a39e-ad18e8e8f92c.png',
-        '/lovable-uploads/e1a57b00-3ce4-4425-aadf-220454852751.png',
-        '/lovable-uploads/de07eee4-31a6-4b9d-b5f7-99cc8a8f13e5.png',
-        '/lovable-uploads/9f39982e-7a36-40e7-b8cf-e1ee1fde153e.png'
-      ],
-      hasVideo: true,
-      videoPath: '/WhatsApp Video 2025-04-25 at 22.33.05.mp4'
-    }
-  ];
-
-  const handleCardClick = (spa: any) => {
-    if (spa.hasVideo) {
-      setSelectedVideo(spa.videoPath);
-    }
-  };
 
   const handleGalleryImageClick = (image: string, e: React.MouseEvent) => {
     console.log('Gallery image clicked:', image);
@@ -79,16 +33,20 @@ const SpaExperiences = () => {
     setSelectedImage(null);
   };
 
-  // Get all gallery items (images + video) for the Kampenwandbahn station
+  // Get all gallery items (images + video) for all spas
   const getGalleryItems = () => {
-    const kampenwandSpa = spas.find(spa => spa.name === 'Kampenwandbahn Station');
-    if (!kampenwandSpa) return [];
+    const allItems: string[] = [];
     
-    const items = [...(kampenwandSpa.gallery || [])];
-    if (kampenwandSpa.hasVideo) {
-      items.push(kampenwandSpa.videoPath);
-    }
-    return items;
+    spas.forEach(spa => {
+      if (spa.gallery) {
+        allItems.push(...spa.gallery);
+      }
+      if (spa.hasVideo && spa.videoPath) {
+        allItems.push(spa.videoPath);
+      }
+    });
+    
+    return allItems;
   };
 
   return (
@@ -103,118 +61,19 @@ const SpaExperiences = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-          {spas.map((spa, index) => {
-            const IconComponent = spa.icon;
-            return (
-              <Card 
-                key={index} 
-                className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800"
-              >
-                <div className="relative h-64 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
-                  {spa.image ? (
-                    <img 
-                      src={spa.image} 
-                      alt={spa.name}
-                      className={`w-full h-full object-cover ${spa.name === 'Burghotel Aschau' ? 'object-[center_35%]' : ''}`}
-                    />
-                  ) : (
-                    <IconComponent className="w-12 h-12 text-white" />
-                  )}
-                </div>
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl text-wellness-charcoal dark:text-white mb-3">
-                    {spa.name}
-                  </CardTitle>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                    {spa.description}
-                  </p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">{t('wellness.features')}:</h4>
-                    <ul className="space-y-2">
-                      {spa.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600 dark:text-gray-300">
-                          <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Gallery for Kampenwandbahn with Video */}
-                  {spa.name === 'Kampenwandbahn Station' && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {/* Gallery Images */}
-                        {spa.gallery && spa.gallery.map((galleryImage, idx) => (
-                          <div 
-                            key={idx} 
-                            className="relative group overflow-hidden rounded-lg cursor-pointer"
-                            onClick={(e) => handleGalleryImageClick(galleryImage, e)}
-                          >
-                            <img 
-                              src={galleryImage} 
-                              alt={`${spa.name} view ${idx + 1}`}
-                              className="w-full h-20 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          </div>
-                        ))}
-                        
-                        {/* Video Thumbnail */}
-                        {spa.hasVideo && (
-                          <div 
-                            className="relative group overflow-hidden rounded-lg cursor-pointer"
-                            onClick={(e) => handleVideoClick(spa.videoPath, e)}
-                          >
-                            <div className="w-full h-20 bg-gradient-to-r from-wellness-sage to-wellness-lightSage flex items-center justify-center">
-                              <div className="w-8 h-8 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                                <div className="w-0 h-0 border-l-[8px] border-l-black border-y-[6px] border-y-transparent ml-0.5"></div>
-                              </div>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                  <Button className="w-full btn-wellness text-lg py-4">
-                    {spa.name === 'Kampenwandbahn Station' ? 'View Station Gallery' : t('wellness.bookNow')}
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {spas.map((spa, index) => (
+            <SpaCard
+              key={index}
+              spa={spa}
+              onGalleryImageClick={handleGalleryImageClick}
+              onVideoClick={handleVideoClick}
+            />
+          ))}
         </div>
 
         {/* Video Dialog */}
-        <Dialog open={!!selectedVideo} onOpenChange={closeVideo}>
-          <DialogContent className="max-w-4xl p-2 bg-black/95 border-none">
-            <DialogTitle className="sr-only">
-              Cable Car Experience Video
-            </DialogTitle>
-            <DialogDescription className="sr-only">
-              Video player for cable car experience
-            </DialogDescription>
-            <div className="relative flex items-center justify-center min-h-[60vh]">
-              {selectedVideo && (
-                <video 
-                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-                  controls
-                  autoPlay
-                  preload="metadata"
-                >
-                  <source src={selectedVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
-            </div>
-          </DialogContent>
-        </Dialog>
+        <VideoDialog selectedVideo={selectedVideo} onClose={closeVideo} />
 
         {/* Image Viewer for Gallery Images */}
         <TrailImageViewer
