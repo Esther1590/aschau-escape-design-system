@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -73,6 +74,18 @@ const SpaExperiences = () => {
 
   const closeImageViewer = () => {
     setSelectedImage(null);
+  };
+
+  // Get all gallery items (images + video) for the Kampenwandbahn station
+  const getGalleryItems = () => {
+    const kampenwandSpa = spas.find(spa => spa.name === 'Kampenwandbahn Station');
+    if (!kampenwandSpa) return [];
+    
+    const items = [...(kampenwandSpa.gallery || [])];
+    if (kampenwandSpa.hasVideo) {
+      items.push(kampenwandSpa.videoPath);
+    }
+    return items;
   };
 
   return (
@@ -203,7 +216,7 @@ const SpaExperiences = () => {
         {/* Image Viewer for Gallery Images */}
         <TrailImageViewer
           selectedImage={selectedImage}
-          images={spas.find(spa => spa.gallery)?.gallery || []}
+          images={getGalleryItems()}
           onClose={closeImageViewer}
         />
       </div>
