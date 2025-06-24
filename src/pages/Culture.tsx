@@ -3,10 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Phone, Mail, MapPin, Calendar, Camera, Building2, Music, Palette, Bus, Clock, Users, Heart } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { useState } from 'react';
 import Header from '@/components/Header';
+import TrailImageViewer from '@/components/wellness/TrailImageViewer';
 
 const Culture = () => {
   const { t } = useTranslation();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const culturalAttractions = [
     {
@@ -70,6 +73,16 @@ const Culture = () => {
       details: ["9 AM - 4 PM daily", "Extended summer hours", "Advance booking available"]
     }
   ];
+
+  const handleImageClick = (imageSrc: string) => {
+    console.log('Image clicked:', imageSrc);
+    setSelectedImage(imageSrc);
+  };
+
+  const handleCloseViewer = () => {
+    console.log('Closing image viewer');
+    setSelectedImage(null);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
@@ -142,7 +155,8 @@ const Culture = () => {
                           {attraction.gallery.map((galleryImage, idx) => (
                             <div 
                               key={idx} 
-                              className="relative group overflow-hidden rounded-lg"
+                              className="relative group overflow-hidden rounded-lg cursor-pointer"
+                              onClick={() => handleImageClick(galleryImage)}
                             >
                               <img 
                                 src={galleryImage} 
@@ -264,6 +278,13 @@ const Culture = () => {
           </div>
         </div>
       </footer>
+
+      {/* Image Viewer */}
+      <TrailImageViewer
+        selectedImage={selectedImage}
+        images={culturalAttractions.find(a => a.isSchloss)?.gallery || []}
+        onClose={handleCloseViewer}
+      />
     </div>
   );
 };
