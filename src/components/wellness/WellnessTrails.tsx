@@ -33,7 +33,8 @@ const WellnessTrails = () => {
         '/lovable-uploads/de107ea7-336e-4d25-a4a5-26dfe2f8e32b.png',
         '/lovable-uploads/4cea2c23-76e4-4862-905b-6625a78a0612.png',
         '/lovable-uploads/4ea7854d-3134-4de1-8df6-44278fd8826d.png',
-        '/lovable-uploads/5dbd7056-75c1-47a1-8f22-ab751e5745bb.png'
+        '/lovable-uploads/5dbd7056-75c1-47a1-8f22-ab751e5745bb.png',
+        '/WhatsApp Video 2025-04-25 at 22.33.10.mp4'
       ],
       highlights: [
         'Forest bathing experience',
