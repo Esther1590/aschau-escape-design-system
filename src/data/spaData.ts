@@ -15,22 +15,6 @@ export const spas = [
     image: '/lovable-uploads/a6359873-ec9a-46a0-9b93-282b17b3e212.png'
   },
   {
-    name: 'Schloss Hohenaschau',
-    description: 'A magnificent 12th-century castle perched majestically above the village, offering guided tours through historic chambers and breathtaking Alpine views.',
-    features: [
-      'Historic 12th-century castle',
-      'Guided tours available',
-      'Breathtaking Alpine views',
-      'Medieval architecture',
-      'Cultural heritage site'
-    ],
-    icon: Crown,
-    image: '/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png',
-    gallery: [
-      '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png'
-    ]
-  },
-  {
     name: 'Kampenwandbahn Station',
     description: 'Experience breathtaking panoramic views from the Kampenwand cable car station, offering a unique wellness perspective from above the clouds.',
     features: [

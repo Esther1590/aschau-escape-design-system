@@ -15,7 +15,10 @@ const Culture = () => {
       image: '/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png',
       icon: Building2,
       accessibility: "Elevator access to main floors, guided tours available",
-      isSchloss: true
+      isSchloss: true,
+      gallery: [
+        '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png'
+      ]
     },
     {
       name: t('culture.museum.name'),
