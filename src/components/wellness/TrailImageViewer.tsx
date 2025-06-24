@@ -53,7 +53,7 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoom > 1) {
+    if (zoom > 1 && isCurrentItemImage()) {
       setIsDragging(true);
       setDragStart({
         x: e.clientX - position.x,
@@ -63,7 +63,7 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoom > 1) {
+    if (isDragging && zoom > 1 && isCurrentItemImage()) {
       setPosition({
         x: e.clientX - dragStart.x,
         y: e.clientY - dragStart.y
@@ -98,9 +98,19 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
     }
   }, [selectedImage, currentImageIndex]);
 
+  const isCurrentItemImage = () => {
+    const currentItem = images[currentImageIndex];
+    return currentItem && !currentItem.endsWith('.mp4');
+  };
+
+  const isCurrentItemVideo = () => {
+    const currentItem = images[currentImageIndex];
+    return currentItem && currentItem.endsWith('.mp4');
+  };
+
   console.log('TrailImageViewer render, selectedImage:', selectedImage, 'open:', !!selectedImage);
 
-  const currentImage = images[currentImageIndex];
+  const currentItem = images[currentImageIndex];
 
   return (
     <Dialog open={!!selectedImage} onOpenChange={handleClose}>
@@ -122,33 +132,35 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
           <X className="w-4 h-4" />
         </Button>
 
-        {/* Zoom Controls */}
-        <div className="absolute top-4 left-4 z-10 flex gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleZoomIn}
-            className="bg-black/50 border-white/20 text-white hover:bg-black/70"
-          >
-            <ZoomIn className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleZoomOut}
-            className="bg-black/50 border-white/20 text-white hover:bg-black/70"
-          >
-            <ZoomOut className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleReset}
-            className="bg-black/50 border-white/20 text-white hover:bg-black/70"
-          >
-            <RotateCcw className="w-4 h-4" />
-          </Button>
-        </div>
+        {/* Zoom Controls - Only show for images */}
+        {isCurrentItemImage() && (
+          <div className="absolute top-4 left-4 z-10 flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleZoomIn}
+              className="bg-black/50 border-white/20 text-white hover:bg-black/70"
+            >
+              <ZoomIn className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleZoomOut}
+              className="bg-black/50 border-white/20 text-white hover:bg-black/70"
+            >
+              <ZoomOut className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleReset}
+              className="bg-black/50 border-white/20 text-white hover:bg-black/70"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </Button>
+          </div>
+        )}
 
         {/* Navigation Controls */}
         {images.length > 1 && (
@@ -179,33 +191,49 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
           </div>
         )}
 
-        {/* Zoom Level Indicator */}
-        <div className="absolute top-12 right-4 z-10 bg-black/50 text-white px-3 py-1 rounded text-sm">
-          {Math.round(zoom * 100)}%
-        </div>
+        {/* Zoom Level Indicator - Only show for images */}
+        {isCurrentItemImage() && (
+          <div className="absolute top-12 right-4 z-10 bg-black/50 text-white px-3 py-1 rounded text-sm">
+            {Math.round(zoom * 100)}%
+          </div>
+        )}
 
         <div 
-          className="relative flex items-center justify-center min-h-[60vh] overflow-hidden cursor-move"
+          className="relative flex items-center justify-center min-h-[60vh] overflow-hidden"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
+          style={{
+            cursor: isCurrentItemImage() && zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
+          }}
         >
-          {currentImage && (
+          {currentItem && isCurrentItemImage() && (
             <img 
-              src={currentImage} 
+              src={currentItem} 
               alt={`Trail view ${currentImageIndex + 1}`}
               className="max-h-[85vh] object-contain rounded-lg shadow-2xl transition-transform duration-200 select-none"
               style={{
                 transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
-                cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
               }}
               draggable={false}
             />
           )}
+          
+          {currentItem && isCurrentItemVideo() && (
+            <video 
+              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              controls
+              autoPlay
+              preload="metadata"
+            >
+              <source src={currentItem} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
 
-        {zoom > 1 && (
+        {zoom > 1 && isCurrentItemImage() && (
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded text-sm">
             Drag to pan • Arrow keys to navigate • Scroll to zoom
           </div>
@@ -213,7 +241,7 @@ const TrailImageViewer = ({ selectedImage, images, onClose }: TrailImageViewerPr
 
         {images.length > 1 && zoom === 1 && (
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded text-sm">
-            Use arrow keys or buttons to navigate • Click and drag to zoom
+            Use arrow keys or buttons to navigate
           </div>
         )}
       </DialogContent>
