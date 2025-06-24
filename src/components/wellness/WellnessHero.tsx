@@ -12,11 +12,11 @@ const WellnessHero = () => {
           backgroundImage: 'url(https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=800&q=80)'
         }}
       />
-      <div className="relative z-10 text-center text-wellness-charcoal dark:text-white">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow-lg">
+      <div className="relative z-10 text-center">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-lg">
           {t('wellness.hero.title')}
         </h1>
-        <p className="text-xl md:text-2xl font-light">
+        <p className="text-xl md:text-2xl font-light text-white drop-shadow-md">
           {t('wellness.hero.subtitle')}
         </p>
       </div>
