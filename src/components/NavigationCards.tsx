@@ -30,14 +30,6 @@ const NavigationCards = () => {
       image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-lightSage',
       route: '/plan'
-    },
-    {
-      id: 'booking',
-      title: t('cards.booking.title'),
-      description: t('cards.booking.description'),
-      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      color: 'bg-wellness-cream',
-      route: '#'
     }
   ];
 
@@ -53,7 +45,7 @@ const NavigationCards = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <Link 
               key={card.id} 
