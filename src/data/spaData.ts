@@ -50,6 +50,6 @@ export const spas = [
       'Cozy fireplaces'
     ],
     icon: Mountain,
-    image: '/lovable-uploads/f89c33b5-93e8-42f4-8a6e-881f1b32c192.png'
+    image: '/lovable-uploads/82134aa7-531b-4afe-9d22-ac628a52fe2d.png'
   }
 ];
