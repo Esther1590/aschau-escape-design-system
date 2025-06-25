@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -152,7 +153,6 @@ const Footer = () => {
                 <li><a href="#wellness" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.wellness')}</a></li>
                 <li><a href="#culture" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.culture')}</a></li>
                 <li><a href="#plan" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.planTrip')}</a></li>
-                <li><a href="#booking" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.booking')}</a></li>
               </ul>
             </div>
 
