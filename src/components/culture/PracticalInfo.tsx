@@ -1,8 +1,11 @@
 
 import { Card } from '@/components/ui/card';
 import { Heart, Bus, Users, Clock } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const PracticalInfo = () => {
+  const { t } = useTranslation();
+
   const practicalInfo = [
     {
       title: "Gentle Walking Paths",
