@@ -38,7 +38,7 @@ const Hero = () => {
             onClick={handleStartJourney}
             aria-label="Start planning your wellness journey"
           >
-            Start Your Journey
+            {t('hero.button')}
           </Button>
         </div>
       </div>
