@@ -12,23 +12,23 @@ const Spring = () => {
   const springActivities = [
     {
       icon: Leaf,
-      title: 'Mountain Hiking',
-      description: 'Explore awakening trails with fresh green landscapes and blooming wildflowers.',
+      title: t('seasonal.spring.activities.hiking.title'),
+      description: t('seasonal.spring.activities.hiking.description'),
     },
     {
       icon: Sun,
-      title: 'Meditation Walks',
-      description: 'Find inner peace while walking through nature as it comes back to life.',
+      title: t('seasonal.spring.activities.meditation.title'),
+      description: t('seasonal.spring.activities.meditation.description'),
     },
     {
       icon: Flower,
-      title: 'Outdoor Yoga',
-      description: 'Practice yoga in meadows surrounded by spring blossoms and fresh air.',
+      title: t('seasonal.spring.activities.yoga.title'),
+      description: t('seasonal.spring.activities.yoga.description'),
     },
     {
       icon: TreePine,
-      title: 'Forest Bathing',
-      description: 'Immerse yourself in the rejuvenating energy of awakening forests.',
+      title: t('seasonal.spring.activities.forestBathing.title'),
+      description: t('seasonal.spring.activities.forestBathing.description'),
     },
   ];
 
@@ -56,8 +56,8 @@ const Spring = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div className="text-center text-white">
-                <h2 className="text-3xl font-bold mb-4 text-white">Experience Spring Awakening</h2>
-                <p className="text-xl text-gray-100">Nature's renewal in the heart of Bavaria</p>
+                <h2 className="text-3xl font-bold mb-4 text-white">{t('seasonal.spring.heroImageTitle')}</h2>
+                <p className="text-xl text-gray-100">{t('seasonal.spring.heroImageSubtitle')}</p>
               </div>
             </div>
           </div>
@@ -69,10 +69,10 @@ const Spring = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-green-700 dark:text-white mb-6">
-              Spring Activities
+              {t('seasonal.spring.activitiesTitle')}
             </h2>
             <p className="text-xl text-green-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Discover the perfect activities to embrace the spring season in Aschau
+              {t('seasonal.spring.activitiesSubtitle')}
             </p>
           </div>
 
@@ -102,49 +102,29 @@ const Spring = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-3xl font-bold text-green-700 dark:text-white mb-6">
-                Spring Weather
+                {t('seasonal.spring.weatherTitle')}
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Temperature: 10-20°C (50-68°F)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Occasional spring showers</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Longer daylight hours</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Fresh mountain air</span>
-                </div>
+                {t('seasonal.spring.weatherItems').map((item: string, index: number) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <span className="text-green-700 dark:text-gray-300">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
             
             <div>
               <h3 className="text-3xl font-bold text-green-700 dark:text-white mb-6">
-                What to Bring
+                {t('seasonal.spring.packingTitle')}
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Light layers for changing weather</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Waterproof jacket</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Comfortable hiking boots</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-green-700 dark:text-gray-300">Camera for blooming landscapes</span>
-                </div>
+                {t('seasonal.spring.packingItems').map((item: string, index: number) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <span className="text-green-700 dark:text-gray-300">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -154,15 +134,15 @@ const Spring = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-green-600 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Experience Spring in Aschau?</h2>
+          <h2 className="text-4xl font-bold mb-6">{t('seasonal.spring.ctaTitle')}</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-green-100">
-            Book your spring wellness retreat and immerse yourself in nature's awakening
+            {t('seasonal.spring.ctaSubtitle')}
           </p>
           <Button 
             size="lg" 
             className="bg-green-400 hover:bg-green-300 text-green-800 px-8 py-3 font-bold"
           >
-            Plan Your Spring Visit
+            {t('seasonal.spring.ctaButton')}
           </Button>
         </div>
       </section>

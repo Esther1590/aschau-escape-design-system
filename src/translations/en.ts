@@ -36,7 +36,46 @@ export const enTranslations: Translations = {
     subtitle: 'Discover the unique beauty and activities that each season brings to Aschau',
     spring: {
       title: 'Spring Awakening',
-      description: 'Experience the renewal of nature with gentle hiking trails, meditation walks, and fresh mountain air.'
+      description: 'Experience the renewal of nature with gentle hiking trails, meditation walks, and fresh mountain air.',
+      heroImageTitle: 'Experience Spring Awakening',
+      heroImageSubtitle: 'Nature\'s renewal in the heart of Bavaria',
+      activitiesTitle: 'Spring Activities',
+      activitiesSubtitle: 'Discover the perfect activities to embrace the spring season in Aschau',
+      weatherTitle: 'Spring Weather',
+      weatherItems: [
+        'Temperature: 10-20°C (50-68°F)',
+        'Occasional spring showers',
+        'Longer daylight hours',
+        'Fresh mountain air'
+      ],
+      packingTitle: 'What to Bring',
+      packingItems: [
+        'Light layers for changing weather',
+        'Waterproof jacket',
+        'Comfortable hiking boots',
+        'Camera for blooming landscapes'
+      ],
+      ctaTitle: 'Ready to Experience Spring in Aschau?',
+      ctaSubtitle: 'Book your spring wellness retreat and immerse yourself in nature\'s awakening',
+      ctaButton: 'Plan Your Spring Visit',
+      activities: {
+        hiking: {
+          title: 'Mountain Hiking',
+          description: 'Explore awakening trails with fresh green landscapes and blooming wildflowers.'
+        },
+        meditation: {
+          title: 'Meditation Walks',
+          description: 'Find inner peace while walking through nature as it comes back to life.'
+        },
+        yoga: {
+          title: 'Outdoor Yoga',
+          description: 'Practice yoga in meadows surrounded by spring blossoms and fresh air.'
+        },
+        forestBathing: {
+          title: 'Forest Bathing',
+          description: 'Immerse yourself in the rejuvenating energy of awakening forests.'
+        }
+      }
     },
     summer: {
       title: 'Summer Bliss',
