@@ -7,6 +7,7 @@ import CulturalAttractions from '@/components/culture/CulturalAttractions';
 import PracticalInfo from '@/components/culture/PracticalInfo';
 import TestimonialSection from '@/components/culture/TestimonialSection';
 import ContactFooter from '@/components/culture/ContactFooter';
+import ChatbotButton from '@/components/ChatbotButton';
 
 const Culture = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -39,6 +40,7 @@ const Culture = () => {
       <PracticalInfo />
       <TestimonialSection />
       <ContactFooter />
+      <ChatbotButton />
 
       {/* Image Viewer */}
       <TrailImageViewer

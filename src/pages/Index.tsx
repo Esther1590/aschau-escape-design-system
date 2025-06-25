@@ -6,6 +6,7 @@ import SeasonalActivities from '@/components/SeasonalActivities';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import Footer from '@/components/Footer';
 import StickyBookingButton from '@/components/StickyBookingButton';
+import ChatbotButton from '@/components/ChatbotButton';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <TestimonialsCarousel />
       <Footer />
       <StickyBookingButton />
+      <ChatbotButton />
     </div>
   );
 };

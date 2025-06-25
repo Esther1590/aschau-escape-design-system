@@ -6,6 +6,7 @@ import PlanTripMapSection from '@/components/plan-trip/PlanTripMapSection';
 import PlanTripForm from '@/components/plan-trip/PlanTripForm';
 import PlanTripTips from '@/components/plan-trip/PlanTripTips';
 import PlanTripOffers from '@/components/plan-trip/PlanTripOffers';
+import ChatbotButton from '@/components/ChatbotButton';
 
 const PlanTrip = () => {
   return (
@@ -17,6 +18,7 @@ const PlanTrip = () => {
       <PlanTripTips />
       <PlanTripOffers />
       <Footer />
+      <ChatbotButton />
     </div>
   );
 };

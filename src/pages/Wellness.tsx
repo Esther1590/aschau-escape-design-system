@@ -5,6 +5,7 @@ import SpaExperiences from '@/components/wellness/SpaExperiences';
 import WellnessTrails from '@/components/wellness/WellnessTrails';
 import RelaxationTips from '@/components/wellness/RelaxationTips';
 import WellnessContact from '@/components/wellness/WellnessContact';
+import ChatbotButton from '@/components/ChatbotButton';
 
 const Wellness = () => {
   return (
@@ -15,6 +16,7 @@ const Wellness = () => {
       <WellnessTrails />
       <RelaxationTips />
       <WellnessContact />
+      <ChatbotButton />
     </div>
   );
 };
