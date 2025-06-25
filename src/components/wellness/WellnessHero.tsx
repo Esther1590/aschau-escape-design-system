@@ -13,8 +13,8 @@ const WellnessHero = () => {
         }}
       />
       
-      {/* Lighter overlay for better image visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+      {/* Very light overlay for minimal image dimming */}
+      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
       
       <div className="relative z-10 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8)'}}>
