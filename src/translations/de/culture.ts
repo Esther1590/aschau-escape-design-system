@@ -45,7 +45,8 @@ export const cultureDe: CultureTranslations = {
     visit: {
       title: "Besuchen Sie uns",
       address: "Aschau Kulturzentrum, Bayern, Deutschland"
-    }
+    },
+    accessibility: "Alle kulturellen Erlebnisse können mit Voranmeldung arrangiert werden, um optimale Zugänglichkeit und Komfort zu gewährleisten."
   },
   practicalInfo: {
     title: "Praktische Informationen",

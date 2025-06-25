@@ -44,6 +44,7 @@ export interface CultureTranslations {
       title: string;
       address: string;
     };
+    accessibility: string;
   };
   practicalInfo: {
     title: string;

@@ -45,7 +45,8 @@ export const cultureEn: CultureTranslations = {
     visit: {
       title: "Visit Us",
       address: "Aschau Cultural Center, Bavaria, Germany"
-    }
+    },
+    accessibility: "All cultural experiences can be arranged with advance notice to ensure optimal accessibility and comfort."
   },
   practicalInfo: {
     title: "Practical Information",

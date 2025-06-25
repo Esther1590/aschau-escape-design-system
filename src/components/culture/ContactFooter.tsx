@@ -37,7 +37,7 @@ const ContactFooter = () => {
           </div>
           <div className="mt-8 p-4 bg-amber-900/30 rounded-lg">
             <p className="text-lg text-amber-200">
-              All cultural experiences can be arranged with advance notice to ensure optimal accessibility and comfort.
+              {t('culture.contact.accessibility')}
             </p>
           </div>
         </div>
