@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -170,7 +171,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
-                    to="/plan" 
+                    to="/plan-trip" 
                     className="text-gray-300 hover:text-wellness-sage transition-colors text-lg"
                     onClick={() => console.log('Plan Trip link clicked')}
                   >
