@@ -150,9 +150,33 @@ const Footer = () => {
             <div>
               <h4 className="text-xl font-semibold mb-4 text-wellness-sage">{t('footer.quickLinks')}</h4>
               <ul className="space-y-3">
-                <li><Link to="/wellness" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.wellness')}</Link></li>
-                <li><Link to="/culture" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.culture')}</Link></li>
-                <li><Link to="/plan" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.planTrip')}</Link></li>
+                <li>
+                  <Link 
+                    to="/wellness" 
+                    className="text-gray-300 hover:text-wellness-sage transition-colors text-lg"
+                    onClick={() => console.log('Wellness link clicked')}
+                  >
+                    {t('nav.wellness')}
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/culture" 
+                    className="text-gray-300 hover:text-wellness-sage transition-colors text-lg"
+                    onClick={() => console.log('Culture link clicked')}
+                  >
+                    {t('nav.culture')}
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/plan" 
+                    className="text-gray-300 hover:text-wellness-sage transition-colors text-lg"
+                    onClick={() => console.log('Plan Trip link clicked')}
+                  >
+                    {t('nav.planTrip')}
+                  </Link>
+                </li>
               </ul>
             </div>
 
