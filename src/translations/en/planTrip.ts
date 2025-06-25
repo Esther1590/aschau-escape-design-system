@@ -1,10 +1,9 @@
-
 import { PlanTripTranslations } from '@/types/translations/planTrip';
 
 export const planTripEn: PlanTripTranslations = {
   hero: {
     title: "Start Your Aschau Journey",
-    subtitle: "Plan your perfect wellness and cultural retreat with personalized recommendations for senior travelers"
+    subtitle: "Plan your perfect wellness and cultural retreat with personalized recommendations for senior travelers. Use our Plan Your Trip page to explore accommodation, mobility options, and local maps. Whether you're traveling by car or train, we make it easy to organize everything in one place with simple tools made for ease and clarity."
   },
   form: {
     title: "Plan Your Perfect Stay",

@@ -1,10 +1,9 @@
-
 import { PlanTripTranslations } from '@/types/translations/planTrip';
 
 export const planTripDe: PlanTripTranslations = {
   hero: {
     title: "Beginnen Sie Ihre Aschau-Reise",
-    subtitle: "Planen Sie Ihren perfekten Wellness- und Kulturaufenthalt mit personalisierten Empfehlungen für Senioren"
+    subtitle: "Planen Sie Ihren perfekten Wellness- und Kulturaufenthalt mit personalisierten Empfehlungen für Senioren. Nutzen Sie unsere Reiseplanungsseite, um Unterkünfte, Mobilitätsoptionen und lokale Karten zu erkunden. Ob Sie mit dem Auto oder Zug anreisen, wir machen es einfach, alles an einem Ort mit einfachen und klaren Tools zu organisieren."
   },
   form: {
     title: "Planen Sie Ihren perfekten Aufenthalt",
