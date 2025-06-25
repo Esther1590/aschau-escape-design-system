@@ -1,24 +1,26 @@
+
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {
-    language,
-    setLanguage,
-    t
-  } = useTranslation();
+  const { language, setLanguage, t } = useTranslation();
   const location = useLocation();
+
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'DE' : 'EN');
   };
+
   const isActive = (path: string) => {
     return location.pathname === path;
   };
-  return <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+
+  return (
+    <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -39,7 +41,7 @@ const Header = () => {
             <Link to="/culture" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/culture') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`}>
               {t('nav.culture')}
             </Link>
-            <Link to="/plan" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/plan') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`}>
+            <Link to="/plan-trip" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/plan-trip') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`}>
               {t('nav.planTrip')}
             </Link>
           </nav>
@@ -60,7 +62,8 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
             <div className="flex flex-col space-y-4">
               <Link to="/" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`} onClick={() => setIsMenuOpen(false)}>
                 {language === 'EN' ? 'Home' : 'Startseite'}
@@ -71,12 +74,15 @@ const Header = () => {
               <Link to="/culture" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/culture') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`} onClick={() => setIsMenuOpen(false)}>
                 {t('nav.culture')}
               </Link>
-              <Link to="/plan" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/plan') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/plan-trip" className={`font-medium transition-colors hover:text-wellness-sage ${isActive('/plan-trip') ? 'text-wellness-sage' : 'text-gray-700 dark:text-gray-200'}`} onClick={() => setIsMenuOpen(false)}>
                 {t('nav.planTrip')}
               </Link>
             </div>
-          </nav>}
+          </nav>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
