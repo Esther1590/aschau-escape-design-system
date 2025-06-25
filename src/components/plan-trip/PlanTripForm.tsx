@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,9 @@ const PlanTripForm = () => {
   const [guests, setGuests] = useState<string>('');
   const [travelStyle, setTravelStyle] = useState<string>('');
   const [showResults, setShowResults] = useState(false);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set to start of day for comparison
 
   const handleGenerateItinerary = () => {
     console.log('Generating itinerary...', { startDate, endDate, guests, travelStyle });
@@ -66,6 +70,7 @@ const PlanTripForm = () => {
                         mode="single"
                         selected={startDate}
                         onSelect={setStartDate}
+                        disabled={(date) => date < today}
                         initialFocus
                         className="p-3 pointer-events-auto"
                       />
@@ -96,6 +101,7 @@ const PlanTripForm = () => {
                         mode="single"
                         selected={endDate}
                         onSelect={setEndDate}
+                        disabled={(date) => date < (startDate || today)}
                         initialFocus
                         className="p-3 pointer-events-auto"
                       />
