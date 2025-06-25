@@ -24,6 +24,8 @@ const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
   const handleBookingClick = () => {
     if (spa.name === 'Burghotel Aschau') {
       window.open('https://www.burghotel-aschau.de/', '_blank');
+    } else if (spa.name === 'Agrad Chalets') {
+      window.open('https://agrad-chalets.de/', '_blank');
     }
   };
 
