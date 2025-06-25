@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Wellness from "./pages/Wellness";
 import Culture from "./pages/Culture";
 import PlanTrip from "./pages/PlanTrip";
+import Spring from "./pages/Spring";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
