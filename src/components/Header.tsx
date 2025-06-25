@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import BackButton from './BackButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,12 +24,15 @@ const Header = () => {
     <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">Aschau im Chiemgau</h1>
-            </div>
-          </Link>
+          {/* Logo and Back Button */}
+          <div className="flex items-center space-x-4">
+            <BackButton />
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="hidden sm:block">
+                <h1 className="text-xl font-bold text-wellness-charcoal dark:text-white">Aschau im Chiemgau</h1>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
