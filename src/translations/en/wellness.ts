@@ -1,4 +1,3 @@
-
 import { WellnessTranslations } from '@/types/translations/wellness';
 
 export const wellnessEn: WellnessTranslations = {
@@ -7,7 +6,7 @@ export const wellnessEn: WellnessTranslations = {
     subtitle: 'Discover tranquility in the heart of the Bavarian Alps'
   },
   experiences: {
-    title: 'Spa Experiences',
+    title: 'Wellness Experiences',
     subtitle: 'Immerse yourself in world-class wellness facilities and treatments designed to rejuvenate your body and soul.'
   },
   spa1: {
