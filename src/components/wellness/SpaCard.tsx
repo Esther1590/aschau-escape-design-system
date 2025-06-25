@@ -40,7 +40,7 @@ const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
           {spa.name}
         </CardTitle>
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-          {spa.description}
+          {spa.name === 'Kampenwandbahn Station' ? 'Reach alpine heights without the hike. ' : ''}{spa.description}
         </p>
       </CardHeader>
       <CardContent className="pt-0">
