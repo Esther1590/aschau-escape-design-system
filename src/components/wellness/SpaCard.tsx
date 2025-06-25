@@ -26,6 +26,8 @@ const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
       window.open('https://www.burghotel-aschau.de/', '_blank');
     } else if (spa.name === 'Agrad Chalets') {
       window.open('https://agrad-chalets.de/', '_blank');
+    } else if (spa.name === 'Kampenwandbahn Station') {
+      window.open('https://www.kampenwand.de/', '_blank');
     }
   };
 
@@ -129,7 +131,7 @@ const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
           className="w-full btn-wellness text-lg py-4"
           onClick={handleBookingClick}
         >
-          {spa.name === 'Kampenwandbahn Station' ? 'View Station Gallery' : spa.name === 'Schloss Hohenaschau' ? 'View Castle Gallery' : t('wellness.bookNow')}
+          {spa.name === 'Kampenwandbahn Station' ? t('wellness.bookNow') : spa.name === 'Schloss Hohenaschau' ? 'View Castle Gallery' : t('wellness.bookNow')}
         </Button>
       </CardContent>
     </Card>
