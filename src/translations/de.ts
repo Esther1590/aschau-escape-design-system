@@ -10,6 +10,7 @@ import { stickyButtonDe } from './de/stickyButton';
 import { wellnessDe } from './de/wellness';
 import { cultureDe } from './de/culture';
 import { planTripDe } from './de/planTrip';
+import { chatDe } from './de/chat';
 
 export const deTranslations: Translations = {
   nav: navigationDe,
@@ -22,4 +23,5 @@ export const deTranslations: Translations = {
   wellness: wellnessDe,
   culture: cultureDe,
   planTrip: planTripDe,
+  chat: chatDe,
 };

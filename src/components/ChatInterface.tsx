@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Send, Bot, User } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 interface Message {
   id: string;
@@ -19,10 +20,12 @@ interface ChatInterfaceProps {
 }
 
 const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
+  const { t } = useTranslation();
+  
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! Welcome to Aschau Tourism Assistant! 🏔️ I\'m here to help you discover the best wellness experiences, cultural attractions, and plan your perfect trip to beautiful Aschau. How can I assist you today?',
+      text: t('chat.welcomeMessage'),
       sender: 'ai',
       timestamp: new Date()
     }
@@ -46,7 +49,7 @@ const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Thank you for your message! I\'m currently a demo version. For real-time assistance, please contact our tourism office at +49 8052 9049-0 or visit our website at www.chiemsee-gast.de. I\'d love to help you plan your Aschau adventure!',
+        text: t('chat.demoResponse'),
         sender: 'ai',
         timestamp: new Date()
       };
@@ -66,7 +69,7 @@ const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <Bot className="w-5 h-5 text-wellness-sage" />
-            Aschau Tourism Assistant
+            {t('chat.title')}
           </SheetTitle>
         </SheetHeader>
         
@@ -116,7 +119,7 @@ const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
+                placeholder={t('chat.placeholder')}
                 className="flex-1"
               />
               <Button

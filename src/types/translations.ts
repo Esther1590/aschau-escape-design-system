@@ -9,6 +9,7 @@ import { StickyButtonTranslations } from './translations/stickyButton';
 import { WellnessTranslations } from './translations/wellness';
 import { CultureTranslations } from './translations/culture';
 import { PlanTripTranslations } from './translations/planTrip';
+import { ChatTranslations } from './translations/chat';
 
 export interface Translations {
   nav: NavigationTranslations;
@@ -21,6 +22,7 @@ export interface Translations {
   wellness: WellnessTranslations;
   culture: CultureTranslations;
   planTrip: PlanTripTranslations;
+  chat: ChatTranslations;
 }
 
 // Re-export all the individual interfaces for convenience
@@ -34,3 +36,4 @@ export * from './translations/stickyButton';
 export * from './translations/wellness';
 export * from './translations/culture';
 export * from './translations/planTrip';
+export * from './translations/chat';
