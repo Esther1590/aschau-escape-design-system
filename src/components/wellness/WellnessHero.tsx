@@ -28,4 +28,4 @@ const WellnessHero = () => {
   );
 };
 
-export default Welln���ssHero;
+export default WellnessHero;
