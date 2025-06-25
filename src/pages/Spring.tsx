@@ -40,10 +40,10 @@ const Spring = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-green-700 dark:text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-green-800 dark:text-white mb-6">
               {t('seasonal.spring.title')}
             </h1>
-            <p className="text-xl text-green-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-green-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               {t('seasonal.spring.description')}
             </p>
           </div>
@@ -54,10 +54,10 @@ const Spring = () => {
               alt="Spring in Aschau"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-green-900 bg-opacity-20 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div className="text-center text-white">
-                <h2 className="text-3xl font-bold mb-4 text-green-100">Experience Spring Awakening</h2>
-                <p className="text-xl text-green-200">Nature's renewal in the heart of Bavaria</p>
+                <h2 className="text-3xl font-bold mb-4 text-white">Experience Spring Awakening</h2>
+                <p className="text-xl text-gray-100">Nature's renewal in the heart of Bavaria</p>
               </div>
             </div>
           </div>
