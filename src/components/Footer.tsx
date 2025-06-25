@@ -1,11 +1,79 @@
+
+import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Newsletter } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    console.log('Newsletter signup for:', email);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast({
+      title: "Success!",
+      description: "Thank you for subscribing to our newsletter!",
+    });
+    
+    setEmail('');
+    setIsSubmitting(false);
+  };
 
   return (
     <footer className="bg-wellness-charcoal text-white">
+      {/* Newsletter Section */}
+      <section className="py-12 px-4 border-b border-gray-600">
+        <div className="container mx-auto max-w-2xl text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <Newsletter className="w-8 h-8 text-wellness-sage" />
+            <h3 className="text-2xl font-bold text-wellness-sage">
+              Stay Updated
+            </h3>
+          </div>
+          <p className="text-gray-300 mb-6 text-lg">
+            Subscribe to our newsletter for wellness tips, cultural events, and exclusive offers from Aschau.
+          </p>
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <Input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-wellness-sage"
+              disabled={isSubmitting}
+            />
+            <Button
+              type="submit"
+              className="bg-wellness-sage hover:bg-wellness-sage/90 text-white px-6"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+            </Button>
+          </form>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-16 px-4 border-b border-gray-600">
         <div className="container mx-auto max-w-4xl">
