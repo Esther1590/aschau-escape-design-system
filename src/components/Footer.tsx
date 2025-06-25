@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -6,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -150,9 +150,9 @@ const Footer = () => {
             <div>
               <h4 className="text-xl font-semibold mb-4 text-wellness-sage">{t('footer.quickLinks')}</h4>
               <ul className="space-y-3">
-                <li><a href="#wellness" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.wellness')}</a></li>
-                <li><a href="#culture" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.culture')}</a></li>
-                <li><a href="#plan" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.planTrip')}</a></li>
+                <li><Link to="/wellness" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.wellness')}</Link></li>
+                <li><Link to="/culture" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.culture')}</Link></li>
+                <li><Link to="/plan" className="text-gray-300 hover:text-wellness-sage transition-colors text-lg">{t('nav.planTrip')}</Link></li>
               </ul>
             </div>
 
