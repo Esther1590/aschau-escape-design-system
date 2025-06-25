@@ -1,3 +1,4 @@
+
 import { PlanTripTranslations } from '@/types/translations/planTrip';
 
 export const planTripEn: PlanTripTranslations = {
@@ -19,6 +20,10 @@ export const planTripEn: PlanTripTranslations = {
     culture: "Cultural Focus",
     both: "Wellness & Culture",
     generateItinerary: "Generate My Itinerary"
+  },
+  map: {
+    title: "Explore Aschau",
+    subtitle: "Discover wellness spots and cultural sites on our interactive map"
   },
   tips: {
     title: "Helpful Travel Tips",

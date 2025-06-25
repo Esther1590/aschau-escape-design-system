@@ -19,6 +19,10 @@ export interface PlanTripTranslations {
     both: string;
     generateItinerary: string;
   };
+  map: {
+    title: string;
+    subtitle: string;
+  };
   tips: {
     title: string;
     trails: {
