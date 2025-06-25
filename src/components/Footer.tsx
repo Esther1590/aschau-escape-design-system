@@ -1,10 +1,9 @@
-
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Newsletter } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
@@ -46,7 +45,7 @@ const Footer = () => {
       <section className="py-12 px-4 border-b border-gray-600">
         <div className="container mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <Newsletter className="w-8 h-8 text-wellness-sage" />
+            <Mail className="w-8 h-8 text-wellness-sage" />
             <h3 className="text-2xl font-bold text-wellness-sage">
               Stay Updated
             </h3>
