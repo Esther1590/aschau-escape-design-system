@@ -1,10 +1,9 @@
-
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Mail } from 'lucide-react';
+import { Mail, Facebook, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
 
@@ -143,6 +142,33 @@ const Footer = () => {
                 <div>
                   <h3 className="text-2xl font-bold">Aschau Wellness Tourism</h3>
                   <p className="text-gray-300">{t('footer.tagline')}</p>
+                </div>
+              </div>
+              
+              {/* Social Media */}
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold mb-3 text-wellness-sage">{t('footer.followUs')}</h4>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://facebook.com/aschau.wellness"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-wellness-sage transition-colors"
+                    aria-label="Follow us on Facebook"
+                  >
+                    <Facebook className="w-6 h-6" />
+                    <span className="text-lg">Facebook</span>
+                  </a>
+                  <a
+                    href="https://instagram.com/aschau.wellness"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-wellness-sage transition-colors"
+                    aria-label="Follow us on Instagram"
+                  >
+                    <Instagram className="w-6 h-6" />
+                    <span className="text-lg">Instagram</span>
+                  </a>
                 </div>
               </div>
             </div>

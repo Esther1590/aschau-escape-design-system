@@ -7,6 +7,7 @@ export interface FooterTranslations {
   phone: string;
   email: string;
   rights: string;
+  followUs: string;
   newsletter: {
     title: string;
     description: string;

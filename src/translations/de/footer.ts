@@ -9,6 +9,7 @@ export const footerDe: FooterTranslations = {
   phone: '+49 8052 904-200',
   email: 'info@aschau-wellness.de',
   rights: '© 2024 Aschau Wellness Tourismus. Alle Rechte vorbehalten.',
+  followUs: 'Folgen Sie uns',
   newsletter: {
     title: 'Bleiben Sie auf dem Laufenden',
     description: 'Abonnieren Sie unseren Newsletter für Wellness-Tipps, kulturelle Veranstaltungen und exklusive Angebote aus Aschau.',
