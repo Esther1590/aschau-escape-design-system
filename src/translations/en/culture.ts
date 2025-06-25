@@ -46,5 +46,49 @@ export const cultureEn: CultureTranslations = {
       title: "Visit Us",
       address: "Aschau Cultural Center, Bavaria, Germany"
     }
+  },
+  practicalInfo: {
+    title: "Practical Information",
+    subtitle: "Everything you need to know for a comfortable and enriching cultural experience in Aschau.",
+    walkingPaths: {
+      title: "Gentle Walking Paths",
+      description: "Well-maintained, paved paths with benches every 100 meters. Scenic routes through the village with minimal elevation changes."
+    },
+    shuttle: {
+      title: "Shuttle Services",
+      description: "Complimentary shuttle service connecting major cultural sites. Operates hourly with wheelchair-accessible vehicles."
+    },
+    guidedTours: {
+      title: "Guided Tours",
+      description: "Expert local guides offer personalized tours at a relaxed pace, with flexible timing and comfortable group sizes."
+    },
+    hours: {
+      title: "Visiting Hours",
+      description: "Most attractions open 9 AM - 4 PM with extended summer hours. Advanced booking recommended for guided experiences."
+    }
+  },
+  attractions: {
+    schloss: {
+      name: "Schloss Hohenaschau",
+      description: "A magnificent 12th-century castle perched majestically above the village, offering guided tours through historic chambers and breathtaking Alpine views. Wheelchair accessible elevator available.",
+      accessibility: "Elevator access to main floors, guided tours available",
+      gallery: "Gallery:"
+    },
+    museum: {
+      name: "Local History Museum",
+      description: "Discover Aschau's rich heritage through carefully curated exhibits showcasing traditional Alpine life, local customs, and historical artifacts. Ground floor access with comfortable seating areas.",
+      accessibility: "Ground floor access, seating areas throughout"
+    },
+    crafts: {
+      name: "Traditional Craft Workshops",
+      description: "Experience authentic Bavarian craftsmanship with gentle hands-on workshops in wood carving, pottery, and traditional textile arts. Expert artisans guide you at a comfortable pace.",
+      accessibility: "Comfortable seating, adjustable work surfaces"
+    },
+    music: {
+      name: "Folk Music Evenings",
+      description: "Immerse yourself in the warm melodies of traditional Alpine folk music with intimate performances by local musicians in cozy, accessible venues throughout the village.",
+      accessibility: "Reserved seating, hearing assistance available"
+    },
+    learnMore: "Learn More & Book"
   }
 };

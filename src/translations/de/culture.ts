@@ -46,5 +46,49 @@ export const cultureDe: CultureTranslations = {
       title: "Besuchen Sie uns",
       address: "Aschau Kulturzentrum, Bayern, Deutschland"
     }
+  },
+  practicalInfo: {
+    title: "Praktische Informationen",
+    subtitle: "Alles, was Sie für ein komfortables und bereicherndes Kulturerlebnis in Aschau wissen müssen.",
+    walkingPaths: {
+      title: "Sanfte Wanderwege",
+      description: "Gut gepflegte, gepflasterte Wege mit Bänken alle 100 Meter. Malerische Routen durch das Dorf mit minimalen Höhenunterschieden."
+    },
+    shuttle: {
+      title: "Shuttle-Service",
+      description: "Kostenloser Shuttle-Service, der wichtige Kulturstätten verbindet. Verkehrt stündlich mit rollstuhlgerechten Fahrzeugen."
+    },
+    guidedTours: {
+      title: "Geführte Touren",
+      description: "Experten-Lokalführer bieten personalisierte Touren in entspanntem Tempo mit flexibler Zeitplanung und komfortablen Gruppengrößen."
+    },
+    hours: {
+      title: "Öffnungszeiten",
+      description: "Die meisten Sehenswürdigkeiten sind täglich von 9 bis 16 Uhr geöffnet, im Sommer mit erweiterten Öffnungszeiten. Voranmeldung für geführte Erlebnisse empfohlen."
+    }
+  },
+  attractions: {
+    schloss: {
+      name: "Schloss Hohenaschau",
+      description: "Eine prächtige Burg aus dem 12. Jahrhundert, die majestätisch über dem Dorf thront und Führungen durch historische Gemächer und atemberaubende Alpenblicke bietet. Rollstuhlgerechter Aufzug verfügbar.",
+      accessibility: "Aufzug zu den Hauptetagen, Führungen verfügbar",
+      gallery: "Galerie:"
+    },
+    museum: {
+      name: "Heimatmuseum",
+      description: "Entdecken Sie Aschau's reiches Erbe durch sorgfältig kuratierte Ausstellungen, die das traditionelle Alpenleben, lokale Bräuche und historische Artefakte zeigen. Erdgeschoss-Zugang mit komfortablen Sitzgelegenheiten.",
+      accessibility: "Erdgeschoss-Zugang, Sitzgelegenheiten überall"
+    },
+    crafts: {
+      name: "Traditionelle Handwerkswerkstätten",
+      description: "Erleben Sie authentisches bayerisches Handwerk mit sanften praktischen Workshops in Holzschnitzerei, Töpferei und traditionellen Textilkünsten. Expertenhandwerker führen Sie in komfortablem Tempo.",
+      accessibility: "Bequeme Sitzgelegenheiten, höhenverstellbare Arbeitsflächen"
+    },
+    music: {
+      name: "Volksmusikabende",
+      description: "Tauchen Sie ein in die warmen Melodien traditioneller Alpenvolksmusik mit intimen Aufführungen lokaler Musiker in gemütlichen, barrierefreien Veranstaltungsorten im ganzen Dorf.",
+      accessibility: "Reservierte Sitzplätze, Hörunterstützung verfügbar"
+    },
+    learnMore: "Mehr erfahren & Buchen"
   }
 };

@@ -8,26 +8,26 @@ const PracticalInfo = () => {
 
   const practicalInfo = [
     {
-      title: "Gentle Walking Paths",
-      description: "Well-maintained, paved paths with benches every 100 meters. Scenic routes through the village with minimal elevation changes.",
+      title: t('culture.practicalInfo.walkingPaths.title'),
+      description: t('culture.practicalInfo.walkingPaths.description'),
       icon: Heart,
       details: ["Paved surfaces", "Regular rest stops", "Handrails where needed"]
     },
     {
-      title: "Shuttle Services",
-      description: "Complimentary shuttle service connecting major cultural sites. Operates hourly with wheelchair-accessible vehicles.",
+      title: t('culture.practicalInfo.shuttle.title'),
+      description: t('culture.practicalInfo.shuttle.description'),
       icon: Bus,
       details: ["Hourly service", "Wheelchair accessible", "Door-to-door pickup"]
     },
     {
-      title: "Guided Tours",
-      description: "Expert local guides offer personalized tours at a relaxed pace, with flexible timing and comfortable group sizes.",
+      title: t('culture.practicalInfo.guidedTours.title'),
+      description: t('culture.practicalInfo.guidedTours.description'),
       icon: Users,
       details: ["Small groups (max 8)", "Flexible timing", "Expert local guides"]
     },
     {
-      title: "Visiting Hours",
-      description: "Most attractions open 9 AM - 4 PM with extended summer hours. Advanced booking recommended for guided experiences.",
+      title: t('culture.practicalInfo.hours.title'),
+      description: t('culture.practicalInfo.hours.description'),
       icon: Clock,
       details: ["9 AM - 4 PM daily", "Extended summer hours", "Advance booking available"]
     }
@@ -38,10 +38,10 @@ const PracticalInfo = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-            Practical Information
+            {t('culture.practicalInfo.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Everything you need to know for a comfortable and enriching cultural experience in Aschau.
+            {t('culture.practicalInfo.subtitle')}
           </p>
         </div>
 

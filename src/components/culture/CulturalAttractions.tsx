@@ -13,11 +13,11 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
 
   const culturalAttractions = [
     {
-      name: "Schloss Hohenaschau",
-      description: "A magnificent 12th-century castle perched majestically above the village, offering guided tours through historic chambers and breathtaking Alpine views. Wheelchair accessible elevator available.",
+      name: t('culture.attractions.schloss.name'),
+      description: t('culture.attractions.schloss.description'),
       image: '/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png',
       icon: Building2,
-      accessibility: "Elevator access to main floors, guided tours available",
+      accessibility: t('culture.attractions.schloss.accessibility'),
       isSchloss: true,
       gallery: [
         '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png',
@@ -29,25 +29,25 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
       ]
     },
     {
-      name: t('culture.museum.name'),
-      description: "Discover Aschau's rich heritage through carefully curated exhibits showcasing traditional Alpine life, local customs, and historical artifacts. Ground floor access with comfortable seating areas.",
+      name: t('culture.attractions.museum.name'),
+      description: t('culture.attractions.museum.description'),
       image: '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png',
       icon: Camera,
-      accessibility: "Ground floor access, seating areas throughout"
+      accessibility: t('culture.attractions.museum.accessibility')
     },
     {
-      name: "Traditional Craft Workshops",
-      description: "Experience authentic Bavarian craftsmanship with gentle hands-on workshops in wood carving, pottery, and traditional textile arts. Expert artisans guide you at a comfortable pace.",
+      name: t('culture.attractions.crafts.name'),
+      description: t('culture.attractions.crafts.description'),
       image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Palette,
-      accessibility: "Comfortable seating, adjustable work surfaces"
+      accessibility: t('culture.attractions.crafts.accessibility')
     },
     {
-      name: "Folk Music Evenings",
-      description: "Immerse yourself in the warm melodies of traditional Alpine folk music with intimate performances by local musicians in cozy, accessible venues throughout the village.",
+      name: t('culture.attractions.music.name'),
+      description: t('culture.attractions.music.description'),
       image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
       icon: Music,
-      accessibility: "Reserved seating, hearing assistance available"
+      accessibility: t('culture.attractions.music.accessibility')
     }
   ];
 
@@ -86,7 +86,7 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
                   {/* Gallery for Schloss Hohenaschau */}
                   {attraction.isSchloss && attraction.gallery && (
                     <div className="mb-6">
-                      <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">Gallery:</h4>
+                      <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-3 text-lg">{t('culture.attractions.schloss.gallery')}</h4>
                       <div className="grid grid-cols-2 gap-2">
                         {attraction.gallery.map((galleryItem, idx) => {
                           const isVideo = galleryItem.endsWith('.mp4');
@@ -129,7 +129,7 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
                   )}
                   
                   <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white text-lg py-4">
-                    Learn More & Book
+                    {t('culture.attractions.learnMore')}
                   </Button>
                 </CardContent>
               </Card>

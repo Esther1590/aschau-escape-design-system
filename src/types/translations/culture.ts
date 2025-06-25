@@ -45,4 +45,48 @@ export interface CultureTranslations {
       address: string;
     };
   };
+  practicalInfo: {
+    title: string;
+    subtitle: string;
+    walkingPaths: {
+      title: string;
+      description: string;
+    };
+    shuttle: {
+      title: string;
+      description: string;
+    };
+    guidedTours: {
+      title: string;
+      description: string;
+    };
+    hours: {
+      title: string;
+      description: string;
+    };
+  };
+  attractions: {
+    schloss: {
+      name: string;
+      description: string;
+      accessibility: string;
+      gallery: string;
+    };
+    museum: {
+      name: string;
+      description: string;
+      accessibility: string;
+    };
+    crafts: {
+      name: string;
+      description: string;
+      accessibility: string;
+    };
+    music: {
+      name: string;
+      description: string;
+      accessibility: string;
+    };
+    learnMore: string;
+  };
 }
