@@ -20,7 +20,7 @@ const WellnessTrails = () => {
   const trails = [
     {
       name: 'Bankerlweg',
-      description: 'A scenic wellness trail through the beautiful Chiemgau landscape, perfect for mindful walking and forest bathing.',
+      description: 'Designed for comfort and calm, this scenic walking route features frequent benches and gentle terrain, ideal for reflective strolls.',
       distance: '3.2 km',
       duration: '45 min',
       difficulty: 'Easy',
