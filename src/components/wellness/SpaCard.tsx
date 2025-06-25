@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -21,6 +20,12 @@ interface SpaCardProps {
 const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
   const { t } = useTranslation();
   const IconComponent = spa.icon;
+
+  const handleBookingClick = () => {
+    if (spa.name === 'Burghotel Aschau') {
+      window.open('https://www.burghotel-aschau.de/', '_blank');
+    }
+  };
 
   return (
     <Card className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-gray-800">
@@ -118,7 +123,10 @@ const SpaCard = ({ spa, onGalleryImageClick, onVideoClick }: SpaCardProps) => {
           </div>
         )}
 
-        <Button className="w-full btn-wellness text-lg py-4">
+        <Button 
+          className="w-full btn-wellness text-lg py-4"
+          onClick={handleBookingClick}
+        >
           {spa.name === 'Kampenwandbahn Station' ? 'View Station Gallery' : spa.name === 'Schloss Hohenaschau' ? 'View Castle Gallery' : t('wellness.bookNow')}
         </Button>
       </CardContent>
