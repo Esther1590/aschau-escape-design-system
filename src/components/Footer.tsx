@@ -18,7 +18,7 @@ const Footer = () => {
     if (!email) {
       toast({
         title: "Error",
-        description: "Please enter your email address",
+        description: t('footer.newsletter.error'),
         variant: "destructive",
       });
       return;
@@ -32,7 +32,7 @@ const Footer = () => {
     
     toast({
       title: "Success!",
-      description: "Thank you for subscribing to our newsletter!",
+      description: t('footer.newsletter.success'),
     });
     
     setEmail('');
@@ -47,16 +47,16 @@ const Footer = () => {
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Mail className="w-8 h-8 text-wellness-sage" />
             <h3 className="text-2xl font-bold text-wellness-sage">
-              Stay Updated
+              {t('footer.newsletter.title')}
             </h3>
           </div>
           <p className="text-gray-300 mb-6 text-lg">
-            Subscribe to our newsletter for wellness tips, cultural events, and exclusive offers from Aschau.
+            {t('footer.newsletter.description')}
           </p>
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input
               type="email"
-              placeholder="Enter your email address"
+              placeholder={t('footer.newsletter.placeholder')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-wellness-sage"
@@ -67,7 +67,7 @@ const Footer = () => {
               className="bg-wellness-sage hover:bg-wellness-sage/90 text-white px-6"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+              {isSubmitting ? t('footer.newsletter.subscribing') : t('footer.newsletter.subscribe')}
             </Button>
           </form>
         </div>

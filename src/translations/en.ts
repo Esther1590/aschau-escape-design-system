@@ -75,6 +75,15 @@ export const enTranslations: Translations = {
     phone: '+49 8052 904-200',
     email: 'info@aschau-wellness.de',
     rights: '© 2024 Aschau Wellness Tourism. All rights reserved.',
+    newsletter: {
+      title: 'Stay Updated',
+      description: 'Subscribe to our newsletter for wellness tips, cultural events, and exclusive offers from Aschau.',
+      placeholder: 'Enter your email address',
+      subscribe: 'Subscribe',
+      subscribing: 'Subscribing...',
+      success: 'Thank you for subscribing to our newsletter!',
+      error: 'Please enter your email address'
+    },
     faq: {
       title: 'Frequently Asked Questions',
       questions: {

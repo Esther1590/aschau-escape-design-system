@@ -1,4 +1,3 @@
-
 export interface NavigationTranslations {
   wellness: string;
   culture: string;
@@ -70,6 +69,15 @@ export interface FooterTranslations {
   phone: string;
   email: string;
   rights: string;
+  newsletter: {
+    title: string;
+    description: string;
+    placeholder: string;
+    subscribe: string;
+    subscribing: string;
+    success: string;
+    error: string;
+  };
   faq: {
     title: string;
     questions: {
