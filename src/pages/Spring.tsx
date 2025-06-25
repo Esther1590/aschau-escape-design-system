@@ -32,9 +32,9 @@ const Spring = () => {
     },
   ];
 
-  // Get weather and packing items as arrays
-  const weatherItems = t('seasonal.spring.weatherItems') as string[];
-  const packingItems = t('seasonal.spring.packingItems') as string[];
+  // Get weather and packing items as arrays with proper fallback
+  const weatherItems = (t('seasonal.spring.weatherItems') as unknown) as string[];
+  const packingItems = (t('seasonal.spring.packingItems') as unknown) as string[];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
@@ -109,7 +109,7 @@ const Spring = () => {
                 {t('seasonal.spring.weatherTitle')}
               </h3>
               <div className="space-y-4">
-                {weatherItems.map((item: string, index: number) => (
+                {Array.isArray(weatherItems) && weatherItems.map((item: string, index: number) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     <span className="text-green-700 dark:text-gray-300">{item}</span>
@@ -123,7 +123,7 @@ const Spring = () => {
                 {t('seasonal.spring.packingTitle')}
               </h3>
               <div className="space-y-4">
-                {packingItems.map((item: string, index: number) => (
+                {Array.isArray(packingItems) && packingItems.map((item: string, index: number) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     <span className="text-green-700 dark:text-gray-300">{item}</span>
