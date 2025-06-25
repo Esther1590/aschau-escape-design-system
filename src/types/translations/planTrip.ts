@@ -53,4 +53,37 @@ export interface PlanTripTranslations {
     };
     viewAll: string;
   };
+  itinerary: {
+    title: string;
+    subtitle: string;
+    guests: string;
+    guest: string;
+    wellnessFocus: string;
+    culturalFocus: string;
+    wellnessAndCulture: string;
+    packageIncludes: string;
+    bookExperience: string;
+    needHelp: string;
+    helpDescription: string;
+    contactTourism: string;
+    combinedPackage: {
+      title: string;
+      description: string;
+      price: string;
+    };
+    features: {
+      spatreatments: string;
+      gentleYoga: string;
+      thermalBaths: string;
+      alpineCuisine: string;
+      castleTours: string;
+      museumVisits: string;
+      craftWorkshops: string;
+      bavarianDining: string;
+      allWellnessActivities: string;
+      culturalTours: string;
+      extendedSpaAccess: string;
+      personalConcierge: string;
+    };
+  };
 }

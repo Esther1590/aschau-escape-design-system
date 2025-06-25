@@ -54,5 +54,38 @@ export const planTripEn: PlanTripTranslations = {
       price: "From €650 per person"
     },
     viewAll: "View All Packages"
+  },
+  itinerary: {
+    title: "Your Personalized Aschau Itinerary",
+    subtitle: "Based on your preferences, here are the perfect packages for your Aschau experience:",
+    guests: "Guests",
+    guest: "Guest",
+    wellnessFocus: "Wellness Focus",
+    culturalFocus: "Cultural Focus",
+    wellnessAndCulture: "Wellness & Culture",
+    packageIncludes: "Package Includes:",
+    bookExperience: "Book This Experience",
+    needHelp: "Need Help Planning?",
+    helpDescription: "Our local experts are here to help you customize your perfect Aschau experience.",
+    contactTourism: "Contact Local Tourism Office",
+    combinedPackage: {
+      title: "10-Day Complete Aschau Experience",
+      description: "The perfect blend of wellness and culture with extended stay benefits and senior-friendly amenities.",
+      price: "From €1,450 per person"
+    },
+    features: {
+      spatreatments: "Spa treatments",
+      gentleYoga: "Gentle yoga",
+      thermalBaths: "Thermal baths",
+      alpineCuisine: "Alpine cuisine",
+      castleTours: "Castle tours",
+      museumVisits: "Museum visits",
+      craftWorkshops: "Craft workshops",
+      bavarianDining: "Bavarian dining",
+      allWellnessActivities: "All wellness activities",
+      culturalTours: "Cultural tours",
+      extendedSpaAccess: "Extended spa access",
+      personalConcierge: "Personal concierge"
+    }
   }
 };

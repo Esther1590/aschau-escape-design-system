@@ -30,7 +30,12 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
         type: 'wellness',
         duration: 7,
         icon: Sparkles,
-        features: ['Spa treatments', 'Gentle yoga', 'Thermal baths', 'Alpine cuisine'],
+        features: [
+          t('planTrip.itinerary.features.spatreatments'),
+          t('planTrip.itinerary.features.gentleYoga'),
+          t('planTrip.itinerary.features.thermalBaths'),
+          t('planTrip.itinerary.features.alpineCuisine')
+        ],
         link: 'https://www.chiemsee-gast.de/unterkuenfte/detail/113'
       },
       {
@@ -41,18 +46,28 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
         type: 'culture',
         duration: 5,
         icon: MapPin,
-        features: ['Castle tours', 'Museum visits', 'Craft workshops', 'Bavarian dining'],
+        features: [
+          t('planTrip.itinerary.features.castleTours'),
+          t('planTrip.itinerary.features.museumVisits'),
+          t('planTrip.itinerary.features.craftWorkshops'),
+          t('planTrip.itinerary.features.bavarianDining')
+        ],
         link: 'https://www.chiemsee-gast.de/'
       },
       {
         id: 'combined-package',
-        title: '10-Day Complete Aschau Experience',
-        description: 'The perfect blend of wellness and culture with extended stay benefits and senior-friendly amenities.',
-        price: 'From €1,450 per person',
+        title: t('planTrip.itinerary.combinedPackage.title'),
+        description: t('planTrip.itinerary.combinedPackage.description'),
+        price: t('planTrip.itinerary.combinedPackage.price'),
         type: 'both',
         duration: 10,
         icon: Calendar,
-        features: ['All wellness activities', 'Cultural tours', 'Extended spa access', 'Personal concierge'],
+        features: [
+          t('planTrip.itinerary.features.allWellnessActivities'),
+          t('planTrip.itinerary.features.culturalTours'),
+          t('planTrip.itinerary.features.extendedSpaAccess'),
+          t('planTrip.itinerary.features.personalConcierge')
+        ],
         link: 'https://www.burghotel-aschau.de/'
       }
     ];
@@ -66,12 +81,25 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
   const filteredOffers = getFilteredOffers();
   const guestCount = parseInt(userPreferences.guests) || 1;
 
+  const getTravelStyleLabel = () => {
+    switch (userPreferences.travelStyle) {
+      case 'wellness':
+        return t('planTrip.itinerary.wellnessFocus');
+      case 'culture':
+        return t('planTrip.itinerary.culturalFocus');
+      case 'both':
+        return t('planTrip.itinerary.wellnessAndCulture');
+      default:
+        return userPreferences.travelStyle;
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl text-wellness-charcoal dark:text-white mb-4">
-            Your Personalized Aschau Itinerary
+            {t('planTrip.itinerary.title')}
           </DialogTitle>
           <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-300 mb-6">
             {userPreferences.startDate && userPreferences.endDate && (
@@ -82,19 +110,18 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
             )}
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4" />
-              {guestCount} {guestCount === 1 ? 'Guest' : 'Guests'}
+              {guestCount} {guestCount === 1 ? t('planTrip.itinerary.guest') : t('planTrip.itinerary.guests')}
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4" />
-              {userPreferences.travelStyle === 'wellness' ? 'Wellness Focus' : 
-               userPreferences.travelStyle === 'culture' ? 'Cultural Focus' : 'Wellness & Culture'}
+              {getTravelStyleLabel()}
             </div>
           </div>
         </DialogHeader>
 
         <div className="space-y-6">
           <p className="text-gray-600 dark:text-gray-300">
-            Based on your preferences, here are the perfect packages for your Aschau experience:
+            {t('planTrip.itinerary.subtitle')}
           </p>
 
           <div className="grid gap-6">
@@ -128,7 +155,7 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
                     </p>
                     <div className="mb-6">
                       <h4 className="font-semibold text-wellness-charcoal dark:text-white mb-2">
-                        Package Includes:
+                        {t('planTrip.itinerary.packageIncludes')}
                       </h4>
                       <ul className="grid grid-cols-2 gap-2">
                         {offer.features.map((feature, idx) => (
@@ -143,7 +170,7 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
                       className="w-full bg-wellness-sage hover:bg-wellness-sage/90 text-white"
                       onClick={() => window.open(offer.link, '_blank')}
                     >
-                      Book This Experience
+                      {t('planTrip.itinerary.bookExperience')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -153,17 +180,17 @@ const ItineraryResults = ({ isOpen, onClose, userPreferences }: ItineraryResults
 
           <div className="bg-wellness-sage/5 p-6 rounded-lg border border-wellness-sage/20">
             <h3 className="text-lg font-semibold text-wellness-charcoal dark:text-white mb-2">
-              Need Help Planning?
+              {t('planTrip.itinerary.needHelp')}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Our local experts are here to help you customize your perfect Aschau experience.
+              {t('planTrip.itinerary.helpDescription')}
             </p>
             <Button 
               variant="outline" 
               onClick={() => window.open('https://www.chiemsee-gast.de/', '_blank')}
               className="border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white"
             >
-              Contact Local Tourism Office
+              {t('planTrip.itinerary.contactTourism')}
             </Button>
           </div>
         </div>
