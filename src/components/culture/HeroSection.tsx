@@ -13,11 +13,14 @@ const HeroSection = () => {
         alt="Cultural Heritage Background"
       />
       
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      
       <div className="relative z-10 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-lg">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8)'}}>
           {t('culture.hero.title')}
         </h1>
-        <p className="text-xl md:text-2xl font-light text-white drop-shadow-md">
+        <p className="text-xl md:text-2xl font-light text-white drop-shadow-xl" style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}>
           {t('culture.hero.subtitle')}
         </p>
       </div>
