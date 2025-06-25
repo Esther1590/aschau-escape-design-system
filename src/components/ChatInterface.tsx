@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,7 +22,7 @@ interface ChatInterfaceProps {
 const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
   const { t } = useTranslation();
   
-  const [messages, setMessages] = useState<Message[]>([
+  const [messages, setMessages] = useState<Message[]>(() => [
     {
       id: '1',
       text: t('chat.welcomeMessage'),
@@ -31,6 +31,20 @@ const ChatInterface = ({ isOpen, onClose }: ChatInterfaceProps) => {
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
+
+  // Update welcome message when language changes
+  React.useEffect(() => {
+    setMessages(prev => {
+      const updatedMessages = [...prev];
+      if (updatedMessages.length > 0 && updatedMessages[0].id === '1') {
+        updatedMessages[0] = {
+          ...updatedMessages[0],
+          text: t('chat.welcomeMessage')
+        };
+      }
+      return updatedMessages;
+    });
+  }, [t]);
 
   const handleSendMessage = () => {
     if (!inputMessage.trim()) return;
