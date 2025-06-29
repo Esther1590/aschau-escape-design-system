@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Building2, Camera, Palette, Music } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { useNavigate } from 'react-router-dom';
 
 interface CulturalAttractionsProps {
   onImageClick: (imageSrc: string) => void;
@@ -10,6 +11,7 @@ interface CulturalAttractionsProps {
 
 const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const culturalAttractions = [
     {
@@ -50,6 +52,12 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
       accessibility: t('culture.attractions.music.accessibility')
     }
   ];
+
+  const handleLearnMoreClick = (attraction: typeof culturalAttractions[0]) => {
+    if (attraction.isSchloss) {
+      navigate('/schloss-hohenaschau');
+    }
+  };
 
   return (
     <section className="py-16 px-4">
@@ -128,7 +136,10 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
                     </div>
                   )}
                   
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white text-lg py-4">
+                  <Button 
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white text-lg py-4"
+                    onClick={() => handleLearnMoreClick(attraction)}
+                  >
                     {t('culture.attractions.learnMore')}
                   </Button>
                 </CardContent>
