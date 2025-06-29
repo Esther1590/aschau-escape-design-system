@@ -11,6 +11,7 @@ import Wellness from "./pages/Wellness";
 import Culture from "./pages/Culture";
 import PlanTrip from "./pages/PlanTrip";
 import Spring from "./pages/Spring";
+import Summer from "./pages/Summer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/culture" element={<Culture />} />
               <Route path="/plan-trip" element={<PlanTrip />} />
               <Route path="/spring" element={<Spring />} />
+              <Route path="/summer" element={<Summer />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -23,7 +23,7 @@ const SeasonalActivities = () => {
       description: t('seasonal.summer.description'),
       image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Lake Swimming', 'Forest Bathing', 'Herb Workshops'],
-      route: null
+      route: '/summer'
     },
     {
       season: t('seasonal.autumn.title'),
