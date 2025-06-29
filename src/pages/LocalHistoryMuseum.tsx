@@ -30,7 +30,7 @@ const LocalHistoryMuseum = () => {
       
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -38,10 +38,10 @@ const LocalHistoryMuseum = () => {
           }}
         ></div>
         <div className="container mx-auto relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{textShadow: '3px 3px 8px rgba(0, 0, 0, 0.9), 1px 1px 4px rgba(0, 0, 0, 0.8)'}}>
             {language === 'EN' ? 'Local History Museum' : 'Heimatmuseum'}
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{textShadow: '2px 2px 6px rgba(0, 0, 0, 0.8), 1px 1px 3px rgba(0, 0, 0, 0.7)'}}>
             {language === 'EN' 
               ? 'Discover the rich heritage and traditions of Aschau im Chiemgau'
               : 'Entdecken Sie das reiche Erbe und die Traditionen von Aschau im Chiemgau'
