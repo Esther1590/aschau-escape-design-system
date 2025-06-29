@@ -12,6 +12,7 @@ import Culture from "./pages/Culture";
 import PlanTrip from "./pages/PlanTrip";
 import Spring from "./pages/Spring";
 import Summer from "./pages/Summer";
+import Autumn from "./pages/Autumn";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/plan-trip" element={<PlanTrip />} />
               <Route path="/spring" element={<Spring />} />
               <Route path="/summer" element={<Summer />} />
+              <Route path="/autumn" element={<Autumn />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
