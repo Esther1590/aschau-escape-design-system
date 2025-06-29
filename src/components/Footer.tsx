@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -150,7 +151,7 @@ const Footer = () => {
                 <h4 className="text-lg font-semibold mb-3 text-wellness-sage">{t('footer.followUs')}</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://facebook.com/aschau.wellness"
+                    href="https://www.facebook.com/search/top?q=aschau%20im%20chiemgau"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-300 hover:text-wellness-sage transition-colors"
@@ -160,7 +161,7 @@ const Footer = () => {
                     <span className="text-lg">Facebook</span>
                   </a>
                   <a
-                    href="https://instagram.com/aschau.wellness"
+                    href="https://www.instagram.com/aschauimchiemgau?igsh=MXJtYmM1bncwOG1oZg=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-300 hover:text-wellness-sage transition-colors"
