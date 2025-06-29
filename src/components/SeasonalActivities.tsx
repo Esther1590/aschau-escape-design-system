@@ -39,7 +39,7 @@ const SeasonalActivities = () => {
       description: t('seasonal.winter.description'),
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       highlights: ['Thermal Baths', 'Winter Wellness', 'Indoor Relaxation'],
-      route: null
+      route: '/winter'
     }
   ];
 
