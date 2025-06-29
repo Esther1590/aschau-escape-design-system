@@ -8,17 +8,12 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import TrailImageViewer from '@/components/wellness/TrailImageViewer';
 import ChatbotButton from '@/components/ChatbotButton';
 
-const SchlossHohenaschau = () => {
+const LocalHistoryMuseum = () => {
   const { t, language } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const schlossGallery = [
-    '/lovable-uploads/ad856991-3922-46d9-90a4-af3e6eb56779.png',
-    '/lovable-uploads/53209aaa-0dba-4790-a6aa-64d5e3ad2c48.png',
-    '/lovable-uploads/795a8580-c818-4526-b201-9d317cebb951.png',
-    '/lovable-uploads/084081ca-c2e2-4431-82a0-3ee8f171543b.png',
-    '/lovable-uploads/d9dc1eac-28e3-4a55-9cdd-d534ff12e097.png',
-    '/20250417_123645_2.mp4'
+  const museumGallery = [
+    '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png'
   ];
 
   const handleImageClick = (imageSrc: string) => {
@@ -39,17 +34,17 @@ const SchlossHohenaschau = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/lovable-uploads/1fb9ec77-eed2-446e-b4cf-bb8e60d0278b.png')`
+            backgroundImage: `url('/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png')`
           }}
         ></div>
         <div className="container mx-auto relative z-10 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Schloss Hohenaschau
+            {language === 'EN' ? 'Local History Museum' : 'Heimatmuseum'}
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             {language === 'EN' 
-              ? 'A magnificent 12th-century castle perched majestically above the village'
-              : 'Eine prächtige Burg aus dem 12. Jahrhundert, majestätisch über dem Dorf gelegen'
+              ? 'Discover the rich heritage and traditions of Aschau im Chiemgau'
+              : 'Entdecken Sie das reiche Erbe und die Traditionen von Aschau im Chiemgau'
             }
           </p>
         </div>
@@ -73,28 +68,28 @@ const SchlossHohenaschau = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
-                        {language === 'EN' ? 'April - October:' : 'April - Oktober:'}
+                        {language === 'EN' ? 'Tuesday - Sunday:' : 'Dienstag - Sonntag:'}
                       </span>
-                      <span>{language === 'EN' ? 'Daily 9:00 - 18:00' : 'Täglich 9:00 - 18:00'}</span>
+                      <span>10:00 - 17:00</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
-                        {language === 'EN' ? 'November - March:' : 'November - März:'}
+                        {language === 'EN' ? 'Monday:' : 'Montag:'}
                       </span>
-                      <span>{language === 'EN' ? 'Tue-Sun 10:00 - 16:00' : 'Di-So 10:00 - 16:00'}</span>
+                      <span>{language === 'EN' ? 'Closed' : 'Geschlossen'}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Last Entry:' : 'Letzter Einlass:'}
                       </span>
-                      <span>{language === 'EN' ? '30 minutes before closing' : '30 Minuten vor Schließung'}</span>
+                      <span>16:30</span>
                     </div>
                     <div className="bg-amber-50 dark:bg-amber-900/30 p-3 rounded-lg">
                       <p className="text-sm text-amber-800 dark:text-amber-200">
                         <Info className="w-4 h-4 inline mr-2" />
                         {language === 'EN' 
-                          ? 'Closed on Mondays (Nov-Mar) and December 24-26'
-                          : 'Geschlossen montags (Nov-März) und 24.-26. Dezember'
+                          ? 'Closed on public holidays and December 24-January 6'
+                          : 'Geschlossen an Feiertagen und 24. Dezember - 6. Januar'
                         }
                       </p>
                     </div>
@@ -115,25 +110,25 @@ const SchlossHohenaschau = () => {
                       <span className="font-medium">
                         {language === 'EN' ? 'Adults:' : 'Erwachsene:'}
                       </span>
-                      <span className="text-lg font-bold">€8.50</span>
+                      <span className="text-lg font-bold">€4.50</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Students/Seniors:' : 'Studenten/Senioren:'}
                       </span>
-                      <span className="text-lg font-bold">€6.50</span>
+                      <span className="text-lg font-bold">€3.50</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Children (6-14):' : 'Kinder (6-14):'}
                       </span>
-                      <span className="text-lg font-bold">€4.00</span>
+                      <span className="text-lg font-bold">€2.00</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Family Ticket:' : 'Familienkarte:'}
                       </span>
-                      <span className="text-lg font-bold">€22.00</span>
+                      <span className="text-lg font-bold">€12.00</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
@@ -158,28 +153,28 @@ const SchlossHohenaschau = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
-                        {language === 'EN' ? 'Group Tours (10+):' : 'Gruppenführungen (10+):'}
+                        {language === 'EN' ? 'Group Tours (8+):' : 'Gruppenführungen (8+):'}
                       </span>
-                      <span>€7.00 {language === 'EN' ? 'per person' : 'pro Person'}</span>
+                      <span>€3.50 {language === 'EN' ? 'per person' : 'pro Person'}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Private Tours:' : 'Privatführungen:'}
                       </span>
-                      <span>€120.00 ({language === 'EN' ? 'up to 15 people' : 'bis zu 15 Personen'})</span>
+                      <span>€45.00 ({language === 'EN' ? 'up to 10 people' : 'bis zu 10 Personen'})</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-medium">
                         {language === 'EN' ? 'Duration:' : 'Dauer:'}
                       </span>
-                      <span>45-60 {language === 'EN' ? 'minutes' : 'Minuten'}</span>
+                      <span>45 {language === 'EN' ? 'minutes' : 'Minuten'}</span>
                     </div>
                     <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
                       <p className="text-sm text-blue-800 dark:text-blue-200">
                         <Calendar className="w-4 h-4 inline mr-2" />
                         {language === 'EN' 
-                          ? 'Tours available in German, English, and Italian'
-                          : 'Führungen auf Deutsch, Englisch und Italienisch'
+                          ? 'Tours available in German and English by appointment'
+                          : 'Führungen auf Deutsch und Englisch nach Vereinbarung'
                         }
                       </p>
                     </div>
@@ -194,47 +189,25 @@ const SchlossHohenaschau = () => {
                 <CardHeader className="bg-purple-600 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Camera className="w-8 h-8" />
-                    <span>{language === 'EN' ? 'Castle Gallery' : 'Schloss Galerie'}</span>
+                    <span>{language === 'EN' ? 'Museum Gallery' : 'Museum Galerie'}</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="grid grid-cols-2 gap-3">
-                    {schlossGallery.map((galleryItem, idx) => {
-                      const isVideo = galleryItem.endsWith('.mp4');
-                      return (
-                        <div 
-                          key={idx} 
-                          className="relative group overflow-hidden rounded-lg cursor-pointer"
-                          onClick={() => handleImageClick(galleryItem)}
-                        >
-                          {isVideo ? (
-                            <video 
-                              className="w-full h-24 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
-                              muted
-                              playsInline
-                            >
-                              <source src={galleryItem} type="video/mp4" />
-                            </video>
-                          ) : (
-                            <img 
-                              src={galleryItem} 
-                              alt={`Schloss Hohenaschau view ${idx + 1}`}
-                              className="w-full h-24 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
-                            />
-                          )}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          {isVideo && (
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="bg-white/80 rounded-full p-2">
-                                <svg className="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                                </svg>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                  <div className="grid grid-cols-1 gap-3">
+                    {museumGallery.map((galleryItem, idx) => (
+                      <div 
+                        key={idx} 
+                        className="relative group overflow-hidden rounded-lg cursor-pointer"
+                        onClick={() => handleImageClick(galleryItem)}
+                      >
+                        <img 
+                          src={galleryItem} 
+                          alt={`Local History Museum view ${idx + 1}`}
+                          className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -253,7 +226,7 @@ const SchlossHohenaschau = () => {
                       <div>
                         <p className="font-medium">{language === 'EN' ? 'Address:' : 'Adresse:'}</p>
                         <p className="text-gray-600 dark:text-gray-300">
-                          Schloßstraße 1<br />
+                          Kampenwandstraße 2<br />
                           83229 Aschau im Chiemgau<br />
                           {language === 'EN' ? 'Germany' : 'Deutschland'}
                         </p>
@@ -263,14 +236,14 @@ const SchlossHohenaschau = () => {
                       <Phone className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="font-medium">{language === 'EN' ? 'Phone:' : 'Telefon:'}</p>
-                        <p className="text-gray-600 dark:text-gray-300">+49 8052 904937</p>
+                        <p className="text-gray-600 dark:text-gray-300">+49 8052 179757</p>
                       </div>
                     </div>
                     <div className="bg-green-50 dark:bg-green-900/30 p-3 rounded-lg">
                       <p className="text-sm text-green-800 dark:text-green-200">
                         ♿ {language === 'EN' 
-                          ? 'Wheelchair accessible via elevator to main floors'
-                          : 'Rollstuhlzugänglich über Aufzug zu den Hauptetagen'
+                          ? 'Ground floor accessible for wheelchairs'
+                          : 'Erdgeschoss rollstuhlgerecht zugänglich'
                         }
                       </p>
                     </div>
@@ -281,35 +254,35 @@ const SchlossHohenaschau = () => {
               <Card className="shadow-xl border-0 dark:bg-gray-800">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
-                    {language === 'EN' ? 'Special Features' : 'Besondere Highlights'}
+                    {language === 'EN' ? 'Exhibition Highlights' : 'Ausstellungs-Highlights'}
                   </h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
                       {language === 'EN' 
-                        ? 'Historic chapel with beautiful frescoes'
-                        : 'Historische Kapelle mit schönen Fresken'
+                        ? 'Traditional Alpine farming tools'
+                        : 'Traditionelle alpine Landwirtschaftsgeräte'
                       }
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
                       {language === 'EN' 
-                        ? 'Knights\' Hall with medieval artifacts'
-                        : 'Rittersaal mit mittelalterlichen Artefakten'
+                        ? 'Historical clothing and textiles'
+                        : 'Historische Kleidung und Textilien'
                       }
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
                       {language === 'EN' 
-                        ? 'Panoramic views of the Alps'
-                        : 'Panoramablick auf die Alpen'
+                        ? 'Local craft demonstrations'
+                        : 'Lokale Handwerksvorführungen'
                       }
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
                       {language === 'EN' 
-                        ? 'Gift shop with local crafts'
-                        : 'Geschenkladen mit lokalen Handwerkskunst'
+                        ? 'Interactive historical displays'
+                        : 'Interaktive historische Ausstellungen'
                       }
                     </li>
                   </ul>
@@ -323,7 +296,7 @@ const SchlossHohenaschau = () => {
             <Button 
               size="lg" 
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg mr-4"
-              onClick={() => window.open('tel:+4980529049370', '_self')}
+              onClick={() => window.open('tel:+4980521797570', '_self')}
             >
               <Phone className="w-5 h-5 mr-2" />
               {language === 'EN' ? 'Book by Phone' : 'Telefonisch buchen'}
@@ -332,7 +305,7 @@ const SchlossHohenaschau = () => {
               size="lg" 
               variant="outline"
               className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-4 text-lg"
-              onClick={() => window.open('https://maps.google.com/?q=Schloss+Hohenaschau,+Aschau+im+Chiemgau', '_blank')}
+              onClick={() => window.open('https://maps.google.com/?q=Heimatmuseum,+Aschau+im+Chiemgau', '_blank')}
             >
               <MapPin className="w-5 h-5 mr-2" />
               {language === 'EN' ? 'Get Directions' : 'Route anzeigen'}
@@ -346,11 +319,11 @@ const SchlossHohenaschau = () => {
       {/* Image Viewer */}
       <TrailImageViewer
         selectedImage={selectedImage}
-        images={schlossGallery}
+        images={museumGallery}
         onClose={handleCloseViewer}
       />
     </div>
   );
 };
 
-export default SchlossHohenaschau;
+export default LocalHistoryMuseum;

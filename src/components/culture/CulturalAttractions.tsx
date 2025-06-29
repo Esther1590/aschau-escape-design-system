@@ -35,7 +35,8 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
       description: t('culture.attractions.museum.description'),
       image: '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png',
       icon: Camera,
-      accessibility: t('culture.attractions.museum.accessibility')
+      accessibility: t('culture.attractions.museum.accessibility'),
+      isMuseum: true
     },
     {
       name: t('culture.attractions.crafts.name'),
@@ -56,6 +57,8 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
   const handleLearnMoreClick = (attraction: typeof culturalAttractions[0]) => {
     if (attraction.isSchloss) {
       navigate('/schloss-hohenaschau');
+    } else if (attraction.isMuseum) {
+      navigate('/local-history-museum');
     }
   };
 
