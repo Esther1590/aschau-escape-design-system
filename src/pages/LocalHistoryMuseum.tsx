@@ -12,7 +12,8 @@ const LocalHistoryMuseum = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const museumGallery = [
-    '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png'
+    '/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png',
+    '/lovable-uploads/b0ef904d-51e8-4454-b4cc-918fe81d2f2d.png'
   ];
 
   const handleImageClick = (imageSrc: string) => {
