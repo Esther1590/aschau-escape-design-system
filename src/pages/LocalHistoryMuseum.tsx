@@ -296,7 +296,7 @@ const LocalHistoryMuseum = () => {
             <Button 
               size="lg" 
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg mr-4"
-              onClick={() => window.open('tel:+4980521797570', '_self')}
+              onClick={() => window.open('tel:+49-8052-179757', '_self')}
             >
               <Phone className="w-5 h-5 mr-2" />
               {language === 'EN' ? 'Book by Phone' : 'Telefonisch buchen'}
