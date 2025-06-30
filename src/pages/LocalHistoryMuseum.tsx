@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -25,23 +26,23 @@ const LocalHistoryMuseum = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-100 dark:from-gray-900 dark:to-gray-800">
       <Header />
       
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png')`
           }}
         ></div>
-        <div className="container mx-auto relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{textShadow: '6px 6px 16px rgba(0, 0, 0, 1), 4px 4px 12px rgba(0, 0, 0, 0.9), 2px 2px 8px rgba(0, 0, 0, 0.8), 1px 1px 4px rgba(0, 0, 0, 0.7)'}}>
+        <div className="container mx-auto relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-100" style={{textShadow: '3px 3px 8px rgba(0, 0, 0, 0.7), 2px 2px 6px rgba(0, 0, 0, 0.5), 1px 1px 4px rgba(0, 0, 0, 0.3)'}}>
             {language === 'EN' ? 'Local History Museum' : 'Heimatmuseum'}
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{textShadow: '5px 5px 12px rgba(0, 0, 0, 1), 3px 3px 9px rgba(0, 0, 0, 0.9), 2px 2px 6px rgba(0, 0, 0, 0.8), 1px 1px 3px rgba(0, 0, 0, 0.6)'}}>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-amber-50" style={{textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 1px 1px 4px rgba(0, 0, 0, 0.4)'}}>
             {language === 'EN' 
               ? 'Discover the rich heritage and traditions of Aschau im Chiemgau'
               : 'Entdecken Sie das reiche Erbe und die Traditionen von Aschau im Chiemgau'
