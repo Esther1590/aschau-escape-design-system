@@ -30,24 +30,42 @@ const LocalHistoryMuseum = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10"></div>
+      <section className="py-24 px-4 relative min-h-[70vh] flex items-center">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('/lovable-uploads/f3c9483b-7cba-456a-83b8-fa7c91fafe06.png')`
           }}
         ></div>
-        <div className="container mx-auto relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-100" style={{textShadow: '3px 3px 8px rgba(0, 0, 0, 0.7), 2px 2px 6px rgba(0, 0, 0, 0.5), 1px 1px 4px rgba(0, 0, 0, 0.3)'}}>
-            {language === 'EN' ? 'Local History Museum' : 'Heimatmuseum'}
-          </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-amber-50" style={{textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 1px 1px 4px rgba(0, 0, 0, 0.4)'}}>
-            {language === 'EN' 
-              ? 'Discover the rich heritage and traditions of Aschau im Chiemgau'
-              : 'Entdecken Sie das reiche Erbe und die Traditionen von Aschau im Chiemgau'
-            }
-          </p>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto relative z-10 text-center max-w-4xl">
+          {/* Text Container with Semi-transparent Background */}
+          <div className="bg-black bg-opacity-40 rounded-2xl px-8 py-12 md:px-12 md:py-16">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight" 
+                style={{
+                  color: '#fefefe',
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
+                }}>
+              {language === 'EN' ? 'Local History Museum' : 'Heimatmuseum'}
+            </h1>
+            
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium"
+               style={{
+                 color: '#f0f0f0',
+                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)',
+                 fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif'
+               }}>
+              {language === 'EN' 
+                ? 'Discover the rich heritage and traditions of Aschau im Chiemgau'
+                : 'Entdecken Sie das reiche Erbe und die Traditionen von Aschau im Chiemgau'
+              }
+            </p>
+          </div>
         </div>
       </section>
 
