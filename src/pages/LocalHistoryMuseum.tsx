@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,7 @@ const LocalHistoryMuseum = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20">
       <Header />
       
       {/* Hero Section */}
@@ -58,7 +59,7 @@ const LocalHistoryMuseum = () => {
             {/* Visitor Information */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-blue-500 text-white">
+                <CardHeader className="bg-amber-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Clock className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Opening Hours' : 'Öffnungszeiten'}</span>
@@ -84,8 +85,8 @@ const LocalHistoryMuseum = () => {
                       </span>
                       <span>16:30</span>
                     </div>
-                    <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
-                      <p className="text-sm text-blue-800 dark:text-blue-200">
+                    <div className="bg-amber-50 dark:bg-amber-900/30 p-3 rounded-lg">
+                      <p className="text-sm text-amber-800 dark:text-amber-200">
                         <Info className="w-4 h-4 inline mr-2" />
                         {language === 'EN' 
                           ? 'Closed on public holidays and December 24-January 6'
@@ -98,7 +99,7 @@ const LocalHistoryMuseum = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-emerald-500 text-white">
+                <CardHeader className="bg-orange-400 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Euro className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Admission Prices' : 'Eintrittspreise'}</span>
@@ -143,7 +144,7 @@ const LocalHistoryMuseum = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-cyan-500 text-white">
+                <CardHeader className="bg-yellow-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Users className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Guided Tours' : 'Führungen'}</span>
@@ -169,8 +170,8 @@ const LocalHistoryMuseum = () => {
                       </span>
                       <span>45 {language === 'EN' ? 'minutes' : 'Minuten'}</span>
                     </div>
-                    <div className="bg-cyan-50 dark:bg-cyan-900/30 p-3 rounded-lg">
-                      <p className="text-sm text-cyan-800 dark:text-cyan-200">
+                    <div className="bg-yellow-50 dark:bg-yellow-900/30 p-3 rounded-lg">
+                      <p className="text-sm text-yellow-800 dark:text-yellow-200">
                         <Calendar className="w-4 h-4 inline mr-2" />
                         {language === 'EN' 
                           ? 'Tours available in German and English by appointment'
@@ -186,7 +187,7 @@ const LocalHistoryMuseum = () => {
             {/* Gallery and Contact */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-violet-500 text-white">
+                <CardHeader className="bg-amber-600 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Camera className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Museum Gallery' : 'Museum Galerie'}</span>
@@ -213,7 +214,7 @@ const LocalHistoryMuseum = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-rose-500 text-white">
+                <CardHeader className="bg-orange-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Phone className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Contact & Location' : 'Kontakt & Standort'}</span>
@@ -258,28 +259,28 @@ const LocalHistoryMuseum = () => {
                   </h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Traditional Alpine farming tools'
                         : 'Traditionelle alpine Landwirtschaftsgeräte'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Historical clothing and textiles'
                         : 'Historische Kleidung und Textilien'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Local craft demonstrations'
                         : 'Lokale Handwerksvorführungen'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Interactive historical displays'
                         : 'Interaktive historische Ausstellungen'
@@ -295,7 +296,7 @@ const LocalHistoryMuseum = () => {
           <div className="mt-12 text-center space-y-4">
             <Button 
               size="lg" 
-              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg mr-4"
+              className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 text-lg mr-4"
               onClick={() => window.open('tel:+49-8052-179757', '_self')}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -304,7 +305,7 @@ const LocalHistoryMuseum = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-4 text-lg"
+              className="border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-8 py-4 text-lg"
               onClick={() => window.open('https://maps.google.com/?q=Heimatmuseum,+Aschau+im+Chiemgau', '_blank')}
             >
               <MapPin className="w-5 h-5 mr-2" />
