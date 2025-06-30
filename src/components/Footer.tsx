@@ -42,7 +42,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-wellness-charcoal text-white">
+    <footer className="bg-wellness-charcoal dark:bg-gray-900 text-white">
       {/* Newsletter Section */}
       <section className="py-12 px-4 border-b border-gray-600">
         <div className="container mx-auto max-w-2xl text-center">
@@ -141,8 +141,8 @@ const Footer = () => {
                   <span className="text-white font-bold text-xl">A</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Aschau Wellness Tourism</h3>
-                  <p className="text-gray-300">{t('footer.tagline')}</p>
+                  <h3 className="text-2xl font-bold text-white dark:text-white">Aschau Wellness Tourism</h3>
+                  <p className="text-gray-300 dark:text-gray-300">{t('footer.tagline')}</p>
                 </div>
               </div>
               
