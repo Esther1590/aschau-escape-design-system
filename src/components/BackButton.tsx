@@ -9,8 +9,9 @@ const BackButton = () => {
   const location = useLocation();
   const { language } = useTranslation();
 
-  // Don't show back button on home page
-  if (location.pathname === '/') {
+  // Don't show back button on home page or main navigation pages
+  const mainPages = ['/', '/wellness', '/culture', '/plan-trip'];
+  if (mainPages.includes(location.pathname)) {
     return null;
   }
 
