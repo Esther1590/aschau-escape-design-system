@@ -59,6 +59,10 @@ const CulturalAttractions = ({ onImageClick }: CulturalAttractionsProps) => {
       navigate('/schloss-hohenaschau');
     } else if (attraction.isMuseum) {
       navigate('/local-history-museum');
+    } else if (attraction.name === t('culture.attractions.crafts.name')) {
+      navigate('/traditional-craft-workshops');
+    } else if (attraction.name === t('culture.attractions.music.name')) {
+      navigate('/folk-music-evenings');
     }
   };
 

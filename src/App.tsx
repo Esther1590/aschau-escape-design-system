@@ -16,6 +16,8 @@ import Autumn from "./pages/Autumn";
 import Winter from "./pages/Winter";
 import SchlossHohenaschau from "./pages/SchlossHohenaschau";
 import LocalHistoryMuseum from "./pages/LocalHistoryMuseum";
+import TraditionalCraftWorkshops from "./pages/TraditionalCraftWorkshops";
+import FolkMusicEvenings from "./pages/FolkMusicEvenings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +41,8 @@ const App = () => (
               <Route path="/winter" element={<Winter />} />
               <Route path="/schloss-hohenaschau" element={<SchlossHohenaschau />} />
               <Route path="/local-history-museum" element={<LocalHistoryMuseum />} />
+              <Route path="/traditional-craft-workshops" element={<TraditionalCraftWorkshops />} />
+              <Route path="/folk-music-evenings" element={<FolkMusicEvenings />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
