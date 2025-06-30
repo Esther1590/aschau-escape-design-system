@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -25,12 +24,12 @@ const FolkMusicEvenings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-100 dark:from-gray-900 dark:to-gray-800">
       <Header />
       
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -58,7 +57,7 @@ const FolkMusicEvenings = () => {
             {/* Event Information */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-amber-600 text-white">
+                <CardHeader className="bg-purple-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Clock className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Event Schedule' : 'Veranstaltungsplan'}</span>
@@ -98,7 +97,7 @@ const FolkMusicEvenings = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-green-600 text-white">
+                <CardHeader className="bg-emerald-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Euro className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Ticket Prices' : 'Ticketpreise'}</span>
@@ -141,7 +140,7 @@ const FolkMusicEvenings = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-blue-600 text-white">
+                <CardHeader className="bg-sky-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Users className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Venue Information' : 'Veranstaltungsort'}</span>
@@ -184,7 +183,7 @@ const FolkMusicEvenings = () => {
             {/* Gallery and Contact */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-purple-600 text-white">
+                <CardHeader className="bg-pink-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Camera className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Music Evening Gallery' : 'Musikabend Galerie'}</span>
@@ -211,7 +210,7 @@ const FolkMusicEvenings = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-red-600 text-white">
+                <CardHeader className="bg-orange-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Phone className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Contact & Location' : 'Kontakt & Standort'}</span>
@@ -253,33 +252,33 @@ const FolkMusicEvenings = () => {
               <Card className="shadow-xl border-0 dark:bg-gray-800">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center">
-                    <Music className="w-6 h-6 mr-2 text-amber-600" />
+                    <Music className="w-6 h-6 mr-2 text-purple-500" />
                     {language === 'EN' ? 'What to Expect' : 'Was Sie erwartet'}
                   </h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Traditional Bavarian folk songs and melodies'
                         : 'Traditionelle bayerische Volkslieder und Melodien'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Authentic Alpine instruments (zither, accordion, alpine horn)'
                         : 'Authentische Alpeninstrumente (Zither, Akkordeon, Alphorn)'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Stories and history behind the music'
                         : 'Geschichten und Geschichte hinter der Musik'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Interactive sing-along opportunities'
                         : 'Interaktive Mitsingmöglichkeiten'
@@ -295,7 +294,7 @@ const FolkMusicEvenings = () => {
           <div className="mt-12 text-center space-y-4">
             <Button 
               size="lg" 
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg mr-4"
+              className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 text-lg mr-4"
               onClick={() => window.open('tel:+4980529577100', '_self')}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -304,7 +303,7 @@ const FolkMusicEvenings = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-4 text-lg"
+              className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-8 py-4 text-lg"
               onClick={() => window.open('https://maps.google.com/?q=Kulturhaus+Aschau,+Bernauer+Straße+5,+Aschau+im+Chiemgau', '_blank')}
             >
               <MapPin className="w-5 h-5 mr-2" />

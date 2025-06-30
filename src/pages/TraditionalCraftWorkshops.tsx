@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -25,12 +24,12 @@ const TraditionalCraftWorkshops = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-100 dark:from-gray-900 dark:to-gray-800">
       <Header />
       
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -58,7 +57,7 @@ const TraditionalCraftWorkshops = () => {
             {/* Workshop Information */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-amber-600 text-white">
+                <CardHeader className="bg-orange-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Clock className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Workshop Schedule' : 'Workshop-Zeitplan'}</span>
@@ -98,7 +97,7 @@ const TraditionalCraftWorkshops = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-green-600 text-white">
+                <CardHeader className="bg-teal-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Euro className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Workshop Prices' : 'Workshop-Preise'}</span>
@@ -135,7 +134,7 @@ const TraditionalCraftWorkshops = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-blue-600 text-white">
+                <CardHeader className="bg-indigo-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Users className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Group Sessions' : 'Gruppensitzungen'}</span>
@@ -169,7 +168,7 @@ const TraditionalCraftWorkshops = () => {
             {/* Gallery and Contact */}
             <div className="space-y-8">
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-purple-600 text-white">
+                <CardHeader className="bg-pink-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Camera className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Workshop Gallery' : 'Workshop Galerie'}</span>
@@ -196,7 +195,7 @@ const TraditionalCraftWorkshops = () => {
               </Card>
 
               <Card className="shadow-xl border-0 dark:bg-gray-800">
-                <CardHeader className="bg-red-600 text-white">
+                <CardHeader className="bg-emerald-500 text-white">
                   <CardTitle className="flex items-center space-x-3 text-2xl">
                     <Phone className="w-8 h-8" />
                     <span>{language === 'EN' ? 'Contact & Location' : 'Kontakt & Standort'}</span>
@@ -237,33 +236,33 @@ const TraditionalCraftWorkshops = () => {
               <Card className="shadow-xl border-0 dark:bg-gray-800">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center">
-                    <Palette className="w-6 h-6 mr-2 text-amber-600" />
+                    <Palette className="w-6 h-6 mr-2 text-orange-500" />
                     {language === 'EN' ? 'What You\'ll Learn' : 'Was Sie lernen werden'}
                   </h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Traditional Bavarian wood carving techniques'
                         : 'Traditionelle bayerische Holzschnitztechniken'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Pottery wheel and hand-building methods'
                         : 'Töpferscheibe und Handaufbautechniken'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'Traditional Alpine textile patterns'
                         : 'Traditionelle alpine Textilmuster'
                       }
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       {language === 'EN' 
                         ? 'History and cultural significance of crafts'
                         : 'Geschichte und kulturelle Bedeutung des Handwerks'
@@ -279,7 +278,7 @@ const TraditionalCraftWorkshops = () => {
           <div className="mt-12 text-center space-y-4">
             <Button 
               size="lg" 
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg mr-4"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg mr-4"
               onClick={() => window.open('tel:+49805290443200', '_self')}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -288,7 +287,7 @@ const TraditionalCraftWorkshops = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-4 text-lg"
+              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg"
               onClick={() => window.open('https://maps.google.com/?q=Dorfstraße+15,+Aschau+im+Chiemgau', '_blank')}
             >
               <MapPin className="w-5 h-5 mr-2" />
