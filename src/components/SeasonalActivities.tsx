@@ -43,7 +43,14 @@ const SeasonalActivities = () => {
     }
   ];
 
-  const handleExploreClick = (activity: typeof activities[0]) => {
+  const handleCardClick = (activity: typeof activities[0]) => {
+    if (activity.route) {
+      navigate(activity.route);
+    }
+  };
+
+  const handleExploreClick = (e: React.MouseEvent, activity: typeof activities[0]) => {
+    e.stopPropagation(); // Prevent card click when button is clicked
     if (activity.route) {
       navigate(activity.route);
     }
@@ -65,8 +72,9 @@ const SeasonalActivities = () => {
           {activities.map((activity, index) => (
             <Card 
               key={activity.season}
-              className="card-hover overflow-hidden border-0 shadow-lg group dark:bg-gray-800"
+              className="card-hover overflow-hidden border-0 shadow-lg group dark:bg-gray-800 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               style={{animationDelay: `${index * 0.15}s`}}
+              onClick={() => handleCardClick(activity)}
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -102,7 +110,7 @@ const SeasonalActivities = () => {
                   variant="outline" 
                   size="sm"
                   className="w-full border-wellness-sage text-wellness-sage hover:bg-wellness-sage hover:text-white dark:border-wellness-lightSage dark:text-wellness-lightSage dark:hover:bg-wellness-lightSage dark:hover:text-gray-900"
-                  onClick={() => handleExploreClick(activity)}
+                  onClick={(e) => handleExploreClick(e, activity)}
                   disabled={!activity.route}
                 >
                   Explore {activity.season}
