@@ -1,216 +1,40 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness Tourism in Aschau im Chiemgau</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1>Aschau Wellness</h1>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wellness.html">Wellness</a></li>
-                <li><a href="culture.html">Culture</a></li>
-                <li><a href="plan-trip.html">Plan Trip</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                </li>
-                <li>
-                    <button id="lang-toggle" class="lang-toggle">EN</button>
-                </li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aschau Wellness Tourism - Your Peaceful Alpine Escape</title>
+    <meta name="description" content="Discover tranquility and wellness in Aschau im Chiemgau. Experience authentic Alpine wellness tourism with spa treatments, cultural activities, and breathtaking nature." />
+    <meta name="author" content="Aschau Wellness Tourism" />
+    <meta name="keywords" content="wellness tourism, Aschau, Chiemgau, Bavaria, Alpine spa, wellness retreat, accessible travel" />
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title" data-en="Find Your Inner Peace in the Bavarian Alps" data-de="Finden Sie Ihre innere Ruhe in den bayerischen Alpen">
-                Find Your Inner Peace in the Bavarian Alps
-            </h1>
-            <p class="hero-subtitle" data-en="Discover wellness, culture, and natural beauty in Aschau im Chiemgau" data-de="Entdecken Sie Wellness, Kultur und natürliche Schönheit in Aschau im Chiemgau">
-                Discover wellness, culture, and natural beauty in Aschau im Chiemgau
-            </p>
-            <a href="plan-trip.html" class="btn btn-primary">Start Your Journey</a>
-        </div>
-        <div class="hero-bg" style="background-image: url('images/4fe3bebb-97e4-43da-acca-7b6e3ae2b103.png')"></div>
-    </section>
+    <!-- Accessibility and SEO meta tags -->
+    <meta name="theme-color" content="#8BC34A" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://aschau-wellness.lovable.app" />
 
-    <!-- Navigation Cards -->
-    <section class="nav-cards">
-        <div class="container">
-            <div class="cards-grid">
-                <a href="wellness.html" class="card nav-card">
-                    <div class="card-icon">🧘</div>
-                    <h3>Wellness & Spa</h3>
-                    <p>Rejuvenate your body and mind with premium spa treatments and wellness experiences.</p>
-                </a>
-                <a href="culture.html" class="card nav-card">
-                    <div class="card-icon">🏰</div>
-                    <h3>Culture & History</h3>
-                    <p>Explore rich Bavarian heritage through castles, museums, and traditional experiences.</p>
-                </a>
-                <a href="plan-trip.html" class="card nav-card">
-                    <div class="card-icon">🗺️</div>
-                    <h3>Plan Your Trip</h3>
-                    <p>Create your perfect wellness getaway with personalized recommendations and bookings.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Aschau Wellness Tourism - Your Peaceful Alpine Escape" />
+    <meta property="og:description" content="Discover tranquility and wellness in Aschau im Chiemgau. Experience authentic Alpine wellness tourism designed for comfort and accessibility." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Seasonal Activities -->
-    <section class="seasonal-activities">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-en="Year-Round Wellness" data-de="Ganzjähriges Wohlbefinden">Year-Round Wellness</h2>
-                <p data-en="Discover the unique beauty and activities that each season brings to Aschau" data-de="Entdecken Sie die einzigartige Schönheit und Aktivitäten, die jede Jahreszeit nach Aschau bringt">
-                    Discover the unique beauty and activities that each season brings to Aschau
-                </p>
-            </div>
-            <div class="seasonal-grid">
-                <div class="seasonal-card" onclick="location.href='spring.html'">
-                    <div class="seasonal-image">
-                        <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spring in Aschau">
-                        <div class="seasonal-badge">Spring</div>
-                    </div>
-                    <div class="seasonal-content">
-                        <h3>Spring Awakening</h3>
-                        <p>Experience nature's renewal with mountain hiking and outdoor yoga.</p>
-                        <ul class="seasonal-highlights">
-                            <li>Mountain Hiking</li>
-                            <li>Meditation Walks</li>
-                            <li>Outdoor Yoga</li>
-                        </ul>
-                        <a href="spring.html" class="btn btn-outline">Explore Spring</a>
-                    </div>
-                </div>
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aschau Wellness Tourism" />
+    <meta name="twitter:description" content="Your peaceful Alpine escape awaits in Aschau im Chiemgau" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80" />
 
-                <div class="seasonal-card" onclick="location.href='summer.html'">
-                    <div class="seasonal-image">
-                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Summer in Aschau">
-                        <div class="seasonal-badge">Summer</div>
-                    </div>
-                    <div class="seasonal-content">
-                        <h3>Summer Bliss</h3>
-                        <p>Enjoy warm weather activities and refreshing lake experiences.</p>
-                        <ul class="seasonal-highlights">
-                            <li>Lake Swimming</li>
-                            <li>Forest Bathing</li>
-                            <li>Herb Workshops</li>
-                        </ul>
-                        <a href="summer.html" class="btn btn-outline">Explore Summer</a>
-                    </div>
-                </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
 
-                <div class="seasonal-card" onclick="location.href='autumn.html'">
-                    <div class="seasonal-image">
-                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Autumn in Aschau">
-                        <div class="seasonal-badge">Autumn</div>
-                    </div>
-                    <div class="seasonal-content">
-                        <h3>Autumn Serenity</h3>
-                        <p>Find peace in golden landscapes and harvest celebrations.</p>
-                        <ul class="seasonal-highlights">
-                            <li>Harvest Retreats</li>
-                            <li>Spa Treatments</li>
-                            <li>Photography Tours</li>
-                        </ul>
-                        <a href="autumn.html" class="btn btn-outline">Explore Autumn</a>
-                    </div>
-                </div>
-
-                <div class="seasonal-card" onclick="location.href='winter.html'">
-                    <div class="seasonal-image">
-                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Winter in Aschau">
-                        <div class="seasonal-badge">Winter</div>
-                    </div>
-                    <div class="seasonal-content">
-                        <h3>Winter Warmth</h3>
-                        <p>Embrace cozy wellness in snow-covered Alpine settings.</p>
-                        <ul class="seasonal-highlights">
-                            <li>Thermal Baths</li>
-                            <li>Winter Wellness</li>
-                            <li>Indoor Relaxation</li>
-                        </ul>
-                        <a href="winter.html" class="btn btn-outline">Explore Winter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Guests Say</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial active">
-                    <p>"An absolutely transformative experience. The wellness treatments combined with the stunning Alpine scenery created the perfect retreat."</p>
-                    <cite>- Sarah M., Munich</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Aschau exceeded all expectations. The cultural sites are fascinating and the spa experiences are world-class."</p>
-                    <cite>- James L., London</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Perfect blend of relaxation and adventure. The seasonal activities make every visit unique."</p>
-                    <cite>- Maria K., Vienna</cite>
-                </div>
-            </div>
-            <div class="testimonial-dots">
-                <span class="dot active" onclick="showTestimonial(0)"></span>
-                <span class="dot" onclick="showTestimonial(1)"></span>
-                <span class="dot" onclick="showTestimonial(2)"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Aschau Wellness</h3>
-                    <p>Your gateway to wellness and culture in the Bavarian Alps.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="wellness.html">Wellness</a></li>
-                        <li><a href="culture.html">Culture</a></li>
-                        <li><a href="plan-trip.html">Plan Trip</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>83229 Aschau im Chiemgau<br>Bayern, Germany</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Aschau Wellness Tourism. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Sticky Booking Button -->
-    <div class="sticky-booking">
-        <a href="plan-trip.html" class="btn btn-primary">Book Now</a>
-    </div>
-
-    <script src="js/main.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
