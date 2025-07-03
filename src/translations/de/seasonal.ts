@@ -49,7 +49,46 @@ export const seasonalDe: SeasonalTranslations = {
   },
   summer: {
     title: 'Sommer-Glückseligkeit',
-    description: 'Genießen Sie Wellness-Aktivitäten im Freien, Schwimmen im See und Waldbaden im warmen Alpensonnenschein.'
+    description: 'Genießen Sie Wellness-Aktivitäten im Freien, Schwimmen im See und Waldbaden im warmen Alpensonnenschein.',
+    heroImageTitle: 'Erleben Sie die Sommer-Glückseligkeit',
+    heroImageSubtitle: 'Warme Alpine Sonne im Herzen Bayerns',
+    activitiesTitle: 'Sommeraktivitäten',
+    activitiesSubtitle: 'Entdecken Sie die perfekten Aktivitäten, um die Sommersaison in Aschau zu genießen',
+    weatherTitle: 'Sommerwetter',
+    weatherItems: [
+      'Temperatur: 20-28°C',
+      'Lange sonnige Tage',
+      'Gelegentliche Nachmittagsgewitter',
+      'Perfekt für Outdoor-Aktivitäten'
+    ],
+    packingTitle: 'Was Sie mitbringen sollten',
+    packingItems: [
+      'Leichte, atmungsaktive Kleidung',
+      'Schwimmsachen',
+      'Sonnenschutz (Hut, Sonnencreme)',
+      'Leichte Regenjacke'
+    ],
+    ctaTitle: 'Bereit, den Sommer in Aschau zu erleben?',
+    ctaSubtitle: 'Buchen Sie Ihren Sommer-Wellness-Rückzug und tauchen Sie ein in die Wärme der alpinen Saison',
+    ctaButton: 'Planen Sie Ihren Sommerbesuch',
+    activities: {
+      hiking: {
+        title: 'Seenschwimmen',
+        description: 'Erfrischen Sie sich in kristallklaren Alpenseen, umgeben von majestätischen Berggipfeln.'
+      },
+      meditation: {
+        title: 'Waldbaden',
+        description: 'Tauchen Sie ein in die heilende Energie alter Alpenwälder während der warmen Jahreszeit.'
+      },
+      yoga: {
+        title: 'Kräuter-Workshops',
+        description: 'Lernen Sie über Alpenkräuter und erstellen Sie natürliche Wellness-Mittel mit lokalen Experten.'
+      },
+      forestBathing: {
+        title: 'Sonnen-Meditation',
+        description: 'Praktizieren Sie Achtsamkeit unter der warmen alpinen Sommersonne in friedlichen Berglandschaften.'
+      }
+    }
   },
   autumn: {
     title: 'Herbstliche Gelassenheit',
