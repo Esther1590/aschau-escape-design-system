@@ -11,7 +11,7 @@ const StickyBookingButton = () => {
   const navigate = useNavigate();
 
   const handleBookingClick = () => {
-    navigate('/plan');
+    navigate('/plan-trip');
   };
 
   return (
