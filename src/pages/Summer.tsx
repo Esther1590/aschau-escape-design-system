@@ -26,7 +26,7 @@ const Summer = () => {
               {t('seasonal.summer.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              Embrace the warmth of summer in the Bavarian Alps
+              {t('seasonal.summer.heroImageSubtitle')}
             </p>
           </div>
         </div>
@@ -37,10 +37,10 @@ const Summer = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Summer Activities
+              {t('seasonal.summer.activitiesTitle')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Discover the perfect activities to embrace the summer season in Aschau
+              {t('seasonal.summer.activitiesSubtitle')}
             </p>
           </div>
 
@@ -50,10 +50,10 @@ const Summer = () => {
                 <span className="text-2xl">🏊</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Lake Swimming
+                {t('seasonal.summer.activities.hiking.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Refresh yourself in crystal-clear Alpine lakes surrounded by mountain peaks.
+                {t('seasonal.summer.activities.hiking.description')}
               </p>
             </div>
 
@@ -62,10 +62,10 @@ const Summer = () => {
                 <span className="text-2xl">🌲</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Forest Bathing
+                {t('seasonal.summer.activities.meditation.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Immerse yourself in the healing energy of ancient Alpine forests.
+                {t('seasonal.summer.activities.meditation.description')}
               </p>
             </div>
 
@@ -74,10 +74,10 @@ const Summer = () => {
                 <span className="text-2xl">🌿</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Herb Workshops
+                {t('seasonal.summer.activities.yoga.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Learn about Alpine herbs and create natural wellness remedies.
+                {t('seasonal.summer.activities.yoga.description')}
               </p>
             </div>
 
@@ -86,10 +86,10 @@ const Summer = () => {
                 <span className="text-2xl">☀️</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Sun Meditation
+                {t('seasonal.summer.activities.forestBathing.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Practice mindfulness under the warm Alpine summer sun.
+                {t('seasonal.summer.activities.forestBathing.description')}
               </p>
             </div>
           </div>
@@ -102,49 +102,29 @@ const Summer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                Summer Weather
+                {t('seasonal.summer.weatherTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Temperature: 20-28°C (68-82°F)
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Long sunny days
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Occasional afternoon thunderstorms
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Perfect for outdoor activities
-                </li>
+                {(t('seasonal.summer.weatherItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                What to Bring
+                {t('seasonal.summer.packingTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Light, breathable clothing
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Swimming attire
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Sun protection (hat, sunscreen)
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Light rain jacket
-                </li>
+                {(t('seasonal.summer.packingItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -155,13 +135,13 @@ const Summer = () => {
       <section className="py-20 px-4 bg-wellness-sage text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience Summer in Aschau?
+            {t('seasonal.summer.ctaTitle')}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Book your summer wellness retreat and immerse yourself in the warmth of the Alpine season
+            {t('seasonal.summer.ctaSubtitle')}
           </p>
           <button className="bg-white text-wellness-sage px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-            Plan Your Summer Visit
+            {t('seasonal.summer.ctaButton')}
           </button>
         </div>
       </section>
