@@ -92,10 +92,88 @@ export const seasonalEn: SeasonalTranslations = {
   },
   autumn: {
     title: 'Autumn Serenity',
-    description: 'Find peace in the golden landscapes with harvest retreats, spa treatments, and photography tours.'
+    description: 'Find peace in the golden landscapes with harvest retreats, spa treatments, and photography tours.',
+    heroImageTitle: 'Experience Autumn Serenity',
+    heroImageSubtitle: 'Golden landscapes in the heart of Bavaria',
+    activitiesTitle: 'Autumn Activities',
+    activitiesSubtitle: 'Discover the perfect activities to embrace the autumn season in Aschau',
+    weatherTitle: 'Autumn Weather',
+    weatherItems: [
+      'Temperature: 8-18°C (46-64°F)',
+      'Crisp, clear days',
+      'Beautiful fall foliage',
+      'Perfect for hiking and photography'
+    ],
+    packingTitle: 'What to Bring',
+    packingItems: [
+      'Warm layers for cooler temperatures',
+      'Comfortable hiking boots',
+      'Camera for autumn scenery',
+      'Light jacket for evening walks'
+    ],
+    ctaTitle: 'Ready to Experience Autumn in Aschau?',
+    ctaSubtitle: 'Book your autumn wellness retreat and immerse yourself in the golden beauty of the Alpine season',
+    ctaButton: 'Plan Your Autumn Visit',
+    activities: {
+      hiking: {
+        title: 'Harvest Retreats',
+        description: 'Experience traditional harvest ceremonies and seasonal wellness practices.'
+      },
+      meditation: {
+        title: 'Spa Treatments',
+        description: 'Indulge in seasonal spa treatments with autumn herbs and warming therapies.'
+      },
+      yoga: {
+        title: 'Photography Tours',
+        description: 'Capture the golden beauty of autumn landscapes in the Alps.'
+      },
+      forestBathing: {
+        title: 'Forest Walks',
+        description: 'Peaceful walks through colorful autumn forests and mountain trails.'
+      }
+    }
   },
   winter: {
     title: 'Winter Wellness',
-    description: 'Embrace the cozy season with thermal baths, indoor relaxation, and traditional winter wellness practices.'
+    description: 'Embrace the cozy season with thermal baths, indoor relaxation, and traditional winter wellness practices.',
+    heroImageTitle: 'Experience Winter Wellness',
+    heroImageSubtitle: 'Cozy warmth in the snow-covered Alps',
+    activitiesTitle: 'Winter Activities',
+    activitiesSubtitle: 'Discover the perfect activities to embrace the winter season in Aschau',
+    weatherTitle: 'Winter Weather',
+    weatherItems: [
+      'Temperature: -5 to 5°C (23-41°F)',
+      'Snow-covered landscapes',
+      'Shorter daylight hours',
+      'Perfect for cozy indoor activities'
+    ],
+    packingTitle: 'What to Bring',
+    packingItems: [
+      'Warm winter clothing',
+      'Waterproof boots',
+      'Swimwear for thermal baths',
+      'Cozy indoor wear for relaxation'
+    ],
+    ctaTitle: 'Ready to Experience Winter in Aschau?',
+    ctaSubtitle: 'Book your winter wellness retreat and embrace the cozy magic of the Alpine season',
+    ctaButton: 'Plan Your Winter Visit',
+    activities: {
+      hiking: {
+        title: 'Thermal Baths',
+        description: 'Relax in naturally heated Alpine thermal pools surrounded by snow.'
+      },
+      meditation: {
+        title: 'Winter Wellness',
+        description: 'Experience traditional winter wellness practices and seasonal treatments.'
+      },
+      yoga: {
+        title: 'Indoor Relaxation',
+        description: 'Cozy indoor spaces for meditation, reading, and peaceful contemplation.'
+      },
+      forestBathing: {
+        title: 'Snow Walks',
+        description: 'Peaceful walks through snow-covered forests and mountain trails.'
+      }
+    }
   }
 };

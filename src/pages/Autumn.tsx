@@ -26,7 +26,7 @@ const Autumn = () => {
               {t('seasonal.autumn.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              Find peace in the golden landscapes of the Bavarian Alps
+              {t('seasonal.autumn.heroImageSubtitle')}
             </p>
           </div>
         </div>
@@ -37,10 +37,10 @@ const Autumn = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Autumn Activities
+              {t('seasonal.autumn.activitiesTitle')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Discover the perfect activities to embrace the autumn season in Aschau
+              {t('seasonal.autumn.activitiesSubtitle')}
             </p>
           </div>
 
@@ -50,10 +50,10 @@ const Autumn = () => {
                 <span className="text-2xl">🍂</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Harvest Retreats
+                {t('seasonal.autumn.activities.hiking.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Experience traditional harvest ceremonies and seasonal wellness practices.
+                {t('seasonal.autumn.activities.hiking.description')}
               </p>
             </div>
 
@@ -62,10 +62,10 @@ const Autumn = () => {
                 <span className="text-2xl">🧘</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Spa Treatments
+                {t('seasonal.autumn.activities.meditation.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Indulge in seasonal spa treatments with autumn herbs and warming therapies.
+                {t('seasonal.autumn.activities.meditation.description')}
               </p>
             </div>
 
@@ -74,10 +74,10 @@ const Autumn = () => {
                 <span className="text-2xl">📸</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Photography Tours
+                {t('seasonal.autumn.activities.yoga.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Capture the golden beauty of autumn landscapes in the Alps.
+                {t('seasonal.autumn.activities.yoga.description')}
               </p>
             </div>
 
@@ -86,10 +86,10 @@ const Autumn = () => {
                 <span className="text-2xl">🌰</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Forest Walks
+                {t('seasonal.autumn.activities.forestBathing.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Peaceful walks through colorful autumn forests and mountain trails.
+                {t('seasonal.autumn.activities.forestBathing.description')}
               </p>
             </div>
           </div>
@@ -102,49 +102,29 @@ const Autumn = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                Autumn Weather
+                {t('seasonal.autumn.weatherTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Temperature: 8-18°C (46-64°F)
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Crisp, clear days
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Beautiful fall foliage
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Perfect for hiking and photography
-                </li>
+                {(t('seasonal.autumn.weatherItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                What to Bring
+                {t('seasonal.autumn.packingTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Warm layers for cooler temperatures
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Comfortable hiking boots
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Camera for autumn scenery
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Light jacket for evening walks
-                </li>
+                {(t('seasonal.autumn.packingItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -155,13 +135,13 @@ const Autumn = () => {
       <section className="py-20 px-4 bg-wellness-sage text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience Autumn in Aschau?
+            {t('seasonal.autumn.ctaTitle')}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Book your autumn wellness retreat and immerse yourself in the golden beauty of the Alpine season
+            {t('seasonal.autumn.ctaSubtitle')}
           </p>
           <button className="bg-white text-wellness-sage px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-            Plan Your Autumn Visit
+            {t('seasonal.autumn.ctaButton')}
           </button>
         </div>
       </section>

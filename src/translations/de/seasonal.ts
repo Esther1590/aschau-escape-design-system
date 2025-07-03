@@ -92,10 +92,88 @@ export const seasonalDe: SeasonalTranslations = {
   },
   autumn: {
     title: 'Herbstliche Gelassenheit',
-    description: 'Finden Sie Ruhe in den goldenen Landschaften mit Ernte-Retreats, Spa-Behandlungen und Fototours.'
+    description: 'Finden Sie Ruhe in den goldenen Landschaften mit Ernte-Retreats, Spa-Behandlungen und Fototours.',
+    heroImageTitle: 'Erleben Sie herbstliche Gelassenheit',
+    heroImageSubtitle: 'Goldene Landschaften im Herzen Bayerns',
+    activitiesTitle: 'Herbstaktivitäten',
+    activitiesSubtitle: 'Entdecken Sie die perfekten Aktivitäten, um die Herbstsaison in Aschau zu erleben',
+    weatherTitle: 'Herbstwetter',
+    weatherItems: [
+      'Temperatur: 8-18°C',
+      'Klare, frische Tage',
+      'Wunderschöne Herbstfarben',
+      'Perfekt zum Wandern und Fotografieren'
+    ],
+    packingTitle: 'Was Sie mitbringen sollten',
+    packingItems: [
+      'Warme Schichten für kühlere Temperaturen',
+      'Bequeme Wanderschuhe',
+      'Kamera für Herbstlandschaften',
+      'Leichte Jacke für Abendspaziergänge'
+    ],
+    ctaTitle: 'Bereit, den Herbst in Aschau zu erleben?',
+    ctaSubtitle: 'Buchen Sie Ihren Herbst-Wellness-Rückzug und tauchen Sie ein in die goldene Schönheit der alpinen Saison',
+    ctaButton: 'Planen Sie Ihren Herbstbesuch',
+    activities: {
+      hiking: {
+        title: 'Ernte-Retreats',
+        description: 'Erleben Sie traditionelle Erntezeremonien und saisonale Wellness-Praktiken.'
+      },
+      meditation: {
+        title: 'Spa-Behandlungen',
+        description: 'Genießen Sie saisonale Spa-Behandlungen mit Herbstkräutern und wärmenden Therapien.'
+      },
+      yoga: {
+        title: 'Fototouren',
+        description: 'Halten Sie die goldene Schönheit der Herbstlandschaften in den Alpen fest.'
+      },
+      forestBathing: {
+        title: 'Waldspaziergänge',
+        description: 'Friedliche Spaziergänge durch farbenfrohe Herbstwälder und Bergpfade.'
+      }
+    }
   },
   winter: {
     title: 'Winter-Wellness',
-    description: 'Genießen Sie die gemütliche Jahreszeit mit Thermalbädern, Indoor-Entspannung und traditionellen Winter-Wellness-Praktiken.'
+    description: 'Genießen Sie die gemütliche Jahreszeit mit Thermalbädern, Indoor-Entspannung und traditionellen Winter-Wellness-Praktiken.',
+    heroImageTitle: 'Erleben Sie Winter-Wellness',
+    heroImageSubtitle: 'Gemütliche Wärme in den schneebedeckten Alpen',
+    activitiesTitle: 'Winteraktivitäten',
+    activitiesSubtitle: 'Entdecken Sie die perfekten Aktivitäten, um die Wintersaison in Aschau zu erleben',
+    weatherTitle: 'Winterwetter',
+    weatherItems: [
+      'Temperatur: -5 bis 5°C',
+      'Schneebedeckte Landschaften',
+      'Kürzere Tageslichtstunden',
+      'Perfekt für gemütliche Indoor-Aktivitäten'
+    ],
+    packingTitle: 'Was Sie mitbringen sollten',
+    packingItems: [
+      'Warme Winterkleidung',
+      'Wasserdichte Stiefel',
+      'Schwimmsachen für Thermalbäder',
+      'Gemütliche Indoor-Kleidung für die Entspannung'
+    ],
+    ctaTitle: 'Bereit, den Winter in Aschau zu erleben?',
+    ctaSubtitle: 'Buchen Sie Ihren Winter-Wellness-Rückzug und genießen Sie die gemütliche Magie der alpinen Saison',
+    ctaButton: 'Planen Sie Ihren Winterbesuch',
+    activities: {
+      hiking: {
+        title: 'Thermalbäder',
+        description: 'Entspannen Sie in natürlich beheizten Alpenpools, umgeben von Schnee.'
+      },
+      meditation: {
+        title: 'Winter-Wellness',
+        description: 'Erleben Sie traditionelle Winter-Wellness-Praktiken und saisonale Behandlungen.'
+      },
+      yoga: {
+        title: 'Indoor-Entspannung',
+        description: 'Gemütliche Innenräume für Meditation, Lesen und friedliche Kontemplation.'
+      },
+      forestBathing: {
+        title: 'Schneespaziergänge',
+        description: 'Friedliche Spaziergänge durch schneebedeckte Wälder und Bergpfade.'
+      }
+    }
   }
 };

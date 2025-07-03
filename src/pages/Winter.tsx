@@ -26,7 +26,7 @@ const Winter = () => {
               {t('seasonal.winter.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              Embrace the cozy season in the snow-covered Bavarian Alps
+              {t('seasonal.winter.heroImageSubtitle')}
             </p>
           </div>
         </div>
@@ -37,10 +37,10 @@ const Winter = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-wellness-charcoal dark:text-white mb-6">
-              Winter Activities
+              {t('seasonal.winter.activitiesTitle')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Discover the perfect activities to embrace the winter season in Aschau
+              {t('seasonal.winter.activitiesSubtitle')}
             </p>
           </div>
 
@@ -50,10 +50,10 @@ const Winter = () => {
                 <span className="text-2xl">♨️</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Thermal Baths
+                {t('seasonal.winter.activities.hiking.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Relax in naturally heated Alpine thermal pools surrounded by snow.
+                {t('seasonal.winter.activities.hiking.description')}
               </p>
             </div>
 
@@ -62,10 +62,10 @@ const Winter = () => {
                 <span className="text-2xl">🧘</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Winter Wellness
+                {t('seasonal.winter.activities.meditation.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Experience traditional winter wellness practices and seasonal treatments.
+                {t('seasonal.winter.activities.meditation.description')}
               </p>
             </div>
 
@@ -74,10 +74,10 @@ const Winter = () => {
                 <span className="text-2xl">🏠</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Indoor Relaxation
+                {t('seasonal.winter.activities.yoga.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Cozy indoor spaces for meditation, reading, and peaceful contemplation.
+                {t('seasonal.winter.activities.yoga.description')}
               </p>
             </div>
 
@@ -86,10 +86,10 @@ const Winter = () => {
                 <span className="text-2xl">❄️</span>
               </div>
               <h3 className="text-xl font-bold text-wellness-charcoal dark:text-white mb-3 text-center">
-                Snow Walks
+                {t('seasonal.winter.activities.forestBathing.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Peaceful walks through snow-covered forests and mountain trails.
+                {t('seasonal.winter.activities.forestBathing.description')}
               </p>
             </div>
           </div>
@@ -102,49 +102,29 @@ const Winter = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                Winter Weather
+                {t('seasonal.winter.weatherTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Temperature: -5 to 5°C (23-41°F)
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Snow-covered landscapes
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Shorter daylight hours
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Perfect for cozy indoor activities
-                </li>
+                {(t('seasonal.winter.weatherItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-wellness-charcoal dark:text-white mb-6">
-                What to Bring
+                {t('seasonal.winter.packingTitle')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Warm winter clothing
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Waterproof boots
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Swimwear for thermal baths
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
-                  Cozy indoor wear for relaxation
-                </li>
+                {(t('seasonal.winter.packingItems') as unknown as string[]).map((item: string, index: number) => (
+                  <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-wellness-sage rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -155,13 +135,13 @@ const Winter = () => {
       <section className="py-20 px-4 bg-wellness-sage text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience Winter in Aschau?
+            {t('seasonal.winter.ctaTitle')}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Book your winter wellness retreat and embrace the cozy magic of the Alpine season
+            {t('seasonal.winter.ctaSubtitle')}
           </p>
           <button className="bg-white text-wellness-sage px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-            Plan Your Winter Visit
+            {t('seasonal.winter.ctaButton')}
           </button>
         </div>
       </section>
