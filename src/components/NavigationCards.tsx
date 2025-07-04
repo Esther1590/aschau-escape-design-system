@@ -29,7 +29,7 @@ const NavigationCards = () => {
       description: t('cards.plan.description'),
       image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       color: 'bg-wellness-lightSage',
-      route: '/plan'
+      route: '/plan-trip'
     }
   ];
 
